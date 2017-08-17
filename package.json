@@ -1,0 +1,23 @@
+{
+  "name": "yunyanjin",
+  "version": "1.0.0",
+  "description": "The best public welfare platform ever.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powerformer/yunyanjin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/powerformer/yunyanjin/issues"
+  },
+  "homepage": "https://github.com/powerformer/yunyanjin#readme",
+  "dependencies": {
+    "koa": "^2.3.0"
+  }
+}
