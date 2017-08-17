@@ -1,6 +1,6 @@
 # yunyanjin
 
-How to start this project
+**How to start this project**
 
 - Make sure you have `npm 5.3.0`, `Node v8.2.1`.
 
@@ -14,7 +14,8 @@ How to start this project
 
 - Surprise! Hello mRc! 
 
-The project structure
+
+**The project structure**
 - `public` 
 
   static assets
