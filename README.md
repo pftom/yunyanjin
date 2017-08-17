@@ -40,6 +40,6 @@
 
   some app configs such as koa-scheme
 
-- routes
+- `routes`
 
   jump route
