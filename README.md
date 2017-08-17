@@ -1,5 +1,18 @@
 # yunyanjin
-The best public welfare platform ever.
+
+How to start this project
+
+- Make sure you have `npm 5.3.0`, `Node v8.2.1`.
+
+- And `git clone git@github.com:powerformer/yunyanjin.git` to your local machine.
+
+- `cd yunyanjin && npm install`
+
+- `node app.js` start this project
+
+- And then, open `http://localhost:3000/`
+
+- Surprise! Hello mRc! 
 
 The project structure
 - `public` 
