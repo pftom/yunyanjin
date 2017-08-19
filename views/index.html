@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="../public/css/bootstrap.css">
-  <link rel="stylesheet" href="../public/css/index.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../public/css/index.css">
 
   <title>云梦盐津</title>
 </head>
 <body>
 
   <div class="header-body">
-      <!-- Navbar -->
 
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -55,32 +53,76 @@
       <!-- Site title -->
       <div class="title-board">
         <div class="title-box">
-          <h1>云梦盐津</h1>
-          <p>梦想，在这里发生</p>
+          <h1 class="project-title">云梦盐津</h1>
+          <p class="project-desc">梦想，在这里发生</p>
         </div>
       </div>
     </div>
 
     <div class="header-bar">
-      <nav class="navbar navbar-default navbar-custom ">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">LOGO</a>
+      <nav class="navbar navbar-default navbar-custom">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">LOGO</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right nav-operation">
+            <li><a href="#">网上商城</a></li>
+            <li><a href="#">新闻中心</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li>
+              <button type="button" id="loginBtn">
+                <span class="glyphicon glyphicon-log-in"></span> 登录/注册
+              </button>
+            </li>
+          </ul>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">网上商城</a></li>
-          <li><a href="#">新闻中心</a></li>
-          <li><a href="#">关于我们</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录/注册</a></li>
-        </ul>
-    </nav>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Login modal -->
+  <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body container-fluid" style="padding:40px 50px;">
+          <div class="col-sm-6">
+            <img src="../public/img/login.svg">
+          </div>
+          <div class="col-sm-6">
+            <h3 style="text-align: center;">登 录</h3>
+            <form role="form">
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span>  用户名</label>
+                <input type="text" class="form-control" id="usrname" placeholder="输入您的用户名">
+              </div>
+              <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>  密码</label>
+                <input type="text" class="form-control" id="psw" placeholder="输入您的密码">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="" checked>记住密码</label>
+              </div>
+                <button type="submit" class="btn btn-success btn-block">登 录</button>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <p>没有帐号? 现在<a href="#">注册</a></p>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Our culture -->
   <div class="container-fluid culture">
     <div class="col-sm-7">
-      <h2>我们的文化</h2>
+      <h2 class="sector-title">我们的文化</h2>
       <p>
         相比之前的传输协议，HTTP/2在底层方面做了很多优化。有安全、省时、简化开发、更好的适应复杂页面、提供缓存利用率等优势，阿里云早在去年发布的CDN6.0服务就已正式支持HTTP/2，访问速度最高可提升68%。今天我们从历史、特性、调试、性能四个层面来全面解析HTTP/2。
       </p>
@@ -91,12 +133,12 @@
   </div>
 
   <!-- Short Description -->
-  <div class="container-fluid">
+  <div class="container-fluid description">
     <div class="col-sm-5">
       <img class="map" src="../public/img/map.jpg" alt="Map">
     </div>
     <div class="col-sm-7">
-      <h2>盐津简介</h2>
+      <h2 class="sector-title">盐津简介</h2>
       <p>
         云南省盐津县，位于云南省东北部，昭通市下辖县，东华大学对口帮扶的国家级贫困县。盐津属典型的山区县，优越的地理气候条件，造就了盐津良好的生态环境。盐津自古是入滇的要冲，素有“咽喉西蜀、锁钥南滇”之称，地处乌蒙山脉关河深谷的中段，位于四川和云南结合之处，也是古丝绸之路入滇的第一站。全县有着丰富的自然资源、独特的区位优势、厚重的人文情怀，更有着乌骨鸡、天麻、竹笋、腊肉、白酒等品种多样、品质优良、健康生态的众多农特产品。
       </p>
@@ -105,28 +147,28 @@
 
   <!-- Goods -->
   <div class="container-fluid">
-    <h2>部分商品展示</h2>
+    <h2 class="sector-title">部分商品展示</h2>
   </div>
 
   <!-- Commitments -->
   <div class="container-fluid">
-    <h2>我们的承诺</h2>
-    <div class="col-sm-6">
+    <h2 class="sector-title">我们的承诺</h2>
+    <div class="col-sm-6 commit">
       <img src="../public/img/commit-1.svg" alt="commit-1"><br>
       <h3>正品保证</h3>
       <p>严格控制供应渠道，全部商品均由品牌供应商直接采购供货，品质有保障。</p>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 commit">
       <img src="../public/img/commit-2.svg" alt="commit-2"><br>
       <h3>支持退换货</h3>
       <p>支持退换货，退换货请在商品收到的七天内进行退换货申请，并将商品寄回。</p>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 commit">
       <img src="../public/img/commit-3.svg" alt="commit-3"><br>
       <h3>尽快发货</h3>
       <p>我们会尽快安排发货，在发货后一般会在2-7天左右送达。</p>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 commit">
       <img src="../public/img/commit-4.svg" alt="commit-4"><br>
       <h3>关于色差</h3>
       <p>所卖商品均为实物拍摄，因此难免会由于灯光等原因出现略微色差，一切以实物为准。</p>
@@ -135,8 +177,16 @@
 
   <!-- Footer -->
   <footer class="container-fluid bg-4 text-center">
-    <strong>东华大学公益项目</strong>
-    <p>This project follows <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+    <h2>东华大学公益项目</h2>
+    <p class="declaration">This project follows <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
   </footer>
+
+  <script>
+    $(document).ready(function() {
+      $("#loginBtn").click(function() {
+        $("#loginModal").modal();
+      });
+    });
+  </script>
 </body>
 </html>
