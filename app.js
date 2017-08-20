@@ -1,8 +1,23 @@
 const Koa = require('koa');
 const app = new Koa();
 
-const main = ctx => {
-  ctx.response.body = 'Hello Hacker mRc.';
+const views = require('co-views');
+
+const render = views(__dirname + '/views', {
+  ext: 'ejs',
+});
+
+const user = {
+      name: {
+        first: 'Tobi',
+        last: 'Holowaychuk'
+      },
+      species: 'ferret',
+      age: 3
+    };
+
+const main = async ctx => {
+  ctx.body = await render('user', { user: user });
 };
 
 app.use(main);
