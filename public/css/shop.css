@@ -1,0 +1,85 @@
+.shop-header {
+  position: relative;
+  text-align: center;
+  padding: 8% 0 0 0;
+  margin: 0 0 3% 0;
+  overflow: hidden;
+}
+
+.shop-header > .jumbotron {
+  background: none;
+}
+
+.jumbotron > * {
+  margin: 3%;
+}
+
+.navbar-custom {
+  background: none;
+  border: none;
+  padding: 3%;
+}
+
+.nav-operation {
+  color: white;
+  font-size: large;
+  font-weight: 300;
+}
+
+.header-bg {
+  background-color: #F7F9FA;
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  z-index: -1;
+  transition: -webkit-filter 0.2s ease, background-image 0.2s ease;
+  background: linear-gradient(223deg, #9ce8dd, #a993da, #F0CB54, #6D93A3);
+  background-size: 600% 600%;
+  -webkit-animation: bg-generator 50s ease infinite;
+  animation: bg-generator 50s ease infinite;
+}
+
+@keyframes bg-generator {
+  0% {background-position: 0% 84%;}
+  50% {background-position: 100% 17%;}
+  100% {background-position: 0% 84%;}
+}
+
+.goods-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3% 0;
+}
+
+.goods-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.1), 0px 2px 10px rgba(0,0,0,0.1);
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.goods-item > img {
+  width: 200px;
+  height: 160px;
+  border-radius: 5%;
+}
+
+.goods-item > h3 {
+  font-size: medium;
+  font-weight: normal;
+}
+
+.price {
+  color: #d0021b;
+  font-size: large;
+  font-weight: bold;
+}
+
+footer {
+  color: white;
+  background-color: #FF9488;
+  padding: 20px;
+}

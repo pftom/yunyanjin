@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -14,8 +15,28 @@
 </head>
 <body>
 
-  <div class="header-body">
+  <!-- Navbar -->
+  <nav class="navbar navbar-fixed-top navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img class="logo" src="../public/img/logo.svg" alt="Logo">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="nav-operation" href="#">网上商城</a></li>
+        <li><a class="nav-operation" href="#">新闻中心</a></li>
+        <li><a class="nav-operation" href="#">关于我们</a></li>
+        <li>
+          <a class="nav-operation" id="loginBtn">
+            <span class="glyphicon glyphicon-log-in"></span> 登录/注册
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
+  <div class="header-body">
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -57,26 +78,6 @@
           <p class="project-desc">梦想，在这里发生</p>
         </div>
       </div>
-    </div>
-
-    <div class="header-bar">
-      <nav class="navbar navbar-default navbar-custom">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">LOGO</a>
-          </div>
-          <ul class="nav navbar-nav navbar-right nav-operation">
-            <li><a href="#">网上商城</a></li>
-            <li><a href="#">新闻中心</a></li>
-            <li><a href="#">关于我们</a></li>
-            <li>
-              <button type="button" id="loginBtn">
-                <span class="glyphicon glyphicon-log-in"></span> 登录/注册
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
     </div>
   </div>
 
@@ -146,12 +147,12 @@
   </div>
 
   <!-- Goods -->
-  <div class="container-fluid">
+  <div class="container-fluid goods">
     <h2 class="sector-title">部分商品展示</h2>
   </div>
 
   <!-- Commitments -->
-  <div class="container-fluid">
+  <div class="container-fluid commitments">
     <h2 class="sector-title">我们的承诺</h2>
     <div class="col-sm-6 commit">
       <img src="../public/img/commit-1.svg" alt="commit-1"><br>

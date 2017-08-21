@@ -3,6 +3,18 @@ p {
   font-weight: lighter;
 }
 
+.navbar-custom {
+  background: none;
+  border: none;
+  padding: 3%;
+}
+
+.nav-operation {
+  color: white;
+  font-size: large;
+  font-weight: 300;
+}
+
 .login {
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -18,6 +30,10 @@ p {
   font-size: 7rem;
   font-weight: normal;
   text-align: right;
+}
+
+button {
+  color: white;
 }
 
 .project-desc {
@@ -46,26 +62,9 @@ p {
   width: 100%;
 }
 
-.header-bar {
-  position: absolute;
-  padding: 3%;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.header-bar .navbar-custom {
-  background: none;
-  border: none;
-}
-
-.nav-selection {
-  font-size: larger;
-  color: white;
-}
-
 .culture {
   background-color: #f6f6f6;
+  padding: 6rem;
   display: flex;
   align-items: center;
 }
@@ -73,20 +72,39 @@ p {
 .video-cover {
   max-width: 100%;
   border-radius: 1rem;
-  margin: 7rem 0;
 }
 
 .description {
   text-align: center;
+  padding: 6rem;
   display: flex;
   align-items: center;
 }
 
 .map {
-  width: 80%;
-  height: 80%;
+  position: relative;
+  width: 70%;
+  height: 70%;
   border-radius: 10px;
-  margin: 7rem 0;
+}
+
+.map::after {
+  content: '';
+  position: absolute;
+  z-index: -1; /* hide shadow behind image */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  width: 70%;
+  left: 15%; /* one half of the remaining 30% */
+  height: 100px;
+  bottom: 0;
+}
+
+.goods {
+  background-color: #f6f6f6;
+}
+
+.commitments {
+  padding: 10%;
 }
 
 .commit {
