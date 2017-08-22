@@ -41,4 +41,4 @@ app.use(route.delete('/shop/products/:id/', deleteProduct));
 
 
 app.listen(port);
-console.log('App is listening on port 3000....');
+console.log('App is listening on port 8080....');
