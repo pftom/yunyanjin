@@ -133,7 +133,8 @@ footer {
 }
 
 .close {
-  font-size: 5rem;
+  width: 10%;
+  height: 10%;
 }
 
 .form-group {
