@@ -8,7 +8,7 @@
 
 - `cd yunyanjin && npm install`
 
-- `npm start start this project
+- `npm start` start this project
 
 
 **The project structure**
