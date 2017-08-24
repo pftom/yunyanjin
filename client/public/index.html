@@ -10,9 +10,13 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-      <script src="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/preloader.min.js"></script>
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="js/slippry.js"></script> <!-- slideshow -->
+    <script src="js/typed.js"></script> <!-- type ani -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -39,5 +43,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      $(function() {
+				var demo1 = $("#slider").slippry({
+					 transition: 'kenburns',
+					 useCSS: true,
+					 speed: 5000,
+					 pause: 9000,
+					 auto: true,
+					 controls: false,
+					 preload: 'visible',
+					 autoHover: false
+				});
+			});
+    </script>
   </body>
 </html>
