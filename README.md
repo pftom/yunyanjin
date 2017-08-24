@@ -8,11 +8,7 @@
 
 - `cd yunyanjin && npm install`
 
-- `node app.js` start this project
-
-- And then, open `http://localhost:3000/`
-
-- Surprise! Hello mRc! 
+- `npm start start this project
 
 
 **The project structure**
