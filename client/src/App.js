@@ -9,9 +9,9 @@ class App extends Component {
     return (
       <div>
           <ul ref={(ul) => { this.slider = ul; }} id="slider" style={{listStyle: 'none', width: '100%', height: '100%', padding: 0, margin: 0}} className="hde">	
-            <li><img src={carousel1} alt="轮播图1"/></li>
-            <li><img src={carousel2} alt="轮播图2"/></li>
-            <li><img src={carousel3} alt="轮播图3"/></li>   
+            <li><img src={carousel1} alt=""/></li>
+            <li><img src={carousel2} alt=""/></li>
+            <li><img src={carousel3} alt=""/></li>   
           </ul>
       </div>
     );
