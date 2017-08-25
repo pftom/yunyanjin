@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div>
 
-          <nav className="navbar navbar-default navbar-fixed-top" role="navigation">
+          <nav className="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
               <div className="container">
                 <div className="navbar-header">
                   <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -39,9 +39,9 @@ class App extends Component {
                 </div>
                 <div className="collapse navbar-collapse" id="myNavbar">
                   <ul className="nav navbar-nav navbar-right">
-                    <li><a href="#about">网上商城</a></li>
-                    <li><a href="#services">新闻中心</a></li>
-                    <li><a href="#portfolio">关于我们</a></li>
+                    <li><a class="nav-operation" href="#about">网上商城</a></li>
+                    <li><a class="nav-operation" href="#services">新闻中心</a></li>
+                    <li><a class="nav-operation" href="#portfolio">关于我们</a></li>
                   </ul>
                 </div>
               </div>
