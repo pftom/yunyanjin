@@ -26,12 +26,22 @@
   font-weight: 350;
 }
 
+
 #login-button {
     padding: 6px 16px;
     border: 1px solid #FFF;
     border-radius: 100px;
     top: 1.5px;
-    left: 30px;
+}
+
+@media screen and (max-width: 991px) {
+    #login-button {
+        padding: 6px 16px;
+        border: 1px solid #FFF;
+        border-radius: 100px;
+        top: 1.5px;
+        left: 24px;;
+    }
 }
 
 svg path {
@@ -79,6 +89,33 @@ svg path {
         margin: 25px 0;
     }
 }
+
+.title-board {
+  color: white;
+  background: linear-gradient(rgba(255,85,66,0.3), rgba(255,85,66,0.6));
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10% 0 10%;
+  width: 100%;
+  height: 100%;
+  /* z-index: 10; */
+  top: 0;
+  left: 0;
+}
+/* 
+.project-desc {
+  font-size: 2em;
+  color: white;
+  text-align: right;
+}
+
+.project-title {
+  font-size: 3em;
+  font-weight: normal;
+  text-align: right;
+} */
 
 
 .header-body .item > img {
