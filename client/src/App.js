@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/App.css';
+import './css/rubick_pres.css';
 
 import carousel1 from './img/carousel-1.jpg';
 import carousel2 from './img/carousel-2.jpg';
@@ -24,7 +25,7 @@ class App extends Component {
     return (
       <div>
 
-          <nav className="navbar navbar-default navbar-fixed-top">
+          <nav className="navbar navbar-default navbar-fixed-top" role="navigation">
               <div className="container">
                 <div className="navbar-header">
                   <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,9 +47,20 @@ class App extends Component {
               </div>
             </nav>
 
-          <div className="jumbotron carouselCard">
-            <h1>云梦盐津</h1>
-            <p>梦想在这里发生</p>
+          <div className="header-body">
+            <div id="myCarousel" className="carousel slide" data-ride="carousel">
+              <div className="carousel-inner" role="listbox">
+                <div className="item active">
+                  <img src={carousel1} alt="carousel1" />
+                </div>
+              </div>
+                <div className="title-board">
+                  <div className="title-box">
+                    <h1 className="project-title">云梦盐津</h1>
+                    <p className="project-desc">梦想，在这里发生</p>
+                  </div>
+                </div>
+            </div>
           </div>
 
           <div className="container-fluid culture">
