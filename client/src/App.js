@@ -20,6 +20,8 @@ import commit4 from './img/commit-4.svg'
 
 import logo from './img/logo.svg';
 
+import login from './img/login.png';
+
 class App extends Component {
   render() {
     return (
@@ -33,21 +35,26 @@ class App extends Component {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span> 
                   </button>
-                  <a className="navbar-brand" href="#">
+                  <a className="navbar-brand" href="#topNav">
                     <img src={logo} alt="logo" className="logo"/>
                   </a>
                 </div>
                 <div className="collapse navbar-collapse" id="myNavbar">
                   <ul className="nav navbar-nav navbar-right">
-                    <li><a class="nav-operation" href="#about">网上商城</a></li>
-                    <li><a class="nav-operation" href="#services">新闻中心</a></li>
-                    <li><a class="nav-operation" href="#portfolio">关于我们</a></li>
+                    <li><a className="nav-operation" href="#shop">网上商城</a></li>
+                    <li><a className="nav-operation" href="#news">新闻中心</a></li>
+                    <li><a className="nav-operation" href="#about">关于我们</a></li>
+                    <li>
+                      <a href="" className="nav-operation" id="login-button">
+                        <img src={login} alt="登录" className="login" /> 登录/注册
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
             </nav>
 
-          <div className="header-body">
+          <div className="header-body" id="topNav">
             <div id="myCarousel" className="carousel slide" data-ride="carousel">
               <div className="carousel-inner" role="listbox">
                 <div className="item active">
@@ -63,7 +70,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="container-fluid culture">
+          <div id="about" className="container-fluid culture">
             <div className="row">
               <div className="col-sm-7">
                 <h2>我们的文化</h2>
@@ -75,7 +82,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="container-fluid">
+          <div id="news" className="container-fluid">
             <div className="row">
               <div className="col-sm-5">
                 <img src={map} alt="map" className="map"/>
@@ -87,7 +94,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="container-fluid goods">
+          <div id="shop" className="container-fluid goods">
             <h2 className="sector-title">部分商品展示</h2>
           </div>
 

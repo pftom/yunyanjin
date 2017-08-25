@@ -56,11 +56,11 @@ $(document).ready(function(){
     rubik.initAnimationsCheck();
     
     // Init navigation toggle for small screens   
-    if(window_width < 979 || burger_menu){
+    if(window_width < 768 || burger_menu){
         rubik.initRightMenu();   
     }
 
-    if(window_width < 979){
+    if(window_width < 768){
         $('.over-area').each(function(){
             var click = $(this).attr("onClick");
             if(click == ''){
@@ -85,7 +85,7 @@ $(document).ready(function(){
 });
 
 $(window).on('scroll',function(){
-   if(window_width > 980){
+   if(window_width > 768){
         rubik.checkScrollForParallax();
    }
    
@@ -102,10 +102,10 @@ $(window).load(function(){
 
 //activate collapse right menu when the windows is resized 
 $(window).resize(function(){
-    if($(window).width() < 979){
+    if($(window).width() < 768){
         rubik.initRightMenu();   
     }
-    if($(window).width() > 979 && !burger_menu){
+    if($(window).width() > 768 && !burger_menu){
         $('nav').removeClass('navbar-burger');
         rubik.misc.navbar_menu_visible = 1;
         navbar_initialized = false;

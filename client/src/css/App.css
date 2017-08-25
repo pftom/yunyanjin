@@ -20,6 +20,34 @@
     background-color: #FFF;
 }
 
+.nav-operation {
+  color: white;
+  font-size: large;
+  font-weight: 350;
+}
+
+#login-button {
+    padding: 6px 16px;
+    border: 1px solid #FFF;
+    border-radius: 100px;
+    top: 3px;
+    left: 30px;
+}
+
+.logo {
+    margin-top: -20px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
 .culture {
   background-color: #f6f6f6;
   padding: 0 6rem 0 6rem;
@@ -41,6 +69,11 @@
         text-align: center;
         margin: 25px 0;
     }
+}
+
+
+.header-body .item > img {
+    width: 100%;
 }
 
 .map {
