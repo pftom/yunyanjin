@@ -30,15 +30,24 @@
     padding: 6px 16px;
     border: 1px solid #FFF;
     border-radius: 100px;
-    top: 3px;
+    top: 1.5px;
     left: 30px;
 }
 
+svg path {
+    fill: transparent;
+}
+
 .logo {
-    margin-top: -20px;
+    margin-top: -15px;
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+
+.navbar-nav li a img:hover, .navbar-nav li.active a img {
     color: #f4511e !important;
     background-color: #fff !important;
 }
