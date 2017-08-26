@@ -1,0 +1,43 @@
+/* .modal-box {
+  padding: 40px 50px;
+} */
+
+/* Styles for login modal. */
+/* .modal-dialog {
+  width: 70%;
+}
+  
+
+
+ */
+
+ .form-group {
+  margin: 2rem 0;
+}
+
+ .modal-header {
+    
+}   
+
+.modal-box label {
+  font-size: 1rem;
+}
+
+.close {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.modal-footer p {
+  font-weight: 300;
+  color: #787878;
+  font-size: 1rem;
+}
+
+.modal-footer a {
+  color: #337ab7;
+}
+
+.modal-footer a:hover {
+  text-decoration: underline;
+}
