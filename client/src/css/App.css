@@ -69,10 +69,39 @@ svg path {
 
 .culture {
   background-color: #f6f6f6;
-  padding: 0 6rem 0 6rem;
-  display: flex;
-  align-items: center;
+  padding: 4rem;
 }
+
+.culture-title {
+    color: #ff5542;
+}
+
+.culutre-box {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .culutre-box {
+        display: block;
+    }
+}
+
+.culture .culutre-box p {
+    font-weight: 300;
+    color: #787878;
+}
+
+ .culture .culutre-box h3 {
+    font-weight: 500;
+} 
+
+
+.map-box {
+    padding: 3rem;
+    background-color: #FFFFFF
+}
+
 
 .video-cover {
   max-width: 100%;
@@ -129,26 +158,93 @@ svg path {
 
 .goods {
     background-color: #f6f6f6;
+    padding: 0 2rem 0 2rem;
 }
 
-.sector-title {
-  color: #ff5542;
-  text-align: center;
-  padding: 3rem;
+.goods-title {
+    font-weight: 500;
+    padding: 1rem 0;
+}
+
+.thumbnail {
+    padding: 0 0 1rem 0;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.goods p {
+    font-weight: 300;
+    color: #9B9B9B;
+    padding: 0 1rem;
+}
+
+.goods p strong {
+    color: #ff5542;
+}
+
+.goods-box {
+    display: flex;
+    justify-content: center;
+}
+
+.scrolls {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap
+}
+
+.commitments-title {
+    padding: 1rem 0 2rem 0;
 }
 
 .commitments {
-  padding: 10%;
+    padding: 0 6rem 4rem 6rem;
 }
 
-.commit {
-  padding: 5rem;
+/* .commitments img {
+    width: 100%;
+    height: 100%;
+} */
+
+.commitments h4 {
+    color: #FF5542;
+    font-weight: 500;
+    margin-top: 0.4rem;
+}
+.commitments p {
+    color: #979797;
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin-top: -0.5rem;
+}
+
+.commitments .commit-bottom {
+    padding-top: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+    .commitments .commit {
+        padding-top: 1rem;
+    }
 }
 
 footer {
   color: white;
   background-color: #FF9488;
   padding: 20px;
+}
+
+footer a {
+    color: #337ab7;
+}
+
+footer a:hover {
+    color: #23527c;
+    text-decoration: underline;
 }
 
 .declaration {
