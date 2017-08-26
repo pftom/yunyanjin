@@ -3,6 +3,8 @@ import './css/App.css';
 import './css/rubick_pres.css';
 import './css/modal.css';
 
+import 'antd/dist/antd.css';
+
 
 import carousel1 from './img/carousel-1.jpg';
 import carousel2 from './img/carousel-2.jpg';
@@ -26,10 +28,38 @@ import logo from './img/logo.svg';
 import login from './img/login.svg'
 import closeIcon from './img/close.svg';
 
-//horizontal scroll
-import HorizontalScroll from 'react-scroll-horizontal';
+import { Modal, Button } from 'antd';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visible: false,
+    };
+
+  }
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: true,
+    });
+  }
+
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+
+
   render() {
     return (
       <div>
@@ -157,7 +187,7 @@ class App extends Component {
           <div id="shop" className="container-fluid goods">
             <h3 className="goods-title text-center">商品展示</h3>
               <div className="row text-center scrollmenu">
-                <div className="good-item">
+                <div className="good-item" onClick={this.showModal}>
                   <div className="thumbnail">
                     <img src={goods1} alt="good1" className="goodItem"/>
                     <p><strong>Paris</strong></p>
@@ -203,6 +233,22 @@ class App extends Component {
               </div>
 
 
+          <Modal
+            title="Basic Modal"
+            visible={this.state.visible}
+            onOk={this.handleOk}
+            onCancel={this.handleCancel}
+            width={800}
+          >
+            <div className="container-fluid">
+              <div className="col-sm-6">
+                <img src={goods3} alt="good3" className="goodItem"/>
+              </div>
+              <div className="col-sm-6">
+                <p>没有最丑，只有更丑</p>
+              </div>
+            </div>
+          </Modal>
 
           <div className="container-fluid commitments">
             <h3 className="goods-title text-center commitments-title">我们的承诺</h3>

@@ -207,6 +207,10 @@ svg path {
   cursor: pointer;
 }
 
+/* .good-item p {
+    width: 30%;
+} */
+
 .commitments-title {
     padding: 1rem 0 2rem 0;
 }
