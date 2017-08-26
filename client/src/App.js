@@ -23,6 +23,9 @@ import logo from './img/logo.svg';
 
 import login from './img/login.png';
 
+//horizontal scroll
+import HorizontalScroll from 'react-scroll-horizontal';
+
 class App extends Component {
   render() {
     return (
@@ -57,7 +60,7 @@ class App extends Component {
                 </div>
                 <div className="collapse navbar-collapse" id="myNavbar">
                   <ul className="nav navbar-nav navbar-right">
-                    <li><a className="nav-operation" href="#shop">网上商城</a></li>
+                    <li><a className="nav-operation" href="#shop">所有商品</a></li>
                     <li><a className="nav-operation" href="#news">新闻中心</a></li>
                     <li><a className="nav-operation" href="#about">关于我们</a></li>
                     <li>
@@ -111,33 +114,53 @@ class App extends Component {
           </div>
 
           <div id="shop" className="container-fluid goods">
-            <h3 className="goods-title text-center">部分商品展示</h3>
-            <div className="row text-center scrolls">
-              <div className="col-sm-3">
-                <div className="thumbnail">
-                  <img src={goods1} alt="good1" className="goodItem"/>
-                  <p><strong>Paris</strong></p>
-                  <p>一口忘忧</p>
+            <h3 className="goods-title text-center">商品展示</h3>
+              <div className="row text-center scrollmenu">
+                <div className="good-item">
+                  <div className="thumbnail">
+                    <img src={goods1} alt="good1" className="goodItem"/>
+                    <p><strong>Paris</strong></p>
+                    <p>一口忘忧</p>
+                  </div>
                 </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="thumbnail">
-                  <img src={goods2} alt="good2" className="goodItem"/>
-                  <p><strong>New York</strong></p>
-                  <p>纯天然酿造，不含任何化学物质</p>
+                <div className="good-item">
+                  <div className="thumbnail">
+                    <img src={goods2} alt="good2" className="goodItem"/>
+                    <p><strong>New York</strong></p>
+                    <p>纯天然酿造，不含任何化学物质</p>
+                  </div>
                 </div>
-              </div>
-              <div className="col-sm-3">
-                <div className="thumbnail">
-                  <img src={goods3} alt="good3" className="goodItem"/>
-                  <p><strong>San Francisco</strong></p>
-                  <p>没有最丑，只有更丑</p>
+                <div className="good-item">
+                  <div className="thumbnail">
+                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <p><strong>San Francisco</strong></p>
+                    <p>没有最丑，只有更丑</p>
+                  </div>
+                </div>
+                <div className="good-item">
+                  <div className="thumbnail">
+                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <p><strong>San Francisco</strong></p>
+                    <p>没有最丑，只有更丑</p>
+                  </div>
+                </div>
+                <div className="good-item">
+                  <div className="thumbnail">
+                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <p><strong>San Francisco</strong></p>
+                    <p>没有最丑，只有更丑</p>
+                  </div>
+                </div>
+                <div className="good-item">
+                  <div className="thumbnail">
+                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <p><strong>San Francisco</strong></p>
+                    <p>没有最丑，只有更丑</p>
+                  </div>
+                </div>
                 </div>
               </div>
 
-              
-              </div>
-          </div>
 
 
           <div className="container-fluid commitments">

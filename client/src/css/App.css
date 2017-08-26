@@ -106,6 +106,7 @@ svg path {
 .video-cover {
   max-width: 100%;
   border-radius: 1rem;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.1), 0px 2px 10px rgba(0,0,0,0.1);
 }
 
 .jumbotron {
@@ -158,16 +159,17 @@ svg path {
 
 .goods {
     background-color: #f6f6f6;
-    padding: 0 2rem 0 2rem;
+    padding: 0 2rem 4rem 1.5rem;
 }
 
 .goods-title {
     font-weight: 500;
-    padding: 1rem 0;
+    padding: 4rem 0 0.2rem 0;
 }
 
 .thumbnail {
     padding: 0 0 1rem 0;
+    margin: 1rem 1rem;
 }
 
 .thumbnail img {
@@ -177,9 +179,9 @@ svg path {
 }
 
 .goods p {
-    font-weight: 300;
+    font-weight: 400;
     color: #9B9B9B;
-    padding: 0 1rem;
+    font-size: 0.8rem;
 }
 
 .goods p strong {
@@ -191,18 +193,33 @@ svg path {
     justify-content: center;
 }
 
-.scrolls {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap
+.good-item {
+    width: 23%;
+    display: inline-block;
+    margin: 1rem 0 2rem 0.4rem;
+}
+
+.good-item:hover {
+    -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.1), 0px 2px 10px rgba(0,0,0,0.1);
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 .commitments-title {
     padding: 1rem 0 2rem 0;
 }
 
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+
 .commitments {
-    padding: 0 6rem 4rem 6rem;
+    padding: 0 8rem 4rem 8rem;
 }
 
 /* .commitments img {
