@@ -41,3 +41,43 @@
 .modal-footer a:hover {
   text-decoration: underline;
 }
+
+
+.good-info-item {
+  width: 100%;
+}
+
+.good-panel {
+}
+
+.good-panel h5 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: .5em;
+}
+
+.good-panel p {
+  padding: 5px 0;
+  border: 1px dashed #ccc;
+  border-left: 0;
+  border-right: 0;
+  color: #aaa;
+  line-height: 1.8em;
+  font-size: 13px;
+}
+
+.good-panel .iteminfo-price {
+  color: #f17530;
+  line-height: 1;
+  padding-top: 5px;
+}
+.good-panel .iteminfo-price  {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.good-panel .iteminfo-price .price .yen {
+  font-size: 16px;
+  font-weight: 200px;
+  margin-right: 10px;
+}

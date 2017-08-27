@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './css/App.css';
+import 'antd/dist/antd.css';
 import './css/rubick_pres.css';
+import './css/App.css';
 import './css/modal.css';
 
-import 'antd/dist/antd.css';
+
 
 
 import carousel1 from './img/carousel-1.jpg';
@@ -28,7 +29,10 @@ import logo from './img/logo.svg';
 import login from './img/login.svg'
 import closeIcon from './img/close.svg';
 
-import { Modal, Button } from 'antd';
+import { Modal, Button, Tabs, Radio, Pagination, Avatar } from 'antd';
+const TabPane = Tabs.TabPane;
+const RadioGroup = Radio.Group;
+const RadioButton = Radio.Button;
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +47,7 @@ class App extends Component {
   handleCancel = (e) => {
     console.log(e);
     this.setState({
-      visible: true,
+      visible: false,
     });
   }
 
@@ -59,6 +63,14 @@ class App extends Component {
     });
   }
 
+
+  changeTab = (key) => {
+    console.log(key);
+  }
+
+  changeRadio = (e) => {
+    console.log(`radio checked: ${e.target.value}`)
+  }
 
   render() {
     return (
@@ -233,21 +245,103 @@ class App extends Component {
               </div>
 
 
+          
           <Modal
-            title="Basic Modal"
+            title="商品"
             visible={this.state.visible}
             onOk={this.handleOk}
             onCancel={this.handleCancel}
-            width={800}
+            width={900}
+            footer={null}
+            title={null}
           >
-            <div className="container-fluid">
-              <div className="col-sm-6">
-                <img src={goods3} alt="good3" className="goodItem"/>
-              </div>
-              <div className="col-sm-6">
-                <p>没有最丑，只有更丑</p>
-              </div>
-            </div>
+            <Tabs
+              defaultActiveKey="1"
+              onChange={this.changeTab}
+              tabBarStyle={{
+                textAlign: 'center'
+              }}
+            >
+              <TabPane
+                tab="购买商品"
+                key="1"
+              >
+                <div className="container-fluid">
+                  <div className="col-sm-6">
+                    <img src={goods3} alt="good3" className="good-info-item"/>
+                  </div>
+                  <div className="col-sm-6">
+                    <div className="good-panel">
+                      <h5>盐津乌骨鸡</h5>
+                      <p>一口忘忧</p>
+                      <div className="iteminfo-price">
+                        <span className="price">
+                          <span className="yen">¥</span>
+                          <span className="price">
+                          666</span>
+                        </span>
+                      </div>
+                    </div>
+                    生产规格：
+                    <RadioGroup>
+                      <RadioButton value="first">500g/袋</RadioButton>
+                      <RadioButton value="second">300g/袋</RadioButton>
+                      <RadioButton value="third">100g/袋</RadioButton>
+                    </RadioGroup>
+                    <br/>
+                    数量选择
+                    <Pagination simple defaultCurrent={1} total={50} />
+                    <button type="submit" className="btn btn-success btn-block">加入购物车</button>
+                    <button type="submit" className="btn btn-success btn-block">立即购买</button>
+                  </div>
+                </div>
+              </TabPane>
+
+              <TabPane
+                tab="商品详情"
+                key="2"
+              >
+                <p>生产许可证</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+
+
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+                <p>产品标准号</p>
+              </TabPane>
+
+
+              <TabPane
+                tab="商品评论"
+                key="3"
+              >
+                <div className="container-fluid text-center">
+                  <div className="row">
+                      <div className="col-sm-2"><Avatar icon="user" /></div>
+                      <div className="col-sm-10"><p>这个真好吃，我已经吃了999次了，大家都来藏藏把</p></div>
+                  </div>
+                  <div className="row">
+                      <div className="col-sm-2"><Avatar icon="user" /></div>
+                      <div className="col-sm-10"><p>这个真好吃，我已经吃了999次了，大家都来藏藏把</p></div>
+                  </div>
+                  <div className="row">
+                      <div className="col-sm-2"><Avatar icon="user" /></div>
+                      <div className="col-sm-10"><p>这个真好吃，我已经吃了999次了，大家都来藏藏把</p></div>
+                  </div>
+                </div>
+              </TabPane>
+            </Tabs>
           </Modal>
 
           <div className="container-fluid commitments">
