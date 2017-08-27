@@ -43,6 +43,10 @@
 }
 
 
+.modal-good-box {
+  margin: 2rem 0;
+}
+
 .good-info-item {
   width: 100%;
 }
@@ -80,4 +84,84 @@
   font-size: 16px;
   font-weight: 200px;
   margin-right: 10px;
+}
+
+.norms-box {
+  margin: 1rem 0;
+}
+
+.norms {
+  color: #3c3c3c;
+  line-height: 24px;
+  font-size: 12px;
+}
+
+.count-select-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.btn-goods-item {
+  margin: 1rem 0;
+}
+
+/* .detail-box {
+  text-align: center;
+} */
+
+.detail-box {
+  margin: 1rem 0;
+}
+
+.detail-box-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.detail-box .detail-box-row span {
+  line-height: 34px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/*
+  comment box
+*/
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.comment-box .comment-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.partition {
+  margin: 2rem 0;
+}
+
+
+/*
+rate box
+
+*/
+
+.rate-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rate-box span {
+  font-size: 14px;
+  color: #999;
 }
