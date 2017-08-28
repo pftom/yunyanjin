@@ -35,6 +35,7 @@ class App extends Component {
     this.state = {
       visible: false,
       isLoggedIn: false,
+      loginModalVisible: false,
     };
 
   }
@@ -58,20 +59,49 @@ class App extends Component {
     });
   }
 
+  handleLogin = () => {
+    this.setState({
+      isLoggedIn: true,
+    });
+  }
 
+  handleLogout = () => {
+    this.setState({
+      isLoggedIn: false,
+    });
+  }
   
 
   changeRadio = (e) => {
     console.log(`radio checked: ${e.target.value}`)
   }
 
+  showLoginModal = () => {
+    this.setState({
+      loginModalVisible: true,
+    });
+  }
+
+  hideLoginModal = () => {
+    this.setState({
+      loginModalVisible: false,
+    });
+  }
+
   render() {
     return (
       <div>
 
-          <NavBar />
+          <NavBar 
+            isLoggedIn={this.state.isLoggedIn}
+            showLoginModal={this.showLoginModal}
+          />
           
-          <Login />
+          <Login 
+            loginModalVisible={this.state.loginModalVisible}
+            handleLogin={this.handleLogin}
+            hideLoginModal={this.hideLoginModal}
+          />
 
           <HeaderBody />
           

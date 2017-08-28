@@ -1,0 +1,21 @@
+.login-box {
+    margin: 0.5 0 0.5rem 0;
+}
+
+.login-illustration {
+    width: 100%;
+}
+
+.register-illustration {
+    height: 265.31px;
+}
+
+.register-left-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-form-item {
+    margin-top: 0.5rem;
+}
