@@ -3,7 +3,7 @@ import { Modal, Button, Tabs, Form, Icon, Input, Checkbox } from 'antd';
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
-class Register extends Component {
+class ChangePassword extends Component {
 
     constructor(props) {
         super(props);
@@ -19,9 +19,6 @@ class Register extends Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-
-            fetch('')
-
         });
   }
     
@@ -48,19 +45,20 @@ class Register extends Component {
         callback();
   }
 
+
     render() {
         const { getFieldDecorator } = this.props.form;
 
         return (
             <div className="container-fluid register-box">
-            <Form onSubmit={this.handleSubmit} className="register-form">
+                <Form onSubmit={this.handleSubmit} className="change-password-form">
                     <FormItem
                         hasFeedback
                     >
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: '请输入您的用户名' }],
+                    {getFieldDecorator('oldPassword', {
+                        rules: [{ required: true, message: '请输入您的旧密码' }],
                     })(
-                        <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="请输入您的用户名" />
+                        <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} placeholder="请输入您的旧密码" />
                     )}
                     </FormItem>
                     <FormItem
@@ -73,7 +71,7 @@ class Register extends Component {
                             validator: this.checkConfirm,
                             }],
                         })(
-                            <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="请输入您的新密码" />
+                            <Input prefix={<Icon type="safety" style={{ fontSize: 13 }} />} type="password" placeholder="请输入您的新密码" />
                         )}
                         </FormItem>
 
@@ -93,13 +91,13 @@ class Register extends Component {
 
                     <FormItem className="remember-password-box">
                     <Button type="primary" htmlType="submit" className="login-form-button">
-                        注 册
+                        确 认 修 改
                     </Button>
                     </FormItem>
                 </Form>
-            </div>
+                </div>
         )
     }
 }
 
-export default Form.create()(Register);
+export default Form.create()(ChangePassword);

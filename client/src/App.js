@@ -18,7 +18,7 @@ import login from './img/login.svg'
 import closeIcon from './img/close.svg';
 
 //import Login component 
-import Login from './Login';
+import UserForm from './UserForm';
 import NavBar from './NavBar';
 import HeaderBody from './HeaderBody';
 import About from './About';
@@ -97,7 +97,7 @@ class App extends Component {
             showLoginModal={this.showLoginModal}
           />
           
-          <Login 
+          <UserForm 
             loginModalVisible={this.state.loginModalVisible}
             handleLogin={this.handleLogin}
             hideLoginModal={this.hideLoginModal}

@@ -1,5 +1,5 @@
 .login-box {
-    margin: 0.5 0 0.5rem 0;
+    margin: 1rem 0 0 0;
 }
 
 .login-illustration {
@@ -16,6 +16,18 @@
     align-items: center;
 }
 
+.checkbox input {
+    top: -3px;
+}
+
 .first-form-item {
-    margin-top: 0.5rem;
+    margin-top: 0;
+}
+
+.ant-btn-lg {
+    width: 100%
+}
+
+.login-form-forgot {
+    float: right;
 }

@@ -1,100 +1,71 @@
 
 import React, { Component } from 'react';
+// import './css/rubick_pres.css';
+// import './css/App.css';
+// import './css/modal.css';
+
+
 import 'antd/dist/antd.css';
-import './css/rubick_pres.css';
-import './css/App.css';
-import './css/modal.css';
-
 import './css/Login.css';
-
-import login from './img/login.svg';
-import register from './img/sketch_logo.jpg';
-import { Modal, Button, Tabs } from 'antd';
+import { Modal, Button, Tabs, Form, Icon, Input, Checkbox } from 'antd';
 const TabPane = Tabs.TabPane;
+const FormItem = Form.Item;
 
 
 class Login extends Component {
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+        if (!err) {
+            console.log('Received values of form: ', values);
+        }
+        });
+    }
+
     render() {
+
+        const { getFieldDecorator } = this.props.form;
+
         return (
-            <Modal
-                visible={this.props.loginModalVisible}
-                onCancel={this.props.hideLoginModal}
-                width={520}
-                footer={null}
-                title={null}
-            >
-                <Tabs
-                defaultActiveKey="1"
-                onChange={this.changeTab}
-                tabBarStyle={{
-                    textAlign: 'center',
-
-                }}
-                >
-                    <TabPane
-                        tab="登录"
-                        key="1"
+            <div className="container-fluid login-box">
+                <Form onSubmit={this.handleSubmit} className="login-form">
+                    <FormItem
+                        hasFeedback
                     >
-                     <div className="container-fluid login-box">
-                            <div className="col-sm-6">
-                                <img src={login} alt="login" className="login-illustration" />
-                            </div>
-                            <div className="col-sm-6">
-                                <form role="form">
-                                    <div className="form-group">
-                                    <label for="usrname"><span className="glyphicon glyphicon-user"></span>  用户名</label>
-                                    <input type="text" className="form-control" id="usrname" placeholder="输入您的用户名" />
-                                    </div>
-                                    <div className="form-group">
-                                    <label for="psw"><span className="glyphicon glyphicon-eye-open"></span>  密码</label>
-                                    <input type="text" className="form-control" id="psw" placeholder="输入您的密码" />
-                                    </div>
-                                    <div className="checkbox">
-                                        <label className="remember-passwd align-center">
-                                            <input type="checkbox" value="" />
-                                            <span className="align-center">记住密码</span>
-                                        </label>
-                                    </div>
-                                    <button type="submit" className="btn btn-success btn-block" onClick={this.props.handleLogin}>登 录</button>
-                                </form>
-                            </div>
-                        </div>
-                    </TabPane>
+                    {getFieldDecorator('userName', {
+                        rules: [{ required: true, message: '请输入您的用户名' }],
+                    })(
+                        <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="请输入您的用户名" />
+                    )}
+                    </FormItem>
+                    <FormItem
 
-                    <TabPane
-                        tab="注册"
-                        key="2"
+                        hasFeedback
                     >
-                        <div className="container-fluid login-box">
-                            <div className="col-sm-6 register-left-box">
-                                <img src={register} alt="register" className="login-illustration register-illustration" />
-                            </div>
-                            <div className="col-sm-6">
-                                <form role="form">
-                                    <div className="form-group first-form-item">
-                                    <label for="usrname"><span className="glyphicon glyphicon-user"></span>  用户名</label>
-                                    <input type="text" className="form-control" id="usrname" placeholder="输入您的用户名" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label for="psw"><span className="glyphicon glyphicon-eye-open"></span>  密码</label>
-                                        <input type="text" className="form-control" id="psw" placeholder="输入您的密码" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label for="psw"><span className="glyphicon glyphicon-ok-circle"></span>  确认密码</label>
-                                        <input type="text" className="form-control" id="psw" placeholder="输入您的密码" />
-                                    </div>
-                                    <button type="submit" className="btn btn-success btn-block" onClick={this.props.handleLogin}>注 册</button>
-                                </form>
-                            </div>
-                        </div>
-                    </TabPane>
-                </Tabs>
-        
-            </Modal>
+                    {getFieldDecorator('password', {
+                        rules: [{ required: true, message: '请输入您的密码' }],
+                    })(
+                        <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="请输入您的密码" />
+                    )}
+                    </FormItem>
+                    <FormItem className="remember-password-box">
+                    {getFieldDecorator('remember', {
+                        valuePropName: 'checked',
+                        initialValue: true,
+                    })(
+                        <Checkbox>记住密码</Checkbox>
+                    )}
+                    <a className="login-form-forgot remember-password" href="">忘记密码</a>
+                    <Button type="primary" htmlType="submit" className="login-form-button">
+                        登 录
+                    </Button>
+                    </FormItem>
+                </Form>
+            </div>
         )
     }
 }
 
 
-export default Login;
+export default Form.create()(Login);
