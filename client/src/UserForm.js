@@ -49,21 +49,7 @@ class UserForm extends Component {
                         tab="登 录"
                         key="1"
                     >
-                        <Login />
-                    </TabPane>
-
-                    <TabPane
-                        tab="注 册"
-                        key="2"
-                    >
-                        <Register />
-                    </TabPane>
-
-                    <TabPane
-                        tab="修 改 密 码"
-                        key="3"
-                    >
-                        <ChangePassword />
+                        <Login noRegister={this.props.noRegister}/>
                     </TabPane>
                 </Tabs>
         

@@ -1,0 +1,25 @@
+.register-nav-bar {
+    width: 100%;
+    background: linear-gradient(to right bottom,rgba(35,188,186,1), rgba(69,233,148,1));
+    height: 90px;
+}
+
+.register-pull-right {
+    color: #FFF;
+}
+
+.register-logo {
+    position: absolute;
+    left: 48%;
+    top: 30px;
+}
+
+.register-box-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.register-box {
+    margin: 3rem 0;
+}

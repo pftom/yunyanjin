@@ -7,12 +7,28 @@ import React, { Component } from 'react';
 
 import 'antd/dist/antd.css';
 import './css/Login.css';
+
+import { Link } from 'react-router-dom';
+import UserForm from './UserForm';
+
 import { Modal, Button, Tabs, Form, Icon, Input, Checkbox } from 'antd';
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
 
+
 class Login extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loginModalVisible: false,
+        }
+    }
+
+    
+
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -56,10 +72,15 @@ class Login extends Component {
                     })(
                         <Checkbox>记住密码</Checkbox>
                     )}
-                    <a className="login-form-forgot remember-password" href="">忘记密码</a>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        登 录
-                    </Button>
+                        <a className="login-form-forgot remember-password"><Link to="/change_password">忘记密码</Link></a>
+                        <Button type="primary" htmlType="submit" className="login-form-button">
+                            登 录
+                        </Button>
+                        {
+                            !this.props.noRegister && (
+                                <div>还没账号？<Link to="register">现在注册</Link></div>
+                            )
+                        }
                     </FormItem>
                 </Form>
             </div>
