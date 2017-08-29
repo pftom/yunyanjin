@@ -21,6 +21,10 @@
     justify-content: center;
 }
 
+.register-box-row-item {
+    width: 300px;
+}
+
 .register-box-row h4 {
     font-size: 24px;
     font-weight: normal;
@@ -34,7 +38,8 @@
 }
 
 .text-blue {
-    color: #35c8e6;
+    color: #108ee9;
+    font-weight: bold;
 }
 
 .register-box {

@@ -49,7 +49,12 @@ class UserForm extends Component {
                         tab="登 录"
                         key="1"
                     >
-                        <Login noRegister={this.props.noRegister}/>
+                        <Login 
+                            handleLogin={this.props.handleLogin}
+                            history={this.props.history}
+                            noRegister={this.props.noRegister}
+                            hideLoginModal={this.props.hideLoginModal}
+                        />
                     </TabPane>
                 </Tabs>
         

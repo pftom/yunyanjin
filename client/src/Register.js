@@ -43,30 +43,51 @@ class Register extends Component {
         this.props.form.validateFieldsAndScroll(async (err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-            }
 
-            const { username, password } = values;
+                const { username, password } = values;
+                
+                const body = {
+                    username,
+                    password,
+                };
+    
+                try {
+                    const value = await request.post(base + userApi.register, body);
+                    const { token } = await request.post(base + userApi.login, body);
+    
+                    await localStorage.setItem('token', token);
 
-            const body = {
-                username,
-                password,
-            };
+                    this.success('注册成功');
 
-            try {
-                const value = await request.post(base + userApi.register, body);
-                const { token } = await request.post(base + userApi.login, body);
+                    const location = {
+                        pathname: '/',
+                    };
+    
+                    this.props.history.push(location);
+                    
 
-                await localStorage.setItem('token', token);
-                <Redirect to={{ pathname: '/' }} />
-            } catch(e) {
-                this.error();
+                } catch(e) {
+                    this.error('注册失败！');
+                }
+            } else {
+                this.error('注册失败！');
+
+                const location = {
+                    pathname: '/',
+                };
+
+                this.props.history.push(location);
             }
 
         });
   }
 
-    error = () => {
-        message.error('注册失败，请检查网络连接');
+    success = (msg) => {
+        message.success(msg);
+    }
+
+    error = (msg) => {
+        message.error(msg);
     }
     
     handleConfirmBlur = (e) => {
@@ -130,7 +151,7 @@ class Register extends Component {
                         </div>
                     </div>
                     <div className="row register-box-row">
-                        <div className="col-sm-3">
+                        <div className="register-box-row-item">
                             <Form onSubmit={this.handleSubmit} className="register-form">
                             <FormItem
                                 hasFeedback

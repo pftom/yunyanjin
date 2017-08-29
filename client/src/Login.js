@@ -38,30 +38,44 @@ class Login extends Component {
             this.props.form.validateFields(async (err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-            }
 
-            const { username, password } = values;
+                const { username, password } = values;
+                
+                const body = {
+                    username,
+                    password,
+                };
+    
+                try {
+                    const { token } = await request.post(base + userApi.login, body);
+    
+                    await localStorage.setItem('token', token);
 
-            const body = {
-                username,
-                password,
-            };
+                    this.success('登录成功！');
 
-            try {
-                const { token } = await request.post(base + userApi.login, body);
+                    this.props.handleLogin()
+                    this.props.hideLoginModal();
 
-                await localStorage.setItem('token', token);
-                <Redirect to={{ pathname: '/' }} />
-            } catch(e) {
-                this.error();
-               <Redirect to="/" />
-                console.log('redirect faile')
+                    const location = {
+                        pathname: '/',
+                    };
+    
+                    this.props.history.push(location);
+                } catch(e) {
+                    this.error('登录失败！');
+                    console.log('redirect faile')
+                }
+            } else {
+                this.error('登录失败！');
             }
         });
     }
+    success = (msg) => {
+        message.success(msg);
+    }
 
-    error = () => {
-        message.error('登录失败，请检查网络连接');
+    error = (msg) => {
+        message.error(msg);
     }
 
     render() {
@@ -103,7 +117,9 @@ class Login extends Component {
                         </Button>
                         {
                             !this.props.noRegister && (
-                                <div>还没账号？<Link to="register">现在注册</Link></div>
+                                <div className="already-user text-center">
+                                    还没账号？<Link to="/register" onClick={this.showLoginModal} className="text-blue">马上注册</Link>
+                                </div>
                             )
                         }
                     </FormItem>

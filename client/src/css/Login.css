@@ -31,3 +31,15 @@
 .login-form-forgot {
     float: right;
 }
+
+a {
+    color: #1c94e0;
+}
+
+.remember-password-box .already-user {
+    margin-top: 32px;
+    padding-top: 27px;
+    padding-bottom: 0;
+    font-size: 14px;
+    border-top: 1px solid #edf0f2;
+}

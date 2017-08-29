@@ -70,6 +70,18 @@ class App extends Component {
       isLoggedIn: false,
     });
   }
+
+  componentDidMount = async () => {
+
+    const token = await localStorage.getItem('token');
+    console.log('token', token);
+
+    if (token) {
+      this.setState({
+        isLoggedIn: true,
+      });
+    }
+  }
   
 
   changeRadio = (e) => {
@@ -89,9 +101,10 @@ class App extends Component {
   }
 
   render() {
+    console.log('history', this.props.history);
+
     return (
       <div>
-
           <NavBar 
             isLoggedIn={this.state.isLoggedIn}
             showLoginModal={this.showLoginModal}
@@ -101,6 +114,7 @@ class App extends Component {
             loginModalVisible={this.state.loginModalVisible}
             handleLogin={this.handleLogin}
             hideLoginModal={this.hideLoginModal}
+            history={this.props.history}
           />
 
           <HeaderBody />

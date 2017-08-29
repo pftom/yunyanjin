@@ -3,8 +3,10 @@ import { Modal, Button, Tabs, Form, Icon, Input, Checkbox } from 'antd';
 import './css/Register.css';
 import { Link } from 'react-router-dom';
 
-import { userApi } from './config/config';
+import { userApi, base } from './config/config';
 import request from './config/request'
+
+import { message } from 'antd';
 
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
@@ -19,14 +21,44 @@ class ChangePassword extends Component {
         }
     }
 
+    componentDidMount() {
+        localStorage.setItem('token', '1234');
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.form.validateFieldsAndScroll((err, values) => {
+        this.props.form.validateFieldsAndScroll(async (err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+
+                try {
+                    const { oldPassword, password } = values;
+                    
+                    const body = {
+                        old_password: oldPassword,
+                        new_password: password,
+                    };
+    
+                    const token = await localStorage.getItem('token');
+    
+                    await request.post(base + userApi.changePassword, body, token);
+
+                    this.success('修改密码成功！');
+                } catch (err) {
+                    this.error('修改密码失败！');
+                }
+            } else {
+                this.error('修改密码失败！');
             }
         });
   }
+   success = (msg) => {
+       message.success(msg);
+   }
+
+    error = (msg) => {
+        message.error(msg);
+    }
     
     handleConfirmBlur = (e) => {
         console.log('blur confirm');
@@ -82,13 +114,13 @@ class ChangePassword extends Component {
                     </div>
                 </div>
             <div className="container-fluid register-box">
-                <div className="row register-box-row">
-                            <div className="col-sm-8">
-                                <h2>密码重置</h2>
+                <div className="row register-box-row text-center">
+                            <div className="col-sm-3">
+                                <h4>密码重置</h4>
                             </div>
                         </div>
                         <div className="row register-box-row">
-                            <div className="col-sm-8">
+                            <div className="register-box-row-item">
                 <Form onSubmit={this.handleSubmit} className="change-password-form">
                     <FormItem
                         hasFeedback
@@ -136,6 +168,10 @@ class ChangePassword extends Component {
                 </div>
                 </div>
                 </div>
+                <div className="il_footer text-center" id="il_footer">
+									<span className="project-name">东华大学公益项目</span>
+									<span className="license">This project follow <a href="">MIT License</a></span>
+								</div>
                 </div>
         )
     }
