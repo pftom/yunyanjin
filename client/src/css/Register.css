@@ -1,6 +1,5 @@
 .register-nav-bar {
     width: 100%;
-    background: linear-gradient(to right bottom,rgba(35,188,186,1), rgba(69,233,148,1));
     height: 90px;
 }
 
@@ -9,9 +8,11 @@
 }
 
 .register-logo {
-    position: absolute;
-    left: 48%;
-    top: 30px;
+    margin-top: 30px;
+}
+
+.register-nav-bar svg g {
+    stroke: #000;
 }
 
 .register-box-row {
@@ -20,6 +21,57 @@
     justify-content: center;
 }
 
+.register-box-row h4 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.already-user {
+    margin-top: 48px;
+    padding: 32px 0;
+    font-size: 14px;
+    border-top: 1px solid #edf0f2;
+}
+
+.text-blue {
+    color: #35c8e6;
+}
+
 .register-box {
     margin: 3rem 0;
+}
+
+.ant-input-affix-wrapper .ant-input {
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+}
+
+.ant-btn-lg {
+    height: 44px;
+}
+
+.has-success.has-feedback:after, .has-warning.has-feedback:after, .has-error.has-feedback:after, .is-validating.has-feedback:after {
+    height: 44px;
+    width: 44px;
+    line-height: 44px;
+}
+
+.il_footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 24px 0;
+    background-color: #f7f9fa;
+    font-size: 14px;
+}
+
+.project-name {
+    color: #0e2026;
+    margin-right: 100px;
+}
+
+.license {
+    color: #a6aeb3;
 }

@@ -263,6 +263,10 @@ footer {
   padding: 20px;
 }
 
+footer .footer-title {
+    color: #FFF;
+}
+
 footer a {
     color: #337ab7;
 }
