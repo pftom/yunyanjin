@@ -8,10 +8,13 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import './css/Login.css';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import UserForm from './UserForm';
 
-import { Modal, Button, Tabs, Form, Icon, Input, Checkbox } from 'antd';
+import {  base, userApi } from './config/config';
+import request from './config/request'
+
+import { Modal, Button, Tabs, Form, Icon, Input, Checkbox, message } from 'antd';
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
@@ -31,12 +34,34 @@ class Login extends Component {
 
 
     handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-        if (!err) {
-            console.log('Received values of form: ', values);
-        }
+            e.preventDefault();
+            this.props.form.validateFields(async (err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
+
+            const { username, password } = values;
+
+            const body = {
+                username,
+                password,
+            };
+
+            try {
+                const { token } = await request.post(base + userApi.login, body);
+
+                await localStorage.setItem('token', token);
+                <Redirect to={{ pathname: '/' }} />
+            } catch(e) {
+                this.error();
+               <Redirect to="/" />
+                console.log('redirect faile')
+            }
         });
+    }
+
+    error = () => {
+        message.error('登录失败，请检查网络连接');
     }
 
     render() {
@@ -72,7 +97,7 @@ class Login extends Component {
                     })(
                         <Checkbox>记住密码</Checkbox>
                     )}
-                        <a className="login-form-forgot remember-password"><Link to="/change_password">忘记密码</Link></a>
+                        <Link to="/change_password" className="login-form-forgot remember-password">忘记密码</Link>
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             登 录
                         </Button>
