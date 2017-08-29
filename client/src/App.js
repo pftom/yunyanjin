@@ -27,6 +27,7 @@ import Shops from './Shops';
 import GoodsDetail from './GoodsDetail';
 import Commitments from './Commitments';
 import Footer from './Footer';
+import ShopCart from './ShopCart';
 
 class App extends Component {
   constructor(props) {
@@ -36,20 +37,20 @@ class App extends Component {
       visible: false,
       isLoggedIn: false,
       loginModalVisible: false,
+      cartModalVisible: false,
     };
 
   }
 
-  handleCancel = (e) => {
-    console.log(e);
+  handleCancel = (type) => {
     this.setState({
-      visible: false,
+      [type]: false,
     });
   }
 
-  showModal = () => {
+  showModal = (type) => {
     this.setState({
-      visible: true,
+      [type]: true,
     });
   }
   handleOk = (e) => {
@@ -88,18 +89,6 @@ class App extends Component {
     console.log(`radio checked: ${e.target.value}`)
   }
 
-  showLoginModal = () => {
-    this.setState({
-      loginModalVisible: true,
-    });
-  }
-
-  hideLoginModal = () => {
-    this.setState({
-      loginModalVisible: false,
-    });
-  }
-
   render() {
     console.log('history', this.props.history);
 
@@ -107,13 +96,20 @@ class App extends Component {
       <div>
           <NavBar 
             isLoggedIn={this.state.isLoggedIn}
-            showLoginModal={this.showLoginModal}
+            showLoginModal={this.showModal}
+            showCartModal={this.showModal}
+          />
+
+          <ShopCart 
+            cartModalVisible={this.state.cartModalVisible}
+            hideCartModal={this.handleCancel}
+            history={this.props.history}
           />
           
           <UserForm 
             loginModalVisible={this.state.loginModalVisible}
             handleLogin={this.handleLogin}
-            hideLoginModal={this.hideLoginModal}
+            hideLoginModal={this.handleCancel}
             history={this.props.history}
           />
 

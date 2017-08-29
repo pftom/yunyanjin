@@ -54,7 +54,10 @@ class Login extends Component {
                     this.success('登录成功！');
 
                     this.props.handleLogin()
-                    this.props.hideLoginModal();
+                    
+                    setTimeout(() => {
+                        this.props.hideLoginModal('loginModalVisible');
+                    }, 2000);
 
                     const location = {
                         pathname: '/',

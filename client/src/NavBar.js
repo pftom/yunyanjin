@@ -19,7 +19,7 @@ class NavBar extends Component {
                     <li><a className="nav-operation" href="#news">新闻中心</a></li>
                     <li><a className="nav-operation" href="#about">关于我们</a></li>
                     <li><a className="nav-operation" href="#about">我的订单</a> </li>
-                    <li><a className="nav-operation" href="#about">购物车</a> </li>
+                    <li><a className="nav-operation" onClick={() => { this.props.showCartModal('cartModalVisible') }}>购物车</a> </li>
                     </ul>
             )
         } else {
@@ -29,7 +29,7 @@ class NavBar extends Component {
                     <li><a className="nav-operation" href="#news">新闻中心</a></li>
                     <li><a className="nav-operation" href="#about">关于我们</a></li>
                     <li>
-                        <a className="nav-operation" id="login-button" onClick={this.props.showLoginModal}>
+                        <a className="nav-operation" id="login-button" onClick={() => { this.props.showModal('loginModalVisible') }}>
                             <span className="glyphicon glyphicon-log-in"></span> 登录/注册
                         </a>
                     </li>
