@@ -7,6 +7,7 @@ import {  base, userApi } from './config/config';
 import request from './config/request';
 
 import good1 from './img/goods-1.jpg';
+import wechat from './img/wechat_pay.png';
 
 
 import { Modal, Button, Tabs, Form, Icon, Input, Checkbox, message } from 'antd';
@@ -20,12 +21,13 @@ class ShopCart extends Component {
             <Modal
                visible={this.props.cartModalVisible}
                 onCancel={this.props.hideCartModal}
-                width={900}
+                width={899}
                 footer={null}
-                title={null}     
+                title={null}
+                className="shop-cart-container"
             >
-                <div className="container-fluid">
-                    <div className="col-sm-8">
+                <div className="container-fluid shop-cart">
+                    <div className="col-sm-7 shop-cart-left">
 
                         <h3 className="text-center">你 的 购 物 车</h3>
 
@@ -96,17 +98,35 @@ class ShopCart extends Component {
                             </div>
                         </div>
 
-                        <div className="breakwidth row"></div>
-                        <div className="row text-right">
-                            总共价格
+                        <div className="breakwidth-30 row"></div>
+                        <div className="row text-right total-price-title">
+                            共需支付
                         </div>
                         <div className="row total-price text-right">
                             ￥666.27
                         </div>
 
+                        <div className="breakwidth-60 row"></div>
+
+                        <div className="row return-homepage">
+                            <Button type="Default">返回首页</Button>
+                        </div>
+
                     </div>
-                    <div className="col-sm-4">
+                    <div className="col-sm-5 check-out-box">
                         <h3 className="text-center">结 账</h3>
+                        <Tabs type="card">
+                            <TabPane tab="微信支付" key="1">
+                                <div className="row wechat_pay_box">
+                                    <img src={wechat} alt="wechat" className="wechat" />
+                                </div>
+                            </TabPane>
+                            <TabPane tab="支付宝支付" key="2">
+                                <div className="row wechat_pay_box">
+                                    <img src={wechat} alt="wechat" className="wechat" />
+                                </div>
+                            </TabPane>
+                        </Tabs>
                     </div>
                 </div>
             </Modal>
