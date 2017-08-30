@@ -69,11 +69,10 @@ class GoodsDetail extends Component {
     render() {
         return (
             <Modal
-            title="商品"
-            visible={this.props.visible}
-            onOk={this.props.handleOk}
-            onCancel={this.props.handleCancel}
-            width={900}
+              title="商品"
+              visible={this.props.goodsItemModalVisible}
+              onCancel={() => { this.props.handleCancel('goodsItemModalVisible') }}
+              width={900}
 
             footer={null}
             title={null}

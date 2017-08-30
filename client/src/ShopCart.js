@@ -20,7 +20,7 @@ class ShopCart extends Component {
         return (
             <Modal
                visible={this.props.cartModalVisible}
-                onCancel={this.props.hideCartModal}
+                onCancel={() => { this.props.hideCartModal('cartModalVisible') }}
                 width={899}
                 footer={null}
                 title={null}
@@ -29,7 +29,7 @@ class ShopCart extends Component {
                 <div className="container-fluid shop-cart">
                     <div className="col-sm-7 shop-cart-left">
 
-                        <h3 className="text-center">你 的 购 物 车</h3>
+                        <h3 className="text-center">我 的 购 物 车</h3>
 
                         <div className="row cart-item-header cart-item-body">
                             <div className="col-sm-5 ">
@@ -109,7 +109,7 @@ class ShopCart extends Component {
                         <div className="breakwidth-60 row"></div>
 
                         <div className="row return-homepage">
-                            <Button type="Default">返回首页</Button>
+                            <Button type="Default" onClick={() => { this.props.hideCartModal('cartModalVisible')}}>返回首页</Button>
                         </div>
 
                     </div>

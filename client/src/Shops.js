@@ -18,7 +18,7 @@ class Shops extends Component {
             <div id="shop" className="container-fluid goods">
             <h3 className="goods-title text-center">商品展示</h3>
               <div className="row text-center scrollmenu">
-                <div className="good-item" onClick={this.props.showModal}>
+                <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible') }}>
                   <div className="thumbnail">
                     <img src={goods1} alt="good1" className="goodItem"/>
                     <p><strong>Paris</strong></p>

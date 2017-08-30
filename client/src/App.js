@@ -38,6 +38,7 @@ class App extends Component {
       isLoggedIn: false,
       loginModalVisible: false,
       cartModalVisible: false,
+      goodsItemModalVisible: false,
     };
 
   }
@@ -51,12 +52,6 @@ class App extends Component {
   showModal = (type) => {
     this.setState({
       [type]: true,
-    });
-  }
-  handleOk = (e) => {
-    console.log(e);
-    this.setState({
-      visible: false,
     });
   }
 
@@ -120,13 +115,12 @@ class App extends Component {
           <News />
 
           <Shops
-            showModal={this.showModal}
+            showGoodItemModal={this.showModal}
           />
 
           <GoodsDetail
             handleCancel={this.handleCancel}
-            handleOk={this.handleOk}
-            visible={this.state.visible} 
+            goodsItemModalVisible={this.state.goodsItemModalVisible} 
           />
           
           <Commitments />

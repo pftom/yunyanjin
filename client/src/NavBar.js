@@ -18,7 +18,7 @@ class NavBar extends Component {
                     <li><a className="nav-operation" href="#shop">所有商品</a></li>
                     <li><a className="nav-operation" href="#news">新闻中心</a></li>
                     <li><a className="nav-operation" href="#about">关于我们</a></li>
-                    <li><a className="nav-operation" href="#about">我的订单</a> </li>
+                    <li><a className="nav-operation" href="#myOrder">我的订单</a> </li>
                     <li><a className="nav-operation" onClick={() => { this.props.showCartModal('cartModalVisible') }}>购物车</a> </li>
                     </ul>
             )
