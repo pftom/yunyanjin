@@ -1,0 +1,19 @@
+
+
+.box-img-shadow img {
+    position: relative;
+    z-index: 100;
+}
+
+.box-img-shadow::after {
+    content: '';
+    position: absolute;
+    /* z-index: 1; hide shadow behind image */
+    -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);                
+    width: 70%; 
+    left: 15%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}
