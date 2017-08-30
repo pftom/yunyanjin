@@ -21,9 +21,11 @@ class ChangePassword extends Component {
         }
     }
 
-    componentDidMount() {
-        localStorage.setItem('token', '1234');
+    async componentDidMount() {
+        const token = await localStorage.getItem('token');
+        console.log('token', token);
     }
+
 
     handleSubmit = (e) => {
         e.preventDefault();

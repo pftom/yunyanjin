@@ -1,12 +1,12 @@
 'use strict';
 
-export const base = 'http://127.0.0.1:8000/';
+export const base = 'http://api.yunyanjin.com/';
 
 
 export const userApi = {
   register: 'users/register',
   login: 'users/login/',
-  changePassword: 'users/change-password',
+  changePassword: 'users/change-password/',
 };
 
 export const shopSingleApi = (id) => ({

@@ -1,3 +1,27 @@
 .navbar-fixed-bottom, .navbar-fixed-top {
     z-index: 990;
 }
+
+.setting-popover-box {
+    padding: 10px;
+}
+
+.setting-popover-box a {
+    font-size: 20px;
+    
+    color: #AAA;
+}
+
+.setting-popover-box a:first-child {
+    
+}
+
+.setting-popover-box a:hover {
+    color: #f4511e;
+}
+
+.setting-popover-box .setting-popover-box-item1 {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}

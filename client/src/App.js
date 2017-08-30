@@ -63,7 +63,10 @@ class App extends Component {
     });
   }
 
-  handleLogout = () => {
+  handleLogout = async () => {
+
+    await localStorage.removeItem('token');
+
     this.setState({
       isLoggedIn: false,
     });
@@ -73,12 +76,11 @@ class App extends Component {
 
     const token = await localStorage.getItem('token');
 
-    // localStorage.removeItem('token');
-    // console.log('token', token);
+    console.log('token', token);
 
     if (token) {
       this.setState({
-        isLoggedIn: false,
+        isLoggedIn: true,
       });
     }
   }
@@ -97,6 +99,7 @@ class App extends Component {
             isLoggedIn={this.state.isLoggedIn}
             showLoginModal={this.showModal}
             showCartModal={this.showModal}
+            handleLogout={this.handleLogout}
           />
 
           <ShopCart 

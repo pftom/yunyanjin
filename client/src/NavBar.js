@@ -8,19 +8,39 @@ import './css/modal.css';
 import './css/NavBar.css';
 import './css/App.css';
 
+import { Link, Redirect } from 'react-router-dom';
+
+import { Icon, Popover } from 'antd';
+
 
 class NavBar extends Component {
+
+    renderSettingContent = () => (
+        <div className="setting-popover-box">
+            <div className="setting-popover-box-item1"><Link to="/change_password" className="nav-operation" href="">修改密码</Link></div>
+            <div className="setting-popover-box-item2"><a href="javascript:void(0);" onClick={this.props.handleLogout}>退出登录</a></div>
+        </div>
+    )
+
     render() {
 
         let renderLogin = null;
         if (this.props.isLoggedIn) {
             renderLogin = (
                 <ul className="nav navbar-nav navbar-right">
-                    <li><a className="nav-operation" href="#shop">所有商品</a></li>
-                    <li><a className="nav-operation" href="#news">新闻中心</a></li>
-                    <li><a className="nav-operation" href="#about">关于我们</a></li>
-                    <li><a className="nav-operation" href="#myOrder">我的订单</a> </li>
-                    <li><a className="nav-operation" onClick={() => { this.props.showCartModal('cartModalVisible') }}>购物车</a> </li>
+                    <li><a className="nav-operation" href="#shop">我们的文化</a></li>
+                    <li><a className="nav-operation" href="#news">盐津简介</a></li>
+                    <li><a className="nav-operation" href="#about">重大事件</a></li>
+                    <li><a className="nav-operation" href="#products">商品展示</a> </li>
+                    <li><a className="nav-operation" href="#commitments">我们的承诺</a> </li>
+                    <li><a className="nav-operation" onClick={() => { this.props.showCartModal('cartModalVisible') }}><Icon type="shopping-cart" style={{ fontSize: 30, marginTop: -5 }} /></a> </li>
+                    <li>
+                        <a href="nav-operation"> 
+                            <Popover content={this.renderSettingContent()}> 
+                                <Icon type="setting" style={{ fontSize: 30, marginTop: -5 }}/> 
+                            </Popover> 
+                        </a>
+                    </li>
                     </ul>
             )
         } else {
