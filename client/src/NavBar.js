@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import './css/rubick_pres.css';
-import './css/App.css';
+
 import './css/modal.css';
 
 
 import './css/NavBar.css';
+import './css/App.css';
 
 
 class NavBar extends Component {
@@ -29,7 +30,7 @@ class NavBar extends Component {
                     <li><a className="nav-operation" href="#news">新闻中心</a></li>
                     <li><a className="nav-operation" href="#about">关于我们</a></li>
                     <li>
-                        <a className="nav-operation" id="login-button" onClick={() => { this.props.showModal('loginModalVisible') }}>
+                        <a className="nav-operation" id="login-button" onClick={() => { this.props.showLoginModal('loginModalVisible') }}>
                             <span className="glyphicon glyphicon-log-in"></span> 登录/注册
                         </a>
                     </li>

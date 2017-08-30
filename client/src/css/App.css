@@ -20,6 +20,16 @@
     background-color: #FFF;
 }
 
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8); 
+    filter: blur(0.2px);
+}
+
+.navbar-transparent {
+    background-color: transparent;
+}
+
 .nav-operation {
   color: white;
   font-size: large;
@@ -27,11 +37,24 @@
 }
 
 
+/*
+
+    login button
+*/
+
 #login-button {
     padding: 6px 16px;
+    top: 1.5px;
+}
+
+.navbar-transparent #login-button {
     border: 1px solid #FFF;
     border-radius: 100px;
-    top: 1.5px;
+}
+
+
+.nav .navbar-nav li a:hover, .nav .navbar-nav li.active a {
+    background-color: transparent;
 }
 
 @media screen and (max-width: 991px) {
@@ -54,12 +77,10 @@ svg path {
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #f4511e !important;
-    background-color: #fff !important;
 }
 
 .navbar-nav li a img:hover, .navbar-nav li.active a img {
     color: #f4511e !important;
-    background-color: #fff !important;
 }
 
 .navbar-default .navbar-toggle {

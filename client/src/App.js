@@ -28,6 +28,7 @@ import GoodsDetail from './GoodsDetail';
 import Commitments from './Commitments';
 import Footer from './Footer';
 import ShopCart from './ShopCart';
+import Video from './Video';
 
 class App extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends Component {
       loginModalVisible: false,
       cartModalVisible: false,
       goodsItemModalVisible: false,
+      videoModalVisible: false,
     };
 
   }
@@ -70,11 +72,13 @@ class App extends Component {
   componentDidMount = async () => {
 
     const token = await localStorage.getItem('token');
-    console.log('token', token);
+
+    // localStorage.removeItem('token');
+    // console.log('token', token);
 
     if (token) {
       this.setState({
-        isLoggedIn: true,
+        isLoggedIn: false,
       });
     }
   }
@@ -110,7 +114,13 @@ class App extends Component {
 
           <HeaderBody />
           
-          <About />
+          <About
+            videoModalVisible={this.state.videoModalVisible}
+            handlePlayVideo={this.showModal}
+            handleCancelVideo={this.handleCancel}
+           />
+
+          <Video videoModalVisible={this.state.videoModalVisible} />
           
           <News />
 

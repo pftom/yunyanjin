@@ -34,28 +34,28 @@ class Shops extends Component {
                 </div>
                 <div className="good-item">
                   <div className="thumbnail">
-                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <img src={goods1} alt="good3" className="goodItem"/>
                     <p><strong>San Francisco</strong></p>
                     <p>没有最丑，只有更丑</p>
                   </div>
                 </div>
                 <div className="good-item">
                   <div className="thumbnail">
-                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <img src={goods1} alt="good3" className="goodItem"/>
                     <p><strong>San Francisco</strong></p>
                     <p>没有最丑，只有更丑</p>
                   </div>
                 </div>
                 <div className="good-item">
                   <div className="thumbnail">
-                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <img src={goods1} alt="good3" className="goodItem"/>
                     <p><strong>San Francisco</strong></p>
                     <p>没有最丑，只有更丑</p>
                   </div>
                 </div>
                 <div className="good-item">
                   <div className="thumbnail">
-                    <img src={goods3} alt="good3" className="goodItem"/>
+                    <img src={goods1} alt="good3" className="goodItem"/>
                     <p><strong>San Francisco</strong></p>
                     <p>没有最丑，只有更丑</p>
                   </div>
