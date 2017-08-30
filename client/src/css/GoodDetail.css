@@ -1,0 +1,31 @@
+.btn {
+    padding: 10px 12px;
+    font-size: 15px;
+    font-weight: 300;
+    height: 40px;
+
+}
+
+.add-to-cart {
+    top: -2px;
+}
+
+.ant-radio-button-wrapper-checked:first-child {
+    border-color: #5cb85c;
+}
+
+.ant-radio-button-wrapper-checked {
+    color: #5cb85c;
+    border-color: #5cb85c;
+    box-shadow: -1px 0 0 0 #5cb85c;
+}
+
+.ant-radio-button-wrapper-checked:hover {
+    border-color: #5cb85c;
+    color: #5cb85c;
+    box-shadow: -1px 0 0 0 #5cb85c;
+}
+
+.ant-radio-button-wrapper:hover, .ant-radio-button-wrapper-focused {
+    color: #5cb85c;
+}

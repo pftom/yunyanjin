@@ -4,6 +4,8 @@ import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
+import './css/GoodDetail.css';
+
 import avatar1 from './img/img_avatar1.png';
 import goods1 from './img/goods-1.png';
 
@@ -119,8 +121,12 @@ class GoodsDetail extends Component {
                       <span className="norms count-select align-center">数量选择：</span>
                       <Pagination simple defaultCurrent={1} total={50} />
                     </div>
-                    <button type="submit" onClick={this.openNotification} className="btn btn-success btn-block btn-goods-item">立即购买</button>
-                    <button type="submit" className="btn btn-success btn-block btn-goods-item">加入购物车</button>
+                    <div className="col-sm-5">
+                      <button type="submit" onClick={this.openNotification} className="btn btn-success btn-block btn-goods-item">立即购买</button>
+                    </div>
+                    <div className="col-sm-6">
+                    <button type="submit" className="btn btn-success btn-block btn-goods-item"> <Icon type="shopping-cart" style={{ fontSize: 20 }}/>  <span className="add-to-cart">加入购物车</span></button>
+                    </div>
                   </div>
                 </div>
               </TabPane>

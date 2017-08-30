@@ -32,7 +32,7 @@ class UserForm extends Component {
         return (
             <Modal
                 visible={this.props.loginModalVisible}
-                onCancel={this.props.hideLoginModal}
+                onCancel={() => { this.props.hideLoginModal('loginModalVisible') }}
                 width={520}
                 footer={null}
                 title={null}
