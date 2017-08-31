@@ -15,7 +15,7 @@ class About extends Component {
             <div className="row culutre-box">
               <div className="col-sm-7">
                 <h3 className="culture-title text-center">我们的文化</h3>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相比之前的传输协议，HTTP/2在底层方面做了很多优化。有安全、省时、简化开发、更好的适应复杂页面、提供缓存利用率等优势，阿里云早在去年发布的CDN6.0服务就已正式支持HTTP/2，访问速度最高可提升68%。今天我们从历史、特性、调试、性能四个层面来全面解析HTTP/2。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;云南省盐津县，东华大学对口帮扶的国家级贫困县。2015年10月，东华大学计算机学院派出调研小组前往盐津，发现当地诸如天麻、乌骨鸡等优势特产品由于市场挤压生而少有销路。结合专业知识，计算机学院慈善义工队从电商扶贫出发，组建“云梦盐津”志愿扶贫团队，通过扶贫调研，并在上海开展电子商务，组织爱心义卖等活动，帮助推广盐津当地特产，为盐津农家特产打开销路，以“公益+创业”的模式助力精准扶贫。</p>
               </div>
               <div className="col-sm-5 box-img-shadow" onClick={() => { this.props.handlePlayVideo('videoModalVisible') } }>
                 <img src={videoCover} alt="videoCover" className="video-cover"/>

@@ -162,7 +162,7 @@ svg path {
     position: relative;
 }
 
-.header-body .title-board .project-desc{
+.header-body  .project-desc{
   color: #FFF;
   font-size: 2.5em;
   color: white;
@@ -171,7 +171,7 @@ svg path {
   margin-top: 15px;
 }
 
-.header-body .title-board  .project-title  {
+.header-body   .project-title  {
   font-size: 4.6em;
   font-weight: normal;
   text-align: right;
@@ -192,13 +192,10 @@ svg path {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    padding: 50px;
+    padding: 0 60px;
 }
 
-.project-title {
-    color: white;
-    font-size: 30px;
-}
+
 
 .map {
     max-width: 100%;
@@ -267,6 +264,7 @@ svg path {
 
 .commitments {
     padding: 0 8rem 4rem 8rem;
+    background-color: #FFF;
 }
 
 /* .commitments img {
