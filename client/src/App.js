@@ -131,10 +131,14 @@ class App extends Component {
             showGoodItemModal={this.showModal}
           />
 
-          <GoodsDetail
-            handleCancel={this.handleCancel}
-            goodsItemModalVisible={this.state.goodsItemModalVisible} 
-          />
+          {
+            this.state.goodsItemModalVisible && (
+              <GoodsDetail
+                handleCancel={this.handleCancel}
+                goodsItemModalVisible={this.state.goodsItemModalVisible} 
+              />
+            )
+          }
           
           <Commitments />
           

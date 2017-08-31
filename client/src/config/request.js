@@ -82,9 +82,11 @@ request.post = ( url, body, token, multiform ) => {
   return fetch(url, options)
         .then(response => {
 
+          console.log('response', response);
           if (![200, 201].includes(response.status) || !response.ok) {
             throw response.json();
           }
+          // console.log('succceed', response.json());
           return response.json();
         })
 }

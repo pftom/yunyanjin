@@ -12,7 +12,7 @@ import { Link, Redirect } from 'react-router-dom';
 import UserForm from './UserForm';
 
 import {  base, userApi } from './config/config';
-import request from './config/request'
+import request from './config/request';
 
 import { Modal, Button, Tabs, Form, Icon, Input, Checkbox, message } from 'antd';
 const TabPane = Tabs.TabPane;
