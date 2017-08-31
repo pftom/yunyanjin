@@ -201,6 +201,36 @@ class GoodsDetail extends Component {
 
         const { goodItemContent, goodItemImg } = this.state;
 
+        let renderDetail = null;
+
+        if (goodItemContent && goodItemContent.effect) {
+          renderDetail = (
+            <div className="container-fluid detail-box">
+              <div className="row" style={{ marginTop: '20px', marginLeft: '40px', marginRight: '40px'}}>
+                  <h3  style={{ marginBottom: '30px'}}>营养成分</h3>
+                  <p>{this.state.goodItemContent.nutrition}</p>
+              </div>
+              <div className="row" style={{ marginTop: '20px', marginLeft: '40px', marginRight: '40px'}}>
+                  <h3 style={{ marginBottom: '30px'}}>用途功效</h3>
+                  <p>{this.state.goodItemContent.effect}</p>
+              </div>
+            </div>
+          )
+        } else {
+          renderDetail = (
+            <div className="container-fluid detail-box">
+              <div className="row" style={{ marginTop: '20px', marginLeft: '40px', marginRight: '40px'}}>
+                  <h3  style={{ marginBottom: '30px'}}>营养成分</h3>
+                  <p>{goodItemContent && (goodItemContent.nutrition ? goodItemContent.nutrition : '暂无') }</p>
+              </div>
+              <div className="row" style={{ marginTop: '20px', marginLeft: '40px', marginRight: '40px'}}>
+                  <h3 style={{ marginBottom: '30px'}}>用途功效</h3>
+                  <p>{goodItemContent && (goodItemContent.effect ? goodItemContent.effect : '暂无')}</p>
+              </div>
+            </div>
+          )
+        }
+
         return (
             <Modal
               title="商品"
@@ -210,6 +240,7 @@ class GoodsDetail extends Component {
 
             footer={null}
             title={null}
+            className="modal-good-container"
           >
             {
               this.state.alreadyLoaded
@@ -284,82 +315,7 @@ class GoodsDetail extends Component {
                     tab="商品详情"
                     key="2"
                   >
-
-                  <div className="container-fluid detail-box">
-                    <div className="row detail-box-row">
-                    <div className="col-sm-3">
-                      <span>保质期：</span>
-                      <span>270天</span>
-                    </div>
-
-                    <div className="col-sm-3">
-                      <span>净含量：</span>
-                      <span>250g</span>
-                    </div>
-
-                    <div className="col-sm-3">
-                      <span>肉类产品：</span>
-                      <span>牛肉干食品工艺</span>
-                    </div>
-
-                  </div>
-
-                  <div className="row detail-box-row">
-
-                    <div className="col-sm-3">
-                        <span>含糖量：</span>
-                        <span>无糖</span>
-                    </div>
-
-                    <div className="col-sm-3">
-                      <span>包装方式：</span>
-                      <span>袋装</span>
-                    </div>
-
-                    
-                    <div className="col-sm-3">
-                      <span>存储方法：</span>
-                      <span>避免阳光直射</span>
-                    </div>
-                  </div>
-
-                  <div className="row detail-box-row">
-                    <div className="col-sm-9">
-                        <span>食品添加剂：</span>
-                        <span>乙基麦芽酶，食用香精</span>
-                    </div>
-                  </div>
-
-                  <div className="row detail-box-row">
-                    <div className="col-sm-9">
-                        <span>联系方式：</span>
-                        <span>0475-8251032</span>
-                    </div>
-                  </div>
-
-                  <div className="row detail-box-row">
-                    <div className="col-sm-9">
-                        <span>厂址：</span>
-                      <span>通辽市经济技术开发区8号路西标准厂房厂家</span>
-                    </div>
-                  </div>
-
-                  <div className="row detail-box-row">
-                    <div className="col-sm-9">
-                        <span>厂名：</span>
-                        <span>内蒙古科尔沁牛业股份有限公司肉制品分公司</span>
-                    </div>
-                  </div>
-
-                  <div className="row detail-box-row">
-                    <div className="col-sm-9">
-                        <span>配料表：</span>
-                      <span>鲜猪肉，鸡肉，白砂糖，猪油，酱油，食盐，芝麻，海苔，味精，小麦粉</span>
-                    </div>
-                  </div>
-
-                  </div>
-
+                  {renderDetail}
 
                   </TabPane>
 
@@ -464,3 +420,59 @@ export default GoodsDetail;
   立即购买
 </Button>
 </div> */
+
+
+
+/* <div className="row detail-box-row">
+
+                    <div className="col-sm-3">
+                        <span>含糖量：</span>
+                        <span>无糖</span>
+                    </div>
+
+                    <div className="col-sm-3">
+                      <span>包装方式：</span>
+                      <span>袋装</span>
+                    </div>
+
+                    
+                    <div className="col-sm-3">
+                      <span>存储方法：</span>
+                      <span>避免阳光直射</span>
+                    </div>
+                  </div>
+
+                  <div className="row detail-box-row">
+                    <div className="col-sm-9">
+                        <span>食品添加剂：</span>
+                        <span>乙基麦芽酶，食用香精</span>
+                    </div>
+                  </div>
+
+                  <div className="row detail-box-row">
+                    <div className="col-sm-9">
+                        <span>联系方式：</span>
+                        <span>0475-8251032</span>
+                    </div>
+                  </div>
+
+                  <div className="row detail-box-row">
+                    <div className="col-sm-9">
+                        <span>厂址：</span>
+                      <span>通辽市经济技术开发区8号路西标准厂房厂家</span>
+                    </div>
+                  </div>
+
+                  <div className="row detail-box-row">
+                    <div className="col-sm-9">
+                        <span>厂名：</span>
+                        <span>内蒙古科尔沁牛业股份有限公司肉制品分公司</span>
+                    </div>
+                  </div>
+
+                  <div className="row detail-box-row">
+                    <div className="col-sm-9">
+                        <span>配料表：</span>
+                      <span>鲜猪肉，鸡肉，白砂糖，猪油，酱油，食盐，芝麻，海苔，味精，小麦粉</span>
+                    </div>
+                  </div> */

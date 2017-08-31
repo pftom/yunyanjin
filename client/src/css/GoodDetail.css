@@ -3,15 +3,15 @@
 tabs
 */
 
-.ant-tabs-nav .ant-tabs-tab-active {
+.modal-good-container .ant-tabs-nav .ant-tabs-tab-active {
     color: #F40;
 }
 
-.ant-tabs-ink-bar {
+.modal-good-container .ant-tabs-ink-bar {
     background-color: #F40;
 }
 
-.ant-tabs-nav .ant-tabs-tab:hover {
+.modal-good-container .ant-tabs-nav .ant-tabs-tab:hover {
     color: #F40;
 }
 
@@ -53,7 +53,7 @@ tabs
     left: 0;
 }
 
-.ant-radio-button-wrapper-checked:first-child {
+.modal-good-container .ant-radio-button-wrapper-checked:first-child {
     border: 1px solid #F40;
 }
 
@@ -61,7 +61,7 @@ tabs
     border-radius: 0;
 }
 
-.ant-radio-button-wrapper-checked {
+.modal-good-container .ant-radio-button-wrapper-checked {
     color: #000;
     border: 1px solid #F40;
     box-shadow: none;
@@ -71,22 +71,22 @@ tabs
     box-shadow: none;
 }
 
-.ant-radio-button-wrapper-checked:hover {
+.modal-good-container .ant-radio-button-wrapper-checked:hover {
     border: 1px solid #F40;
     color: #000;
     box-shadow: none;
 }
 
-.norms-box .ant-radio-button-wrapper:hover, .norms-box .ant-radio-button-wrapper-focused {
+.modal-good-container .norms-box .ant-radio-button-wrapper:hover, .norms-box .ant-radio-button-wrapper-focused {
     color: #000;
     border: 1px solid #F40;
 }
 
-.price {
+.modal-good-container .price {
     color: #F40;
 }
 
-.btn-goods-item {
+.modal-good-container .btn-goods-item {
     border-radius: 19px;
     width: 180px;
     height: 38px;
@@ -97,23 +97,23 @@ tabs
     font-family: "Hiragino Sans GB","microsoft yahei",sans-serif;
 }
 
-.btn-goods-item:hover {
+.modal-good-container .btn-goods-item:hover {
     border-color: #F22D00;
     background-color: #F22D00;
 }
 
-.ant-btn-primary:hover, .ant-btn-primary:focus {
+.modal-good-container .ant-btn-primary:hover, .modal-good-container .ant-btn-primary:focus {
     background-color: #F22D00;
 }
 
-.btn-goods-first-item {
+.modal-good-container .btn-goods-first-item {
     width: 134px;
     color: #E5511D;
     border-color: #F0CAB6;
     background-color: #FFE4D0;
 }
 
-.btn-goods-first-item:hover, .btn-goods-first-item:focus  {
+.modal-good-container .btn-goods-first-item:hover, .modal-good-container .btn-goods-first-item:focus  {
     border-color: #F0CAB6;
     background-color: #F0CAB6;
     color: #E5511D;
