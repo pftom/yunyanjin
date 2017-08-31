@@ -46,9 +46,11 @@ class NavBar extends Component {
         } else {
             renderLogin = (
                 <ul className="nav navbar-nav navbar-right" style={{ paddingRight: '-70px'}}>
-                    <li><a className="nav-operation" href="#shop">所有商品</a></li>
-                    <li><a className="nav-operation" href="#news">新闻中心</a></li>
-                    <li><a className="nav-operation" href="#about">关于我们</a></li>
+                    <li><a className="nav-operation" href="#about">我们的文化</a></li>
+                    <li><a className="nav-operation" href="#news">盐津简介</a></li>
+                    <li><a className="nav-operation" href="#events">扶贫纪实</a></li>
+                    <li><a className="nav-operation" href="#shop">商品展示</a> </li>
+                    <li><a className="nav-operation" href="#commitments">我们的承诺</a> </li>
                     <li>
                         <a className="nav-operation" id="login-button" onClick={() => { this.props.showLoginModal('loginModalVisible') }}>
                             <span className="glyphicon glyphicon-log-in"></span> 登录/注册

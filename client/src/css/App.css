@@ -42,14 +42,16 @@
     login button
 */
 
-.navbar>.container .navbar-brand {
-    margin-left: 10px;
-}
+
 
 @media (min-width: 768px) {
     .navbar>.container .navbar-brand {
         margin-left: -70px;
     }
+}
+
+.navbar>.container .navbar-brand {
+    margin-left: 0px;
 }
 
 #login-button {

@@ -21,3 +21,43 @@
 .js-modal-btn:hover {
     cursor: pointer;
 }
+
+.mouse-box-inverse .mouse {
+    height: 30px;
+    width: 22px;
+    border-radius: 10px;
+    transform: none;
+    top: 170px;
+    border: 2px solid black;
+}
+
+.mouse-box-inverse .wheel {
+    -webkit-animation: mouse-wheel 1.2s ease infinite;
+    -moz-animation: mouse-wheel 1.2s ease infinite;
+    height: 5px;
+    width: 2px;
+    display: block;
+    margin: 7px auto;
+    position: relative;
+    background: black;
+}
+
+.mouse-box-inverse  span {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    display: block;
+    width: 9px;
+    height: 9px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin: 5px 0 3px 6px;
+}
+
+
+.mouse-box-inverse {
+    position: absolute;
+    left: 50%;
+    top: 85%;
+
+}

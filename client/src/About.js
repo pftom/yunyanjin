@@ -21,6 +21,18 @@ class About extends Component {
                 <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/video-cover.png'} alt="videoCover" className="video-cover"/>
               </div>
             </div>
+            <a href="#news" className="mouse-box-inverse">
+                <div className="mouse">
+                  <div className="wheel">
+
+                  </div>
+                </div>
+                <div>
+                  <span className="unu">
+                  </span>
+                  <span className="doi"></span>
+                  </div>
+              </a>
           </div>
         )
     }

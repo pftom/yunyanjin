@@ -143,7 +143,10 @@ class App extends Component {
             handleCancelVideo={this.handleCancel}
            />
 
-          <Video videoModalVisible={this.state.videoModalVisible} />
+          <Video 
+            videoModalVisible={this.state.videoModalVisible}
+            handleCancel={this.handleCancel} 
+          />
           
           <News />
 
