@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/css/slippry.css" />
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/modal-video.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/">
+    <link href='http://cdn.webfont.youziku.com/webfonts/nomal/107408/45803/59a7f1e6f629d80600cb0024.css' rel='stylesheet' type='text/css' />
      <!-- slideshow -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -44,6 +46,7 @@
     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="%PUBLIC_URL%/js/modal-video.js"></script>
     <script src="%PUBLIC_URL%/js/slippry.js"></script>
     <script src="%PUBLIC_URL%/js/modernizr.js"></script>
     <script src="%PUBLIC_URL%/js/rubick_pres.js"></script>
@@ -72,7 +75,19 @@
             });
           } // End if 
         });
+
+        $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
       })
+
 </script>
       <script>
 			$(function() {
@@ -86,7 +101,9 @@
 					 preload: 'visible',
 					 autoHover: false
 				});
-			});
+      });
+      
+      $(".js-modal-btn").modalVideo();
         </script>
   </body>
 </html>

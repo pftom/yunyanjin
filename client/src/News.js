@@ -10,8 +10,8 @@ class News extends Component {
     render() {
         return (
             <div id="news" className="container-fluid culture map-box">
-            <div className="row culutre-box">
-              <div className="col-sm-5">
+            <div className="row culutre-box slideanim">
+              <div className="col-sm-5 ">
                 <img src={map} alt="map" className="map"/>
               </div>
               <div className="col-sm-7">

@@ -14,7 +14,7 @@ class HeaderBody extends Component {
     render() {
         return (
             <div className="header-body" id="topNav" style={{ height: '100vh', zIndex: 3 }}>
-              <h1 className="project-title">云梦盐津</h1>
+              <h1 className="project-title" style={{fontFamily: "LiDeBiao-Xing3cdd3233821a390", fontSize: "120px"}}>云梦盐津</h1>
               <p className="project-desc">梦想，在这里发生</p>
             </div>
         )

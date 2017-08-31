@@ -17,3 +17,7 @@
     height: 100px;
     bottom: 0;
 }
+
+.js-modal-btn:hover {
+    cursor: pointer;
+}

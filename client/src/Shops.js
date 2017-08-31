@@ -18,6 +18,7 @@ class Shops extends Component {
             <div id="shop" className="container-fluid goods">
             <h3 className="goods-title text-center">商品展示</h3>
               <div className="row text-center scrollmenu">
+                <div className="row slideanim">
                 <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible', 1) }}>
                   <div className="thumbnail">
                     <img src={goods1} alt="good1" className="goodItem"/>
@@ -39,6 +40,8 @@ class Shops extends Component {
                     <p>没有最丑，只有更丑</p>
                   </div>
                 </div>
+                </div>
+                <div className="row  slideanim">
                 <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible', 4) }}>
                   <div className="thumbnail">
                     <img src={goods1} alt="good3" className="goodItem"/>
@@ -59,6 +62,7 @@ class Shops extends Component {
                     <p><strong>San Francisco</strong></p>
                     <p>没有最丑，只有更丑</p>
                   </div>
+                </div>
                 </div>
                 </div>
               </div>

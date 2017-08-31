@@ -1,4 +1,4 @@
-
+@import './moda-video.scss';
 
 .navbar-default .navbar-nav>li>a {
     color: #FFF;
@@ -263,7 +263,7 @@ svg path {
 
 
 .commitments {
-    padding: 0 8rem 4rem 8rem;
+    padding: 10%;
     background-color: #FFF;
 }
 
@@ -272,7 +272,7 @@ svg path {
     height: 100%;
 } */
 
-.commitments h4 {
+/* .commitments h4 {
     color: #FF5542;
     font-weight: 500;
     margin-top: 0.4rem;
@@ -282,7 +282,7 @@ svg path {
     font-weight: 400;
     font-size: 0.8rem;
     margin-top: -0.5rem;
-}
+} */
 
 .commitments .commit-bottom {
     padding-top: 4rem;
@@ -317,4 +317,36 @@ footer a:hover {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   font-size: normal;
+}
+
+.slideanim {visibility:hidden;}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
 }

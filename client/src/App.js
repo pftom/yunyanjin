@@ -29,6 +29,7 @@ import Commitments from './Commitments';
 import Footer from './Footer';
 import ShopCart from './ShopCart';
 import Video from './Video';
+import Events from './Events';
 
 
 let currentGood = 1;
@@ -145,6 +146,8 @@ class App extends Component {
           <Video videoModalVisible={this.state.videoModalVisible} />
           
           <News />
+
+          <Events />
 
           <Shops
             showGoodItemModal={this.showModal}

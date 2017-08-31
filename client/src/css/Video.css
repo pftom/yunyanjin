@@ -21,6 +21,23 @@
     text-align: center;
 }
 
-.video-box {
-    display: none;
+.video-container {
+    z-index: 1000;
+    /* background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    top: 0;
+    left: 0;;
+    position: absolute;
+    display: table;
+    vertical-align: middle; */
 }
+
+/* .video-box {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+} */
