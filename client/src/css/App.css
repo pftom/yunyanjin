@@ -157,19 +157,9 @@ svg path {
     }
 }
 
-.title-board {
-  color: white;
-  background: linear-gradient(rgba(255,85,66,0.3), rgba(255,85,66,0.6));
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10% 10% 0 10%;
-  width: 100%;
-  height: 100%;
-  /* z-index: 10; */
-  top: 0;
-  left: 0;
+.container-fluid {
+    z-index: 3;
+    position: relative;
 }
 
 .header-body .title-board .project-desc{
@@ -191,6 +181,23 @@ svg path {
 
 .header-body .item > img {
     width: 100%;
+}
+
+.header-body {
+    background: linear-gradient(rgba(255, 84, 65, 0.30), rgba(255,85,66,0.6));
+    z-index: 3;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 50px;
+}
+
+.project-title {
+    color: white;
+    font-size: 30px;
 }
 
 .map {

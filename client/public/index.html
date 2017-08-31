@@ -10,8 +10,12 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/slippry.css" />
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+     <!-- slideshow -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,6 +44,7 @@
     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="%PUBLIC_URL%/js/slippry.js"></script>
     <script src="%PUBLIC_URL%/js/modernizr.js"></script>
     <script src="%PUBLIC_URL%/js/rubick_pres.js"></script>
     <script>
@@ -70,11 +75,18 @@
       })
 </script>
       <script>
-    $(document).ready(function() {
-      $("#login-button").click(function() {
-        $("#loginModal").modal();
-      });
-    });
-  </script>
+			$(function() {
+				var demo1 = $("#slider").slippry({
+					 transition: 'kenburns',
+					 useCSS: true,
+					 speed: 5000,
+					 pause: 9000,
+					 auto: true,
+					 controls: false,
+					 preload: 'visible',
+					 autoHover: false
+				});
+			});
+        </script>
   </body>
 </html>
