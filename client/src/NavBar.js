@@ -27,7 +27,7 @@ class NavBar extends Component {
         let renderLogin = null;
         if (this.props.isLoggedIn) {
             renderLogin = (
-                <ul className="nav navbar-nav navbar-right">
+                <ul className="nav navbar-nav navbar-right" style={{ paddingRight: '-70px'}}>
                     <li><a className="nav-operation" href="#shop">我们的文化</a></li>
                     <li><a className="nav-operation" href="#news">盐津简介</a></li>
                     <li><a className="nav-operation" href="#about">重大事件</a></li>
@@ -45,7 +45,7 @@ class NavBar extends Component {
             )
         } else {
             renderLogin = (
-                <ul className="nav navbar-nav navbar-right">
+                <ul className="nav navbar-nav navbar-right" style={{ paddingRight: '-70px'}}>
                     <li><a className="nav-operation" href="#shop">所有商品</a></li>
                     <li><a className="nav-operation" href="#news">新闻中心</a></li>
                     <li><a className="nav-operation" href="#about">关于我们</a></li>

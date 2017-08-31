@@ -16,7 +16,7 @@ class Shops extends Component {
     render() {
         return (
             <div id="shop" className="container-fluid goods">
-            <h3 className="goods-title text-center">商品展示</h3>
+            <h3 className="sector-title text-center">商品展示</h3>
               <div className="row text-center scrollmenu">
                 <div className="row slideanim">
                 <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible', 1) }}>

@@ -13,7 +13,7 @@ class Commitments extends Component {
     render() {
         return (
             <div className="container-fluid commitments">
-                <h3 className="goods-title text-center commitments-title">我们的承诺</h3>
+                <h3 className="sector-title text-center ">我们的承诺</h3>
                 <div className="row  slideanim">
                     <div className="col-sm-6 commit">
                     <img src={commit1} alt="commit-1" /><br />
