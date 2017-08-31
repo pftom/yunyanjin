@@ -12,7 +12,7 @@ class News extends Component {
             <div id="news" className="container-fluid culture map-box">
             <div className="row culutre-box slideanim">
               <div className="col-sm-5 ">
-                <img src={map} alt="map" className="map"/>
+                <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/map.png'} alt="map" className="map"/>
               </div>
               <div className="col-sm-7">
               <h3 className="sector-title text-center">在盐津，放飞梦想</h3>

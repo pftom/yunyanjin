@@ -12,7 +12,7 @@ import commit4 from './img/commit-4.svg'
 class Commitments extends Component {
     render() {
         return (
-            <div className="container-fluid commitments">
+            <div className="container-fluid commitments" id="commitments">
                 <h3 className="sector-title text-center ">我们的承诺</h3>
                 <div className="row  slideanim">
                     <div className="col-sm-6 commit">

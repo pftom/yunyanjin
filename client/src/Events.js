@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import './css/Events.css';
 
-import Timeline from 'react-image-timeline';
+import Timeline from './TimeLine';
 require('react-image-timeline/dist/timeline.css');
 
 const events = [{
@@ -36,9 +36,10 @@ const events = [{
 class Events extends Component {
     render() {
         return (
-            <div className="event-box ">
+            <div className="event-box " id="events">
+                <h3 className="sector-title text-center">扶贫纪实</h3>
                 <div className="row slideanim">
-                <Timeline events={events} />
+                    <Timeline events={events} />
                 </div>
             </div>
         )
