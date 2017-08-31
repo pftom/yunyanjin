@@ -15,3 +15,10 @@ export const shopSingleApi = (id) => ({
   productAllBuyItem: `shop/products/${id}/items/`,
   productAddToCart: `shop/add-to-cart`
 });
+
+
+export const cartSingleApi = (id) => ({
+  allProducts: `cart/items/`,
+  updateSingleProduct: `cart/items/${id}/`,
+  deleteSingleProduct: `cart/items/${id}/`,
+});

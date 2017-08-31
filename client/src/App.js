@@ -111,11 +111,15 @@ class App extends Component {
             handleLogout={this.handleLogout}
           />
 
-          <ShopCart 
-            cartModalVisible={this.state.cartModalVisible}
-            hideCartModal={this.handleCancel}
-            history={this.props.history}
-          />
+          {
+            this.state.cartModalVisible && (
+              <ShopCart 
+                cartModalVisible={this.state.cartModalVisible}
+                hideCartModal={this.handleCancel}
+                history={this.props.history}
+              />
+            )
+          }
           
           <UserForm 
             loginModalVisible={this.state.loginModalVisible}
