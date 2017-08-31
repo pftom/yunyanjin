@@ -23,21 +23,21 @@ class Shops extends Component {
                   <div className="thumbnail">
                     <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/goods/1.jpg'} alt="good1" className="goodItem"/>
                     <p><strong>盐津乌骨鸡</strong></p>
-                    <p>一口忘忧</p>
+                    <p>集口味美、保健、药用于一体</p>
                   </div>
                 </div>
                 <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible', 2) }}>
                   <div className="thumbnail" >
                     <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/goods/2.jpg'} alt="good2" className="goodItem"/>
                     <p><strong>昭通天麻</strong></p>
-                    <p>纯天然酿造，不含任何化学物质</p>
+                    <p>畅销国内外的名贵中药</p>
                   </div>
                 </div>
                 <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible', 3) }}>
                   <div className="thumbnail">
                     <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/goods/3.jpg'} alt="good3" className="goodItem"/>
                     <p><strong>盐津干竹笋</strong></p>
-                    <p>没有最丑，只有更丑</p>
+                    <p>中国传统佳肴，原生态食品</p>
                   </div>
                 </div>
                 </div>
@@ -46,21 +46,21 @@ class Shops extends Component {
                   <div className="thumbnail">
                     <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/goods/4.jpg'} alt="good3" className="goodItem"/>
                     <p><strong>盐津乌骨鸡蛋</strong></p>
-                    <p>没有最丑，只有更丑</p>
+                    <p>上等滋补佳品</p>
                   </div>
                 </div>
                 <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible', 5) }}>
                   <div className="thumbnail">
                     <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/goods/5.jpg'} alt="good3" className="goodItem"/>
                     <p><strong>盐津农家蜂蜜</strong></p>
-                    <p>没有最丑，只有更丑</p>
+                    <p>盐津农户自产蜂蜜，原生态产品</p>
                   </div>
                 </div>
               <div className="good-item" onClick={() => { this.props.showGoodItemModal('goodsItemModalVisible', 6) }}>
                   <div className="thumbnail">
                     <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/goods/6.jpg'} alt="good3" className="goodItem"/>
                     <p><strong>苗岭碧芽茶叶</strong></p>
-                    <p>没有最丑，只有更丑</p>
+                    <p>名优绿茶和苦丁茶系列产品</p>
                   </div>
                 </div>
                 </div>
