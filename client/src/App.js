@@ -30,6 +30,9 @@ import Footer from './Footer';
 import ShopCart from './ShopCart';
 import Video from './Video';
 
+
+let currentGood = 1;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +54,13 @@ class App extends Component {
     });
   }
 
-  showModal = (type) => {
+  showModal = (type, goodId) => {
+
+    if (goodId) {
+      currentGood = goodId;
+    }
+
+
     this.setState({
       [type]: true,
     });
@@ -134,6 +143,7 @@ class App extends Component {
           {
             this.state.goodsItemModalVisible && (
               <GoodsDetail
+                currentGood={currentGood}
                 handleCancel={this.handleCancel}
                 goodsItemModalVisible={this.state.goodsItemModalVisible} 
               />

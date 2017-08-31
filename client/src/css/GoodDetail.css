@@ -57,6 +57,10 @@ tabs
     border: 1px solid #F40;
 }
 
+.ant-radio-button-wrapper:first-child:last-child {
+    border-radius: 0;
+}
+
 .ant-radio-button-wrapper-checked {
     color: #000;
     border: 1px solid #F40;

@@ -38,10 +38,11 @@ class GoodsDetail extends Component {
     componentDidMount = async () => {
       try {
         const token = await localStorage.getItem('token');
+        console.log('currentGood', this.props.currentGood);
         
-        const goodItemContent = await request.get(base + shopSingleApi(1).productDetail, null, token);
-        const goodItemImg = await request.get(base + shopSingleApi(1).productAllImg, null, token);
-        const goodAllBuyItem = await request.get(base + shopSingleApi(1).productAllBuyItem, null, token);
+        const goodItemContent = await request.get(base + shopSingleApi(this.props.currentGood).productDetail, null, token);
+        const goodItemImg = await request.get(base + shopSingleApi(this.props.currentGood).productAllImg, null, token);
+        const goodAllBuyItem = await request.get(base + shopSingleApi(this.props.currentGood).productAllBuyItem, null, token);
 
         console.log('goodItemContent', goodItemContent);
         console.log('goodItemImg', goodItemImg);
@@ -52,7 +53,7 @@ class GoodsDetail extends Component {
           goodItemImg,
           goodAllBuyItem,
           currentBuyItem: goodAllBuyItem[0],
-          norms: goodAllBuyItem[0].description,
+          norms: goodAllBuyItem[0].description || goodAllBuyItem[0].unit,
           currentPrice: goodAllBuyItem[0].price,
           alreadyLoaded: true,
         });
@@ -161,7 +162,7 @@ class GoodsDetail extends Component {
 
       let currentBuyItem = null;
       goodAllBuyItem.map(item => {
-        if (item.description === e.target.value) {
+        if (item.description || item.unit === e.target.value) {
           currentBuyItem = item;
         }
       })
@@ -250,7 +251,7 @@ class GoodsDetail extends Component {
                           <RadioGroup defaultValue={this.state.norms} onChange={this.handleNormsChange}>
                             {
                               this.state.goodAllBuyItem.map((item, key) => (
-                                <RadioButton key={key} value={item.description}>{item.description}</RadioButton>
+                                <RadioButton key={key} value={item.description || item.unit}>{item.description || item.unit}</RadioButton>
                               ))
                             }
                           </RadioGroup>
@@ -266,7 +267,7 @@ class GoodsDetail extends Component {
                             <a href="javascript:void(0);" className="yj-count" onClick={this.handleCountAdd}>
                               <Icon type="plus" style={{ color: '#3C3C3C', fontWeight: 'bold' }}/>
                             </a>
-                            &nbsp; {this.state.currentBuyItem.unit}(库存{this.state.currentBuyItem.stock}{this.state.currentBuyItem.unit})
+                            &nbsp; {this.state.currentBuyItem.unit}(库存{this.state.currentBuyItem.stock})
                           </span>
                         </div>
                         <div className="col-sm-6 add-to-cart-box">
