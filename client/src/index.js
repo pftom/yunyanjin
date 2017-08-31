@@ -15,7 +15,7 @@ import {
 
 
  const BasicApp = () => (
-     <Router>
+     <Router forceRefresh={true}>
         <div>
             <Route exact path="/" component={App} />
             <Route path="/register" component={Register} />

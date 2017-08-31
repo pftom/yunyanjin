@@ -35,7 +35,7 @@ class NavBar extends Component {
                     <li><a className="nav-operation" href="#commitments">我们的承诺</a> </li>
                     <li><a className="nav-operation" onClick={() => { this.props.showCartModal('cartModalVisible') }}><Icon type="shopping-cart" style={{ fontSize: 30, marginTop: -5 }} /></a> </li>
                     <li>
-                        <a href="nav-operation"> 
+                        <a href="nav-operation" href="#"> 
                             <Popover placement="bottom" content={this.renderSettingContent()}> 
                                 <Icon type="setting" style={{ fontSize: 30, marginTop: -5 }}/> 
                             </Popover> 
