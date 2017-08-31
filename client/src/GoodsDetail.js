@@ -21,6 +21,8 @@ class GoodsDetail extends Component {
 
         this.state = {
             current: 3,
+            count: '1',
+            norms: 'first'
         }
     }
 
@@ -68,6 +70,50 @@ class GoodsDetail extends Component {
         });
     }
 
+    handleCountChange = (event) => {
+      const text = event.target.value;
+      let cnt = 1;
+      if (Number(text) < 0 || isNaN(Number(text))) {
+        cnt = 1;
+      } else {
+        cnt = Number(text);
+      }
+
+      this.setState({
+        count: cnt,
+      });
+    }
+
+    handleCountAdd = () => {
+      let { count } = this.state;
+      count = Number(count);
+      count++;
+
+      this.setState({
+        count,
+      });
+    }
+
+    handleCountMinus = () => {
+      let { count } = this.state;
+      count = Number(count);
+      if (count > 0) {
+        count--;
+      }
+
+      this.setState({
+        count,
+      });
+    }
+
+    handleNormsChange = (e) => {
+      console.log(e.target.value);
+
+      this.setState({
+        norms: e.target.value,
+      });
+    }
+
     render() {
         return (
             <Modal
@@ -97,7 +143,17 @@ class GoodsDetail extends Component {
                   <div className="col-sm-6">
                     <div className="good-panel">
                       <h5>盐津乌骨鸡</h5>
-                      <p>一口忘忧</p>
+                      <p>
+                        一口忘忧
+                        <br />
+                        一口忘忧
+                        <br />
+                        一口忘忧
+                        <br />
+                        一口忘忧
+                        <br />
+                        一口忘忧
+                      </p>
 
                       <div className="iteminfo-price">
                         <span className="price">
@@ -110,7 +166,7 @@ class GoodsDetail extends Component {
                     
                     <div className="norms-box">
                       <span className="norms">生产规格：</span>
-                      <RadioGroup>
+                      <RadioGroup defaultValue={this.state.norms} onChange={this.handleNormsChange}>
                         <RadioButton value="first">500g/袋</RadioButton>
                         <RadioButton value="second">300g/袋</RadioButton>
                         <RadioButton value="third">100g/袋</RadioButton>
@@ -119,13 +175,26 @@ class GoodsDetail extends Component {
 
                     <div className="count-select-box">
                       <span className="norms count-select align-center">数量选择：</span>
-                      <Pagination simple defaultCurrent={1} total={50} />
+                      <span className="count-box">
+                        <a href="javascript:void(0);" className="yj-count" onClick={this.handleCountMinus}>
+                          <Icon type="minus" style={{ color: '#3C3C3C', fontWeight: 'bold' }} />
+                        </a>
+                        <input type="text" value={this.state.count} onChange={this.handleCountChange} />
+                        <a href="javascript:void(0);" className="yj-count" onClick={this.handleCountAdd}>
+                          <Icon type="plus" style={{ color: '#3C3C3C', fontWeight: 'bold' }}/>
+                        </a>
+                      </span>
                     </div>
                     <div className="col-sm-5">
-                      <button type="submit" onClick={this.openNotification} className="btn btn-success btn-block btn-goods-item">立即购买</button>
+                        <Button type="primary" className="btn-goods-item btn-goods-first-item">
+                          立即购买
+                        </Button>
                     </div>
                     <div className="col-sm-6">
-                    <button type="submit" className="btn btn-success btn-block btn-goods-item"> <Icon type="shopping-cart" style={{ fontSize: 20 }}/>  <span className="add-to-cart">加入购物车</span></button>
+                      <Button type="primary" className="btn-goods-item">
+                        <Icon type="shopping-cart" style={{ fontSize: 20 }} />
+                        加入购物车
+                      </Button>
                     </div>
                   </div>
                 </div>
