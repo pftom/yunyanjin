@@ -117,4 +117,23 @@ request.put = ( url, token, body, multiform ) => {
         })
 }
 
+request.delete = ( url, token ) => {
+  let options = null;
+
+  if (token) {
+    options = _.extend(header('DELETE', token));
+  }
+
+  console.log('url', url, options);
+  
+    return fetch(url, options)
+        .then(response => {
+          console.log('response', response);
+          if (response.status !== 204 || !response.ok) {
+            throw response.json();
+          }
+          return response.json();
+        })
+}
+
 export default request;

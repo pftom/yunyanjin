@@ -40,7 +40,11 @@ class ShopCart extends Component {
         }
     }
 
-    componentDidMount = async () => {
+    componentDidMount() {
+        this.getAllCart();
+    }
+
+    getAllCart = async () => {
 
         const { countEveryProductCount, allNoRepProducts, allNoRepProductsCount } = this.state;
         try {
@@ -99,7 +103,14 @@ class ShopCart extends Component {
         try {
             const token = await localStorage.getItem('token');
 
-            await request.delete()
+            console.log('token', token);
+            console.log('item', item);
+
+            await request.delete(base + cartSingleApi(item.item.id).deleteSingleProduct, token);
+
+            this.getAllCart();
+
+            this.success('删除商品成功！');
 
         } catch(err) {
             this.error('删除商品失败！请检查网络连接！');
@@ -154,7 +165,7 @@ class ShopCart extends Component {
                                                 </div>
                                                 <div className="col-sm-3 item-price text-left">
                                                     <span>￥{item.quantity * item.item.price}</span>
-                                                    <Icon type="close" className="item-price-close" onClick={(item) => { this.deleteCartItem(item) }}/>
+                                                    <Icon type="close" className="item-price-close" onClick={() => { this.deleteCartItem(item) }}/>
                                                 </div>
                                             </div>
                                         ))
