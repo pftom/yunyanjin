@@ -136,7 +136,7 @@ class ShopCart extends Component {
                                             <span>商品数量</span>
                                         </div>
                                         <div className="col-sm-3 text-left">
-                                            <span>价格</span>
+                                            <span>单价</span>
                                         </div>
                                     </div>
                                     {
