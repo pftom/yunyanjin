@@ -27,10 +27,22 @@ class ShopCart extends Component {
             allProducts: null,
             alreadyLoaded: false,
             totalPrice: 0,
+            allNoRepProducts: [],
+            allNoRepProductsCount: [],
+            countEveryProductCount: {
+                '1': 0,
+                '2': 0,
+                '3': 0,
+                '4': 0,
+                '5': 0,
+                '6': 0,
+            },
         }
     }
 
     componentDidMount = async () => {
+
+        const { countEveryProductCount, allNoRepProducts, allNoRepProductsCount } = this.state;
         try {
             const token = await localStorage.getItem('token');
             
@@ -41,11 +53,30 @@ class ShopCart extends Component {
 
             allProducts.map(item => {
                 totalPrice += Number(item.item.price);
+                countEveryProductCount[`${item.item.id}`]++;
             })
+            
+
+            Object.keys(countEveryProductCount).map(item => {
+                if (countEveryProductCount[item] > 0) {
+                    let flag = false;
+                    allProducts.map(goodItem => {
+                        if (!flag && goodItem.item.id === Number(item)) {
+                            allNoRepProducts.push(goodItem);
+                            allNoRepProductsCount.push(countEveryProductCount[item]);
+                            flag = true;
+                        }
+                    })
+                }
+            })
+
+            console.log('allNoRepProducts', allNoRepProducts, 'allNoRepProductsCount', allNoRepProductsCount);
 
             this.setState({
                 allProducts,
                 alreadyLoaded: true,
+                allNoRepProductsCount,
+                allNoRepProducts,
                 totalPrice,
             });
 
@@ -109,7 +140,7 @@ class ShopCart extends Component {
                                         </div>
                                     </div>
                                     {
-                                        this.state.allProducts.map((item, key) => (
+                                        this.state.allNoRepProducts.map((item, key) => (
                                             <div className="row cart-item-body" key={key}>
                                                 <div className="col-sm-5 ">
                                                     <img src={item.photo} alt="good1" /> 
@@ -119,7 +150,7 @@ class ShopCart extends Component {
                                                     <span>{item.item.unit}</span>
                                                 </div>
                                                 <div className="col-sm-2 text-center">
-                                                    <span className="item-count">{item.quantity}</span>
+                                                    <span className="item-count">{this.state.allNoRepProductsCount[key]}</span>
                                                 </div>
                                                 <div className="col-sm-3 item-price text-left">
                                                     <span>￥{item.quantity * item.item.price}</span>
