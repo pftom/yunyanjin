@@ -137,6 +137,7 @@
     height: 595.4px;
     padding-bottom: 0;
     margin-bottom: 0;
+    padding-right: -1px;
 }
 
 .check-out-box .ant-tabs-bar {
@@ -192,6 +193,10 @@
     display: flex;
     justify-content: center;
     margin-top: 60px;
+}
+
+.check-out-box-tab {
+    margin-right: -1px;
 }
 
 .good-item-modal {

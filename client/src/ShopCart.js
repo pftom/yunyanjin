@@ -177,6 +177,7 @@ class ShopCart extends Component {
                                 </div>
                                 <div className="col-sm-5 check-out-box">
                                     <h3 className="text-center">结 账</h3>
+                                    <div className="check-out-box-tab">
                                     <Tabs type="card">
                                         <TabPane tab="微信支付" key="1">
                                             <div className="row wechat_pay_box">
@@ -189,6 +190,7 @@ class ShopCart extends Component {
                                             </div>
                                         </TabPane>
                                     </Tabs>
+                                    </div>
                                 </div>
                             </div>
                         )
