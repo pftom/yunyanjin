@@ -14,10 +14,6 @@
   }
   
   
-  .sector-title {
-      color: #ff5542;
-      margin: 0 0 30px 0;
-  }
   
   .culutre-box {
       display: flex;
@@ -38,6 +34,22 @@
           display: block;
       }
   }
+
+  @media screen and (max-width: 445px) {
+    .culture .culutre-small-box {
+        margin-right: 0;
+    }
+
+    .culture .col-sm-7 {
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    .culutre-box {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
   
   /* .culture .culutre-box p {
       font-weight: 300;

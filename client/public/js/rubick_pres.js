@@ -71,6 +71,18 @@ $(document).ready(function(){
         
         rubik.checkResponsiveImage();
     } 
+    //add for response adapt
+
+    if(window_width < 768) {
+        console.log('should remove it');
+        $('.sy-box, #slider').html('<img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/mobile-background.jpg" class="responsive-img" />')
+    }
+
+    if(window_width <= 441) {
+        console.log('should remove it');
+
+        $('.responsive-mouse-box').html('')
+    }
     
     
     
@@ -108,7 +120,25 @@ $(window).resize(function(){
     if($(window).width() > 993 && !burger_menu){
         $('nav').removeClass('navbar-burger');
         rubik.misc.navbar_menu_visible = 1;
-        navbar_initialized = false;
+        navbar_initialized = false; 
+    }
+
+    if($(window).width() < 768) {
+        console.log('should remove it');
+        $('.sy-box').html('<img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/mobile-background.jpg" class="responsive-img" />')
+    }
+
+    //add for response adapt
+    if($(window).width() >= 768) {
+        console.log('should remove it');
+
+        $('.sy-box').html('<img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s1.jpg" class="responsive-img" />')
+    }
+
+    if($(window).width() <= 441) {
+        console.log('should remove it');
+
+        $('.responsive-mouse-box').html('')
     }
 });
 

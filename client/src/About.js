@@ -21,7 +21,7 @@ class About extends Component {
                 <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/video-cover.png'} alt="videoCover" className="video-cover"/>
               </div>
             </div>
-            <a href="#news" className="mouse-box-inverse">
+            <a href="#news" className="mouse-box-inverse responsive-mouse-box">
                 <div className="mouse">
                   <div className="wheel">
 

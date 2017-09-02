@@ -14,12 +14,49 @@
   }
   
   .header-body   .project-title  {
-    font-size: 4.6em;
+    font-size: 7.5rem;
     font-weight: normal;
     text-align: right;
     color: #FFF;
   }
   
+
+  @media screen and (max-width: 768px) {
+    .header-body   .project-title {
+        font-size: 4.5rem;
+    }
+
+    .header-body  .project-desc {
+        font-size: 1.5rem;
+        width: 100%;
+        
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .header-body   .project-title {
+        font-size: 4rem;
+    }
+
+    .header-body  .project-desc {
+        font-size: 1.3rem;
+        width: 100%;
+        
+    }
+}
+
+
+@media screen and (max-width: 330px) {
+    .header-body   .project-title {
+        font-size: 3.5rem;
+    }
+
+    .header-body  .project-desc {
+        font-size: 1.2rem;
+        width: 100%;
+        
+    }
+}
   
   .header-body .item > img {
       width: 100%;
