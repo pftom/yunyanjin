@@ -4,6 +4,39 @@
     height: 100%;
 }
 
+.header-body  .project-desc{
+    color: #FFF;
+    font-size: 2.5em;
+    color: white;
+    text-align: right;
+    font-weight: lighter;
+    margin-top: 15px;
+  }
+  
+  .header-body   .project-title  {
+    font-size: 4.6em;
+    font-weight: normal;
+    text-align: right;
+    color: #FFF;
+  }
+  
+  
+  .header-body .item > img {
+      width: 100%;
+  }
+  
+  .header-body {
+      background: linear-gradient(rgba(255, 84, 65, 0.30), rgba(255,85,66,0.6));
+      z-index: 3;
+      color: white;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0 60px;
+  }
+
 .mouse {
     height: 30px;
     width: 22px;

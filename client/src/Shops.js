@@ -4,6 +4,8 @@ import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
+import './css/Shop.css';
+
 
 
 import goods1 from './img/goods-1.png';

@@ -4,6 +4,8 @@ import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
+import './css/Footer.css';
+
 class Footer extends Component {
     render() {
         return (

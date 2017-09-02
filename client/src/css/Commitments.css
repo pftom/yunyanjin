@@ -1,0 +1,38 @@
+.commitments-title {
+    padding: 1rem 0 2rem 0;
+}
+
+
+
+.commitments {
+    padding: 7% 10%;
+    background-color: #FFF;
+}
+
+.commit {
+    padding: 30px;
+}
+
+.commitments img {
+    margin: 0 0 20px 0;
+}
+
+.commitments h4 {
+    font-size: 24px;
+}
+
+.commitments p {
+    color: #979797;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.commitments .commit-bottom {
+    padding-top: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+    .commitments .commit {
+        padding-top: 1rem;
+    }
+}

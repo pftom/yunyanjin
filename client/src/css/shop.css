@@ -1,99 +1,62 @@
-.shop-header {
-  position: relative;
-  text-align: center;
-  margin: 0 0 2% 0;
-  overflow: hidden;
+
+.goods {
+    background-color: #f6f6f6;
+    padding: 7rem 2rem 4rem 1.5rem;
 }
 
-.shop-header > .jumbotron {
-  background: none;
+.goods-title {
+    font-weight: 500;
+    padding: 4rem 0 0.2rem 0;
 }
 
-.jumbotron > * {
-  margin: 3%;
+.thumbnail {
+    padding: 0 0 2rem 0;
+    margin: 1rem 1rem;
 }
 
-.navbar-custom {
-  background: none;
-  border: none;
-  padding: 3%;
+.thumbnail img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
 }
 
-.nav-operation {
-  color: white;
-  font-size: large;
-  font-weight: 300;
+.goods p {
+    font-weight: lighter;
+    color: #9B9B9B;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.header-bg {
-  background-color: #F7F9FA;
-  width: 110%;
-  height: 110%;
-  position: absolute;
-  left: -5%;
-  top: -5%;
-  z-index: -1;
-  transition: -webkit-filter 0.2s ease, background-image 0.2s ease;
-  background: linear-gradient(223deg, #9ce8dd, #a993da, #F0CB54, #6D93A3);
-  background-size: 600% 600%;
-  -webkit-animation: bg-generator 50s ease infinite;
-  animation: bg-generator 50s ease infinite;
+.goods p strong {
+    color: #ff5542;
+    font-size: 1.2rem;
 }
 
-@keyframes bg-generator {
-  0% {background-position: 0% 84%;}
-  50% {background-position: 100% 17%;}
-  100% {background-position: 0% 84%;}
+.goods-box {
+    display: flex;
+    justify-content: center;
 }
 
-.goods-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2% 0;
+.good-item {
+    width: 23%;
+    display: inline-block;
+    margin: 0.5rem 0 0.5rem 1rem;
 }
 
-.goods-item:hover {
+.thumbnail {
+    border: none;
+}
+
+
+
+.good-item:hover {
+  -webkit-transform: scale(1.05);
   transform: scale(1.05);
   box-shadow: 0px 10px 25px rgba(0,0,0,0.1), 0px 2px 10px rgba(0,0,0,0.1);
-  transition: ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
   cursor: pointer;
 }
 
-.goods-item > img {
-  width: 200px;
-  height: 160px;
-  border-radius: 5%;
-}
-
-.goods-item > h3 {
-  font-size: medium;
-  font-weight: normal;
-}
-
-.price {
-  color: #d0021b;
-  font-size: large;
-  font-weight: bold;
-}
-
-footer {
-  color: white;
-  background-color: #FF9488;
-  padding: 20px;
-}
-
-/* Styles for item modal. */
-.modal-dialog {
-  width: 70%;
-}
-
-.modal-header, .close {
-  text-align: center;
-  padding: 2rem;;
-}
-
-.close {
-  width: 10%;
-  height: 10%;
-}
+/* .good-item p {
+    width: 30%;
+} */

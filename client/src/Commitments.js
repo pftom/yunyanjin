@@ -4,6 +4,8 @@ import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
+import './css/Commitments.css';
+
 import commit1 from './img/commit-1.svg'
 import commit2 from './img/commit-2.svg'
 import commit3 from './img/commit-3.svg'
