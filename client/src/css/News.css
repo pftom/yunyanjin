@@ -2,8 +2,53 @@
 
 .map-box {
     padding: 6rem 3rem;
-    background-color: #f6f6f6
+    background-color: #f6f6f6;
 }
+
+
+@media screen and (max-width: 445px) { 
+    .news-box {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .news-box .col-sm-5 {
+        margin: 10px;
+    }
+
+    .news-box .col-sm-7 {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 361px) { 
+
+    .map-box {
+        padding: 1rem 2rem;
+    }
+
+    .news-box {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    
+        .map-box     {
+            padding: 1.5rem 2rem;
+        }
+
+        .news-box .col-sm-5 {
+            margin: 0;
+        }
+
+        .news-box .col-sm-7 {
+            margin-top: 10px;
+        }
+}
+
 
 
 .map {

@@ -47,6 +47,43 @@ body {
     }
 }
 
+@media screen and (max-width: 414px) {
+    .sector-title {
+        font-size: 1.5rem;
+        margin: 0 0 7px 0;
+    }
+
+    .unify-main-page {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    .sector-title {
+        font-size: 1.5rem;
+        margin: 0 0 7px 0;
+    }
+
+    .unify-main-page {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+
+    .sector-title {
+        font-size: 1.2rem;
+        margin: 0 0 7px 0;
+    }
+
+    .unify-main-page {
+        font-size: 0.5rem;
+        line-height: 2rem;
+    }
+}
+
+
 
 
 

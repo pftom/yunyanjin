@@ -12,7 +12,7 @@ class News extends Component {
     render() {
         return (
             <div id="news" className="container-fluid culture map-box">
-              <div className="row culutre-box slideanim">
+              <div className="row culutre-box news-box slideanim">
                 <div className="col-sm-5 ">
                   <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/map.png'} alt="map" className="map"/>
                 </div>

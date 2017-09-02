@@ -81,7 +81,9 @@ $(document).ready(function(){
     if(window_width <= 441) {
         console.log('should remove it');
 
-        $('.responsive-mouse-box').html('')
+        $('.responsive-mouse-box').html('');
+        $('.mouse-box').html('');
+        $('.mouse-box-inverse').html('');
     }
     
     
