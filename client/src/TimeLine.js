@@ -122,7 +122,7 @@ var DefaultTextBody = function () {
             null,
             _react2['default'].createElement(
                 'p',
-                null,
+                { className: 'unify-main-page' },
                 text
             )
         );
