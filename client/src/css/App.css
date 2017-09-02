@@ -1,173 +1,11 @@
 @import './moda-video.scss';
 
-.navbar-default .navbar-nav>li>a {
-    color: #FFF;
-}
-
-.navbar-default .navbar-toggle {
-    border: none;
-}
-
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-    background: none;
-}
-
-.navbar-default .navbar-toggle .icon-bar:focus, .navbar-default .navbar-toggle .icon-bar:hover {
-    color: #FFF;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #FFF;
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 
-.navbar {
-    background-color: rgba(255, 255, 255, 0.9); 
-    -webkit-backdrop-filter: blur(20px);
-}
-
-.navbar-transparent {
-    background-color: transparent;
-}
-
-.nav-operation {
-  color: white;
-  font-size: large;
-  font-weight: 350;
-}
-
-
-/*
-
-    login button
-*/
-
-
-
-@media (min-width: 768px) {
-    .navbar>.container .navbar-brand {
-        margin-left: -70px;
-    }
-}
-
-.navbar>.container .navbar-brand {
-    margin-left: 0px;
-}
-
-#login-button {
-    padding: 6px 16px;
-    top: 1.5px;
-}
-
-.navbar-transparent #login-button {
-    border: 1px solid #FFF;
-    border-radius: 100px;
-}
-
-
-.nav .navbar-nav li a:hover, .nav .navbar-nav li.active a {
-    background-color: transparent;
-}
-
-@media screen and (max-width: 991px) {
-    #login-button {
-        padding: 6px 16px;
-        border: 1px solid #FFF;
-        border-radius: 100px;
-        top: 1.5px;
-        left: 24px;;
-    }
-}
-
-svg path {
-    fill: transparent;
-}
-
-.logo {
-    margin-top: -15px;
-}
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
-}
-
-.navbar-nav li a img:hover, .navbar-nav li.active a img {
-    color: #f4511e !important;
-}
-
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-}
-
-.navbar-transparent .navbar-nav > li > a:not(.btn), [class*="navbar-ct"] .navbar-nav > li > a:not(.btn) {
-    font-size: 22px;
-}
-
-.navbar-default .navbar-nav > li > a:not(.btn) {
-    font-size: 19px;
-}
-
-.culture {
-  background-color: #FFF;
-  padding: 6rem 4rem;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.sector-title {
-    color: #ff5542;
-    margin: 0 0 30px 0;
-}
-
-.culutre-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.culture .culutre-small-box {
-    margin-right: 50px;
-}
-
-.culture .col-sm-7 {
-    margin-right: 50px;
-}
-
-@media screen and (max-width: 768px) {
-    .culutre-box {
-        display: block;
-    }
-}
-
-.culture .culutre-box p {
-    font-weight: 300;
-    color: #787878;
-}
-
- .culture .culutre-box h3 {
-    font-weight: 500;
-} 
-
-
-.map-box {
-    padding: 6rem 3rem;
-    background-color: #f6f6f6
-}
-
-
-.video-cover {
-  max-width: 100%;
-  border-radius: 1rem;
-}
-
-.jumbotron {
-    color: #fff;
-    padding: 100px 25px;
-}
 @media screen and (max-width: 768px) {
     .col-sm-5 {
         text-align: center;
@@ -184,10 +22,6 @@ svg path {
 
 
 
-.map {
-    max-width: 100%;
-    border-radius: 1rem;
-}
 
 
 

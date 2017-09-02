@@ -1,4 +1,52 @@
 
+.video-cover {
+    max-width: 100%;
+    border-radius: 1rem;
+  }
+
+.culture {
+    background-color: #FFF;
+    padding: 6rem 4rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .sector-title {
+      color: #ff5542;
+      margin: 0 0 30px 0;
+  }
+  
+  .culutre-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .culture .culutre-small-box {
+      margin-right: 50px;
+  }
+  
+  .culture .col-sm-7 {
+      margin-right: 50px;
+  }
+  
+  @media screen and (max-width: 768px) {
+      .culutre-box {
+          display: block;
+      }
+  }
+  
+  .culture .culutre-box p {
+      font-weight: 300;
+      color: #787878;
+  }
+  
+   .culture .culutre-box h3 {
+      font-weight: 500;
+  }
 
 .box-img-shadow img {
     position: relative;

@@ -4,6 +4,8 @@ import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
+import './css/News.css';
+
 import map from './img/map.jpg';
 
 class News extends Component {
