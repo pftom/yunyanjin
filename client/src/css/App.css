@@ -83,6 +83,12 @@ body {
     }
 }
 
+@media all and (max-width: 600px) { 
+    .ant-modal-close-x:before {
+        margin-bottom: 30px;
+    }
+}
+
 
 
 

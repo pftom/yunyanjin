@@ -564,6 +564,7 @@ body > .navbar-collapse a {
 .navbar-toggle .icon-bar {
   background-color: #FFFFFF;
 }
+
 .navbar-toggle .navbar-collapse,
 .navbar-toggle .navbar-form {
   border-color: transparent;
@@ -1062,7 +1063,10 @@ body > .navbar-collapse.has-image::after {
   margin-bottom: 8px;
   width: 40px;
   height: 40px;
+
 }
+
+
 .navbar-burger .bar1,
 .navbar-burger .bar2,
 .navbar-burger .bar3 {

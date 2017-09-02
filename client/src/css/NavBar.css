@@ -15,8 +15,12 @@
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #FFF;
+    background-color: #000;
 }
+
+.navbar-transparent .navbar-toggle .icon-bar {
+    background-color: #FFFFFF;
+  }
 
 
 .navbar {
@@ -79,6 +83,17 @@
 
 svg path {
     fill: transparent;
+}
+
+@media screen and (max-width: 414px) { 
+    svg {
+        height: 40px;
+        width: 53px;
+    }
+
+    .navbar>.container .navbar-brand {
+        margin-left: 15px;
+    }
 }
 
 .logo {

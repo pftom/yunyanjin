@@ -82,7 +82,6 @@ $(document).ready(function(){
         console.log('should remove it');
 
         $('.responsive-mouse-box').html('');
-        $('.mouse-box').html('');
         $('.mouse-box-inverse').html('');
     }
     

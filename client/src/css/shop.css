@@ -16,7 +16,7 @@
 
 .thumbnail img {
     width: 100%;
-    height: 150px;
+    height: 16rem;
     margin-bottom: 20px;
 }
 
@@ -41,6 +41,14 @@
     width: 23%;
     display: inline-block;
     margin: 0.5rem 0 0.5rem 1rem;
+}
+
+@media all and (max-width: 600px) {
+    .good-item {
+        width: 80%;
+        display: inline-block;
+        margin: 0.5rem 0 0.5rem 0;
+    }
 }
 
 .thumbnail {
