@@ -94,6 +94,10 @@ svg path {
     .navbar>.container .navbar-brand {
         margin-left: 15px;
     }
+
+    .navbar-collapse .navbar-nav li .nav-operation{
+        margin: 5px 3px;
+    }
 }
 
 .logo {

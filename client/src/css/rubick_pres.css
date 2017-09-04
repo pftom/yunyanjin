@@ -30,9 +30,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .tagsinput .tag,
 .tagsinput-remove-link,
 .filter,
-.btn-hover,
-[data-toggle="collapse"] i,
-body > .navbar-collapse a {
+.btn-hover {
   -webkit-transition: all 150ms linear;
   -moz-transition: all 150ms linear;
   -o-transition: all 150ms linear;
@@ -41,8 +39,8 @@ body > .navbar-collapse a {
 }
 
 .btn-morphing .fa,
-.btn-morphing .circle,
-.gsdk-collapse {
+.btn-morphing .circle
+ {
   -webkit-transition: all 370ms linear;
   -moz-transition: all 370ms linear;
   -o-transition: all 370ms linear;
@@ -935,7 +933,7 @@ body {
   position: relative;
 }
 
-body > .navbar-collapse {
+/* body > .navbar-collapse {
   position: fixed;
   display: block;
   top: 0;
@@ -1015,7 +1013,7 @@ body > .navbar-collapse.has-image::after {
   display: block;
   content: "";
   z-index: 1;
-}
+} */
 
 .wrapper {
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -1380,15 +1378,15 @@ body > .navbar-collapse.has-image::after {
     margin-left: 0;
   }
 
-  .nav-open .navbar-collapse {
+  /* .nav-open .navbar-collapse {
     -webkit-transform: translate3d(0px, 0, 0);
     -moz-transform: translate3d(0px, 0, 0);
     -o-transform: translate3d(0px, 0, 0);
     -ms-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0);
-  }
+  } */
 
-  .nav-open .navbar .container {
+  /* .nav-open .navbar .container {
     -webkit-transform: translate3d(-200px, 0, 0);
     -moz-transform: translate3d(-200px, 0, 0);
     -o-transform: translate3d(-200px, 0, 0);
@@ -1402,9 +1400,9 @@ body > .navbar-collapse.has-image::after {
     -o-transform: translate3d(-150px, 0, 0);
     -ms-transform: translate3d(-150px, 0, 0);
     transform: translate3d(-150px, 0, 0);
-  }
+  } */
 
-  .navbar-burger .container {
+  /* .navbar-burger .container {
     padding: 0 15px;
   }
   .navbar-burger .navbar-header {
@@ -1413,19 +1411,19 @@ body > .navbar-collapse.has-image::after {
   .navbar-burger .navbar-toggle {
     display: block;
     margin-right: 0;
-  }
-  .navbar-burger.navbar .navbar-collapse.collapse, .navbar-burger.navbar .navbar-collapse.collapse.in, .navbar-burger.navbar .navbar-collapse.collapsing {
+  } */
+  /* .navbar-burger.navbar .navbar-collapse.collapse, .navbar-burger.navbar .navbar-collapse.collapse.in, .navbar-burger.navbar .navbar-collapse.collapsing {
     display: none !important;
-  }
+  } */
 
-  body > .navbar-collapse .navbar-nav,
+  /* body > .navbar-collapse .navbar-nav,
   body > .navbar-collapse .navbar-nav > li {
     float: none;
   }
   body > .navbar-collapse .navbar-nav > li {
     float: none;
-  }
-}
+  }*/
+} 
 /*          Changes for small display      */
 @media (max-width: 767px) {
   .navbar-transparent {
@@ -1437,41 +1435,41 @@ body > .navbar-collapse.has-image::after {
     right: 230px;
   }
 
-  body > .navbar-collapse {
+  /* body > .navbar-collapse {
     width: 230px;
     -webkit-transform: translate3d(230px, 0, 0);
     -moz-transform: translate3d(230px, 0, 0);
     -o-transform: translate3d(230px, 0, 0);
     -ms-transform: translate3d(230px, 0, 0);
     transform: translate3d(230px, 0, 0);
-  }
+  } */
 
-  .navbar .navbar-collapse.collapse,
+  /* .navbar .navbar-collapse.collapse,
   .navbar .navbar-collapse.collapse.in,
   .navbar .navbar-collapse.collapsing {
     display: none !important;
-  }
+  } */
 
   .navbar .container {
     left: 0;
   }
 
-  .nav-open .navbar-collapse {
+  /* .nav-open .navbar-collapse {
     -webkit-transform: translate3d(0px, 0, 0);
     -moz-transform: translate3d(0px, 0, 0);
     -o-transform: translate3d(0px, 0, 0);
     -ms-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0);
-  }
+  } */
 
-  .nav-open .wrapper {
+  /* .nav-open .wrapper {
     left: 0;
     -webkit-transform: translate3d(-115px, 0, 0);
     -moz-transform: translate3d(-115px, 0, 0);
     -o-transform: translate3d(-115px, 0, 0);
     -ms-transform: translate3d(-115px, 0, 0);
     transform: translate3d(-115px, 0, 0);
-  }
+  } */
 
   .navbar-nav {
     margin: 1px -15px;
@@ -3689,13 +3687,13 @@ body.noscroll {
     line-height: 1.11111111;
   }
 
-  .nav-open .navbar .container {
+  /* .nav-open .navbar .container {
     -webkit-transform: translate3d(-230px, 0, 0);
     -moz-transform: translate3d(-230px, 0, 0);
     -o-transform: translate3d(-230px, 0, 0);
     -ms-transform: translate3d(-230px, 0, 0);
     transform: translate3d(-230px, 0, 0);
-  }
+  } */
 
   .navbar-transparent {
     background-color: transparent;

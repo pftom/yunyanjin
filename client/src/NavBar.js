@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
-import './css/rubick_pres.css';
 
 import './css/modal.css';
 
@@ -12,8 +11,18 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { Icon, Popover } from 'antd';
 
+const width = window.innerWidth;
 
 class NavBar extends Component {
+
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            width: 0
+        };
+    }
 
     renderSettingContent = () => (
         <div className="setting-popover-box">
@@ -22,42 +31,101 @@ class NavBar extends Component {
         </div>
     )
 
+    renderNavBar = (changePasswdNav, logoutNav, cartNav, loginRegisterNav, settingNav) => (
+        <ul className="nav navbar-nav navbar-right" style={{ paddingRight: '-70px'}}>
+            <li><a className="nav-operation" href="#about">我们的文化</a></li>
+            <li><a className="nav-operation" href="#news">盐津简介</a></li>
+            <li><a className="nav-operation" href="#events">扶贫纪实</a></li>
+            <li><a className="nav-operation" href="#shop">商品展示</a> </li>
+            <li><a className="nav-operation" href="#commitments">我们的承诺</a> </li>
+            {cartNav}
+            {settingNav}
+            {changePasswdNav}
+            {logoutNav}
+            {loginRegisterNav}
+        </ul>
+    )
+
     render() {
 
-        let renderLogin = null;
-        if (this.props.isLoggedIn) {
-            renderLogin = (
-                <ul className="nav navbar-nav navbar-right" style={{ paddingRight: '-70px'}}>
-                    <li><a className="nav-operation" href="#about">我们的文化</a></li>
-                    <li><a className="nav-operation" href="#news">盐津简介</a></li>
-                    <li><a className="nav-operation" href="#events">扶贫纪实</a></li>
-                    <li><a className="nav-operation" href="#shop">商品展示</a> </li>
-                    <li><a className="nav-operation" href="#commitments">我们的承诺</a> </li>
-                    <li><a className="nav-operation" onClick={() => { this.props.showCartModal('cartModalVisible') }}><Icon type="shopping-cart" style={{ fontSize: 30, marginTop: -5 }} /></a> </li>
-                    <li>
-                        <a href="nav-operation" href="#"> 
-                            <Popover placement="bottom" content={this.renderSettingContent()}> 
-                                <Icon type="setting" style={{ fontSize: 30, marginTop: -5 }}/> 
-                            </Popover> 
+        const cartNav = (
+            <li className="navbar-shopcart">
+                <a className="nav-operation" onClick={() => { this.props.showCartModal('cartModalVisible') }}>
+                    {
+                        width <= 760
+                        ? (
+                            '购物车'
+                        )
+                        : (
+                            <Icon type="shopping-cart" style={{ fontSize: 30, marginTop: -5 }} />
+                        )
+                    }
+                </a> 
+            </li>
+        );
+
+        const changePasswdNav = (
+            <li><Link className="nav-operation" href="javascript:void(0);" to="/change_password">修改密码</Link> </li>
+        );
+
+        const logoutNav = (
+            <li><a href="javascript:void(0);" onClick={this.props.handleLogout}>退出登录</a> </li>
+        );
+
+        const loginRegisterNav = (
+            <li>
+                {
+                    width <= 760
+                    ? (
+                        <a className="nav-operation" onClick={() => { this.props.showLoginModal('loginModalVisible') }}>
+                            登录/注册
                         </a>
-                    </li>
-                    </ul>
-            )
-        } else {
-            renderLogin = (
-                <ul className="nav navbar-nav navbar-right" style={{ paddingRight: '-70px'}}>
-                    <li><a className="nav-operation" href="#about">我们的文化</a></li>
-                    <li><a className="nav-operation" href="#news">盐津简介</a></li>
-                    <li><a className="nav-operation" href="#events">扶贫纪实</a></li>
-                    <li><a className="nav-operation" href="#shop">商品展示</a> </li>
-                    <li><a className="nav-operation" href="#commitments">我们的承诺</a> </li>
-                    <li>
+                    )
+                    : (
                         <a className="nav-operation" id="login-button" onClick={() => { this.props.showLoginModal('loginModalVisible') }}>
                             <span className="glyphicon glyphicon-log-in"></span> 登录/注册
                         </a>
-                    </li>
-                  </ul>
-            )
+                    )
+                }
+            </li>
+        );
+
+        const settingNav = (
+            <li className="navbar-setting">
+                <a href="nav-operation" href="#"> 
+                    <Popover placement="bottom" content={this.renderSettingContent()}> 
+                        <Icon type="setting" style={{ fontSize: 30, marginTop: -5 }}/> 
+                    </Popover> 
+                </a>
+            </li>
+        );
+        
+
+        let renderLogin = null;
+        if (this.props.isLoggedIn) {
+            if (width <= 760) {
+                renderLogin = this.renderNavBar(
+                    changePasswdNav,
+                    logoutNav,
+                    cartNav
+                );
+            } else {
+                renderLogin = this.renderNavBar(
+                    null,
+                    null,
+                    cartNav,
+                    null,
+                    settingNav
+                );
+            }
+        } else {
+                renderLogin = this.renderNavBar(
+                    null,
+                    null,
+                    null,
+                    loginRegisterNav,
+                    null,
+                );
         }
 
         return (

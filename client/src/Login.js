@@ -1,8 +1,5 @@
 
 import React, { Component } from 'react';
-// import './css/rubick_pres.css';
-// import './css/App.css';
-// import './css/modal.css';
 
 
 import 'antd/dist/antd.css';

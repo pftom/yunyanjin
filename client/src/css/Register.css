@@ -73,6 +73,35 @@
     font-size: 14px;
 }
 
+@media screen and (max-width: 768px) {
+    .il_footer {
+        padding: 24px 100px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .il_footer .project-name {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .register-box-row {
+        width: 100%;
+    }
+
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .register-box-row h4 {
+        margin-bottom: 50px;
+    }
+
+}
+
 .project-name {
     color: #0e2026;
     margin-right: 100px;
