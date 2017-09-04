@@ -1,4 +1,3 @@
-
 .declaration {
     font-family: Montserrat, sans-serif;
     color: white;
@@ -8,17 +7,17 @@
 
 footer {
     background-color: rgba(255,85,66,0.8);
-    padding: 50px 0;
-  }
-  
-  footer .footer-title {
-      color: #FFF;
-      font-size: 2.5rem;
-  }
-  
-  footer a {
-      color: #337ab7;
-  }
+    padding: 2rem 0 3.5rem 0;
+}
+
+footer .footer-title {
+    color: #FFF;
+    font-size: 2rem;
+}
+
+footer a {
+    color: #337ab7;
+}
 
 
 footer a {

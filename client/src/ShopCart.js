@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Link, Redirect } from 'react-router-dom';
+
 import './css/ShopCart.css'
 
 import {  base, cartSingleApi } from './config/config';
@@ -8,15 +8,10 @@ import request from './config/request';
 
 import wechat from './img/wechat_pay.png';
 
-import goods1 from './img/goods-1.png';
-import goods2 from './img/goods-2.png';
-import goods3 from './img/goods-3.png';
-import goods4 from './img/goods-4.png';
-
-import { Modal, Button, Tabs, Form, Icon, Input, Checkbox, message, Spin } from 'antd';
+import { Modal, Button, Tabs, Icon, message, Spin } from 'antd';
 
 const TabPane = Tabs.TabPane;
-const FormItem = Form.Item;
+
 
 class ShopCart extends Component {
 
@@ -49,7 +44,7 @@ class ShopCart extends Component {
         const { countEveryProductCount, allNoRepProducts, allNoRepProductsCount } = this.state;
         try {
             const token = await localStorage.getItem('token');
-            
+
             const allProducts = await request.get(base + cartSingleApi().allProducts, null, token);
 
             console.log('allProducts', allProducts);
@@ -58,8 +53,9 @@ class ShopCart extends Component {
             allProducts.map(item => {
                 totalPrice += Number(item.item.price);
                 countEveryProductCount[`${item.item.id}`]++;
+                return item;
             })
-            
+
 
             Object.keys(countEveryProductCount).map(item => {
                 if (countEveryProductCount[item] > 0) {
@@ -70,8 +66,11 @@ class ShopCart extends Component {
                             allNoRepProductsCount.push(countEveryProductCount[item]);
                             flag = true;
                         }
+                        return goodItem;
                     })
                 }
+
+                return item;
             })
 
             console.log('allNoRepProducts', allNoRepProducts, 'allNoRepProductsCount', allNoRepProductsCount);
@@ -128,7 +127,7 @@ class ShopCart extends Component {
                 className="shop-cart-container"
             >
                 {
-                    this.state.alreadyLoaded 
+                    this.state.alreadyLoaded
                     ? (
                         this.state.allProducts && (
                             <div className="container-fluid shop-cart">
@@ -139,7 +138,7 @@ class ShopCart extends Component {
                                     <div className="row cart-item-header cart-item-body">
                                         <div className="col-sm-5 ">
                                             <span>商品名称</span>
-                                        </div>  
+                                        </div>
                                         <div className="col-sm-2 text-center">
                                             <span>商品规格</span>
                                         </div>
@@ -154,11 +153,11 @@ class ShopCart extends Component {
                                         this.state.allNoRepProducts.map((item, key) => (
                                             <div className="row cart-item-body min-screen-body" key={key}>
                                                 <div className="col-sm-5 ">
-                                                    <img src={item.photo} alt="good1" /> 
+                                                    <img src={item.photo} alt="good1" />
                                                     {
                                                         window.innerWidth >= 761 && (<span className="good-img-title">{item.item.description}</span>)
                                                     }
-                                                </div>  
+                                                </div>
                                                 <div className="col-sm-2 text-center">
                                                     <span>{item.item.unit}</span>
                                                 </div>

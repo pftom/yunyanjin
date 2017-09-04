@@ -1,20 +1,16 @@
-
 import React, { Component } from 'react';
-
 
 import 'antd/dist/antd.css';
 import './css/Login.css';
 
-import { Link, Redirect } from 'react-router-dom';
-import UserForm from './UserForm';
+import { Link } from 'react-router-dom';
 
 import {  base, userApi } from './config/config';
 import request from './config/request';
 
-import { Modal, Button, Tabs, Form, Icon, Input, Checkbox, message } from 'antd';
-const TabPane = Tabs.TabPane;
-const FormItem = Form.Item;
+import { Button, Form, Icon, Input, Checkbox, message } from 'antd';
 
+const FormItem = Form.Item;
 
 
 class Login extends Component {
@@ -27,7 +23,7 @@ class Login extends Component {
         }
     }
 
-    
+
 
 
     handleSubmit = (e) => {
@@ -37,21 +33,21 @@ class Login extends Component {
                 console.log('Received values of form: ', values);
 
                 const { username, password } = values;
-                
+
                 const body = {
                     username,
                     password,
                 };
-    
+
                 try {
                     const { token } = await request.post(base + userApi.login, body);
-    
+
                     await localStorage.setItem('token', token);
 
                     this.success('登录成功！');
 
                     this.props.handleLogin()
-                    
+
                     setTimeout(() => {
                         this.props.hideLoginModal('loginModalVisible');
                     }, 2000);
@@ -59,7 +55,7 @@ class Login extends Component {
                     const location = {
                         pathname: '/',
                     };
-    
+
                     this.props.history.push(location);
                 } catch(e) {
                     this.error('登录失败！');

@@ -4,20 +4,7 @@ import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
-
-
-
-import carousel1 from './img/carousel-1.jpg';
-import carousel2 from './img/carousel-2.jpg';
-import carousel3 from './img/carousel-3.jpg';
-
-
-import logo from './img/logo.svg';
-
-import login from './img/login.svg'
-import closeIcon from './img/close.svg';
-
-//import Login component 
+//import Login component
 import UserForm from './UserForm';
 import NavBar from './NavBar';
 import HeaderBody from './HeaderBody';
@@ -94,7 +81,7 @@ class App extends Component {
       });
     }
   }
-  
+
 
   changeRadio = (e) => {
     console.log(`radio checked: ${e.target.value}`)
@@ -105,13 +92,13 @@ class App extends Component {
 
     return (
       <div>
-          <ul id="slider" style={{ zIndex: -1, position: 'absolute', listStyle: 'none', width: '100%', height: '100%', padding: 0, margin: 0 }} className="hde">	
-                  <li><img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s1.jpg" /></li>
-                  <li><img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s2.jpg" /></li>
-                  <li><img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s3.jpg" /></li>
-                  
+          <ul id="slider" style={{ zIndex: -1, position: 'absolute', listStyle: 'none', width: '100%', height: '100%', padding: 0, margin: 0 }} className="hde">
+                  <li><img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s1.jpg" alt="background-image1"/></li>
+                  <li><img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s2.jpg" alt="background-image2"/></li>
+                  <li><img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s3.jpg" alt="background-image3"/></li>
+
               </ul>
-          <NavBar 
+          <NavBar
             isLoggedIn={this.state.isLoggedIn}
             showLoginModal={this.showModal}
             showCartModal={this.showModal}
@@ -120,15 +107,15 @@ class App extends Component {
 
           {
             this.state.cartModalVisible && (
-              <ShopCart 
+              <ShopCart
                 cartModalVisible={this.state.cartModalVisible}
                 hideCartModal={this.handleCancel}
                 history={this.props.history}
               />
             )
           }
-          
-          <UserForm 
+
+          <UserForm
             loginModalVisible={this.state.loginModalVisible}
             handleLogin={this.handleLogin}
             hideLoginModal={this.handleCancel}
@@ -136,18 +123,18 @@ class App extends Component {
           />
 
           <HeaderBody />
-          
+
           <About
             videoModalVisible={this.state.videoModalVisible}
             handlePlayVideo={this.showModal}
             handleCancelVideo={this.handleCancel}
            />
 
-          <Video 
+          <Video
             videoModalVisible={this.state.videoModalVisible}
-            handleCancel={this.handleCancel} 
+            handleCancel={this.handleCancel}
           />
-          
+
           <News />
 
           <Events />
@@ -161,15 +148,15 @@ class App extends Component {
               <GoodsDetail
                 currentGood={currentGood}
                 handleCancel={this.handleCancel}
-                goodsItemModalVisible={this.state.goodsItemModalVisible} 
+                goodsItemModalVisible={this.state.goodsItemModalVisible}
               />
             )
           }
-          
+
           <Commitments />
-          
+
           <Footer />
-          
+
       </div>
     );
   }

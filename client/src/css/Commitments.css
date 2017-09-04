@@ -1,12 +1,17 @@
-.commitments-title {
-    padding: 1rem 0 2rem 0;
-}
-
-
-
 .commitments {
     padding: 7% 10%;
     background-color: #FFF;
+}
+
+@media screen and (max-width: 768px) {
+    .commitments {
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+}
+
+.commitments-title {
+    padding: 1rem 0 2rem 0;
 }
 
 .commit {
@@ -18,13 +23,13 @@
 }
 
 .commitments h4 {
-    font-size: 24px;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
 .commitments p {
     color: #979797;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: lighter;
 }
 
@@ -35,5 +40,9 @@
 @media screen and (max-width: 768px) {
     .commitments .commit {
         padding-top: 1rem;
+    }
+
+    .commitments p {
+        font-size: 1rem;
     }
 }

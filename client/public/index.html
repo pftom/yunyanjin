@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 
     <link rel="stylesheet" href="%PUBLIC_URL%/css/slippry.css" />
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/css/modal-video.min.css">
     <link href='http://cdn.webfont.youziku.com/webfonts/nomal/107408/45803/59a7f1e6f629d80600cb0024.css' rel='stylesheet' type='text/css' />
@@ -73,7 +73,7 @@
             // Add hash (#) to URL when done scrolling (default click behavior)
             window.location.hash = hash;
             });
-          } // End if 
+          } // End if
         });
 
         $(window).scroll(function() {
@@ -81,11 +81,24 @@
           var pos = $(this).offset().top;
 
           var winTop = $(window).scrollTop();
-            if (pos < winTop + 600) {
+            if ($(window).width() > 768 &&  pos < winTop + 600) {
               $(this).addClass("slide");
             }
         });
       });
+      })
+
+
+      $('.navbar-toggle').on('click', function (e) {
+        e.preventDefault();
+          console.log(e);
+          isCollapsed = $('.navbar-toggle').hasClass('toggled') ? true : false;
+
+          alert('You have click');
+
+          if (isCollapsed) {
+              $('nav').removeClass('navbar-transparent');
+          }
       })
 
 </script>
@@ -102,7 +115,7 @@
 					 autoHover: false
 				});
       });
-      
+
       $(".js-modal-btn").modalVideo();
         </script>
   </body>

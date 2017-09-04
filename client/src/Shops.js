@@ -3,14 +3,7 @@ import 'antd/dist/antd.css';
 import './css/App.css';
 import './css/modal.css';
 
-import './css/Shop.css';
-
-
-
-import goods1 from './img/goods-1.png';
-import goods2 from './img/goods-2.png';
-import goods3 from './img/goods-3.png';
-import goods4 from './img/goods-4.png';
+import './css/shop.css';
 
 class Shops extends Component {
 

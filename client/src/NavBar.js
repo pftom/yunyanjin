@@ -7,7 +7,7 @@ import './css/modal.css';
 import './css/NavBar.css';
 import './css/App.css';
 
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Icon, Popover } from 'antd';
 
@@ -27,7 +27,7 @@ class NavBar extends Component {
     renderSettingContent = () => (
         <div className="setting-popover-box">
             <div className="setting-popover-box-item1"><Link to="/change_password" className="nav-operation" href="">修改密码</Link></div>
-            <div className="setting-popover-box-item2"><a href="javascript:void(0);" onClick={this.props.handleLogout}>退出登录</a></div>
+            <div className="setting-popover-box-item2"><a onClick={this.props.handleLogout}>退出登录</a></div>
         </div>
     )
 
@@ -60,16 +60,16 @@ class NavBar extends Component {
                             <Icon type="shopping-cart" style={{ fontSize: 30, marginTop: -5 }} />
                         )
                     }
-                </a> 
+                </a>
             </li>
         );
 
         const changePasswdNav = (
-            <li><Link className="nav-operation" href="javascript:void(0);" to="/change_password">修改密码</Link> </li>
+            <li><Link className="nav-operation" to="/change_password">修改密码</Link> </li>
         );
 
         const logoutNav = (
-            <li><a href="javascript:void(0);" onClick={this.props.handleLogout}>退出登录</a> </li>
+            <li><a onClick={this.props.handleLogout}>退出登录</a> </li>
         );
 
         const loginRegisterNav = (
@@ -92,14 +92,14 @@ class NavBar extends Component {
 
         const settingNav = (
             <li className="navbar-setting">
-                <a href="nav-operation" href="#"> 
-                    <Popover placement="bottom" content={this.renderSettingContent()}> 
-                        <Icon type="setting" style={{ fontSize: 30, marginTop: -5 }}/> 
-                    </Popover> 
+                <a href="nav-operation">
+                    <Popover placement="bottom" content={this.renderSettingContent()}>
+                        <Icon type="setting" style={{ fontSize: 30, marginTop: -5 }}/>
+                    </Popover>
                 </a>
             </li>
         );
-        
+
 
         let renderLogin = null;
         if (this.props.isLoggedIn) {
@@ -135,7 +135,7 @@ class NavBar extends Component {
                   <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
-                    <span className="icon-bar"></span> 
+                    <span className="icon-bar"></span>
                   </button>
                   <a className="navbar-brand" href="#topNav">
                   <svg  className="logo" width="63px" height="47px" viewBox="0 0 63 47" version="1.1" xmlns="http://www.w3.org/2000/svg">

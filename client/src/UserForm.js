@@ -1,25 +1,14 @@
-
 import React, { Component } from 'react';
-
-
-
 
 import 'antd/dist/antd.css';
 import './css/Login.css';
-import login from './img/login.svg';
-import register from './img/sketch_logo.jpg';
 
-
-//import login, register, change-password component
+// import login, register, change-password component
 import Login from './Login';
-import Register from './Register';
-import ChangePassword from './ChangePassword';
 
-import { Modal, Button, Tabs } from 'antd';
+import { Modal, Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
-
-
 
 
 class UserForm extends Component {
@@ -46,7 +35,7 @@ class UserForm extends Component {
                         tab="登 录"
                         key="1"
                     >
-                        <Login 
+                        <Login
                             handleLogin={this.props.handleLogin}
                             history={this.props.history}
                             noRegister={this.props.noRegister}
@@ -54,7 +43,7 @@ class UserForm extends Component {
                         />
                     </TabPane>
                 </Tabs>
-        
+
             </Modal>
         )
     }

@@ -6,7 +6,7 @@ var fixedTop = false;
 
 var navbar_initialized = false;
 
-var big_image; 
+var big_image;
 var scroll;
 var project_content;
 var $project;
@@ -20,7 +20,7 @@ var pixels;
 var modal;
 var $project_content;
 
-var test = true;        
+var test = true;
 
 var timerStart = Date.now();
 var delay;
@@ -35,29 +35,29 @@ var no_touch_screen = false;
 
 var burger_menu;
 
-        
+
 $(document).ready(function(){
     BrowserDetect.init();
-    
+
     if(BrowserDetect.browser == 'Explorer' && BrowserDetect.version <= 9){
-        $('body').html(better_browser);   
+        $('body').html(better_browser);
     }
 
     window_width = $(window).width();
     window_height = $(window).height();
 
     burger_menu = $('nav').hasClass('navbar-burger') ? true : false;
-    
+
     if (!Modernizr.touch){
         $('body').addClass('no-touch');
         no_touch_screen = true;
     }
-    
+
     rubik.initAnimationsCheck();
-    
-    // Init navigation toggle for small screens   
+
+    // Init navigation toggle for small screens
     if(window_width < 993 || burger_menu){
-        rubik.initRightMenu();   
+        rubik.initRightMenu();
     }
 
     if(window_width < 993){
@@ -68,9 +68,9 @@ $(document).ready(function(){
                 $(this).attr("onClick", src);
             }
         });
-        
+
         rubik.checkResponsiveImage();
-    } 
+    }
     //add for response adapt
 
     if(window_width < 768) {
@@ -84,44 +84,47 @@ $(document).ready(function(){
         $('.responsive-mouse-box').html('');
         $('.mouse-box-inverse').html('');
     }
-    
-    
-    
+
+
+
     if($('#contactUsMap').length != 0){
-        rubik.initGoogleMaps();   
+        rubik.initGoogleMaps();
     }
-    
+
     if($('.content-with-opacity').length != 0){
         content_opacity = 1;
     }
 
 });
 
+// for toggle button
+
+
 $(window).on('scroll',function(){
    if(window_width > 768){
         rubik.checkScrollForParallax();
    }
-   
-   rubik.checkScrollForTransparentNavbar();    
-         
+
+   rubik.checkScrollForTransparentNavbar();
+
 });
 
 $(window).load(function(){
-    
+
     //after the content is loaded we reinitialize all the waypoints for the animations
     rubik.initAnimationsCheck();
-    
-});  
 
-//activate collapse right menu when the windows is resized 
+});
+
+//activate collapse right menu when the windows is resized
 $(window).resize(function(){
     if($(window).width() < 993){
-        rubik.initRightMenu();   
+        rubik.initRightMenu();
     }
     if($(window).width() > 993 && !burger_menu){
         $('nav').removeClass('navbar-burger');
         rubik.misc.navbar_menu_visible = 1;
-        navbar_initialized = false; 
+        navbar_initialized = false;
     }
 
     if($(window).width() < 768) {
@@ -143,36 +146,36 @@ $(window).resize(function(){
     }
 });
 
-$('a[data-scroll="true"]').click(function(e){         
+$('a[data-scroll="true"]').click(function(e){
     var scroll_target = $(this).data('id');
     var scroll_trigger = $(this).data('scroll');
-    
+
     if(scroll_trigger == true && scroll_target !== undefined){
         e.preventDefault();
-        
+
         $('html, body').animate({
              scrollTop: $(scroll_target).offset().top - 50
         }, 1000);
     }
-                
+
 });
 
-    
+
 rubik = {
     misc:{
         navbar_menu_visible: 0
     },
     initAnimationsCheck: function(){
-        
+
         $('[class*="add-animation"]').each(function(){
            offset_diff = 30;
            if($(this).hasClass('title')){
                offset_diff = 110;
            }
-           
+
            var waypoints = $(this).waypoint(function(direction) {
                 if(direction == 'down'){
-                        $(this.element).addClass('animate');    
+                        $(this.element).addClass('animate');
                    } else {
                        $(this.element).removeClass('animate');
                    }
@@ -180,48 +183,48 @@ rubik = {
                   offset: window_height - offset_diff
            });
         });
-  
+
     },
-    initRightMenu: function(){  
+    initRightMenu: function(){
          if(!navbar_initialized){
             $nav = $('nav');
             $nav.addClass('navbar-burger');
-             
+
             $navbar = $nav.find('.navbar-collapse').first().clone(true);
             $navbar.css('min-height', window.screen.height);
-              
+
             ul_content = '';
-             
+
             $navbar.children('ul').each(function(){
                 content_buff = $(this).html();
-                ul_content = ul_content + content_buff;   
+                ul_content = ul_content + content_buff;
             });
-             
+
             ul_content = '<ul class="nav navbar-nav">' + ul_content + '</ul>';
             $navbar.html(ul_content);
-             
+
             $('body').append($navbar);
-                            
+
             background_image = $navbar.data('nav-image');
             if(background_image != undefined){
                 $navbar.css('background',"url('" + background_image + "')")
                        .removeAttr('data-nav-image')
                        .css('background-size',"cover")
-                       .addClass('has-image');                
+                       .addClass('has-image');
             }
-             
+
             $toggle = $('.navbar-toggle');
-             
+
             $navbar.find('a').removeClass('btn btn-round btn-default');
             $navbar.find('button').removeClass('btn-round btn-fill btn-info btn-primary btn-success btn-danger btn-warning btn-neutral');
             $navbar.find('button').addClass('btn-simple btn-block');
 
             $link = $navbar.find('a');
-            
+
             $link.click(function(e){
                 var scroll_target = $(this).data('id');
                 var scroll_trigger = $(this).data('scroll');
-                
+
                 if(scroll_trigger == true && scroll_target !== undefined){
                     e.preventDefault();
 
@@ -229,25 +232,25 @@ rubik = {
                          scrollTop: $(scroll_target).offset().top - 50
                     }, 1000);
                 }
-                
+
              });
 
-            
-            $toggle.click(function (){    
 
-                if(rubik.misc.navbar_menu_visible == 1) {                    
-                    $('html').removeClass('nav-open'); 
+            $toggle.click(function (){
+
+                if(rubik.misc.navbar_menu_visible == 1) {
+                    $('html').removeClass('nav-open');
                     rubik.misc.navbar_menu_visible = 0;
                     $('#bodyClick').remove();
                      setTimeout(function(){
                         $toggle.removeClass('toggled');
                      }, 550);
-                
+
                 } else {
                     setTimeout(function(){
                         $toggle.addClass('toggled');
                     }, 580);
-                    
+
                     div = '<div id="bodyClick"></div>';
                     $(div).appendTo("body").click(function() {
                         $('html').removeClass('nav-open');
@@ -257,33 +260,33 @@ rubik = {
                             $toggle.removeClass('toggled');
                          }, 550);
                     });
-                   
+
                     $('html').addClass('nav-open');
                     rubik.misc.navbar_menu_visible = 1;
-                    
+
                 }
             });
             navbar_initialized = true;
         }
-   
+
     },
 
     checkResponsiveImage: function(){
         $('.section-header > div > img, .section-header video').each(function(){
             var $image = $(this);
             var src = $image.attr("responsive-src");
-    
+
             if(!src){
-               src = $image.attr('src'); 
+               src = $image.attr('src');
             }
-    
+
             div = '<div class="responsive-background" style="background-image:url(' + src + ')"/>';
             $image.after(div);
-            $image.addClass('hidden-xs'); 
+            $image.addClass('hidden-xs');
         });
-    },  
-    
-    checkScrollForTransparentNavbar: debounce(function() {	
+    },
+
+    checkScrollForTransparentNavbar: debounce(function() {
         	if($(document).scrollTop() > 560 ) {
                 if(transparent) {
                     transparent = false;
@@ -296,52 +299,52 @@ rubik = {
                 }
             }
     }, 17),
-    
-    checkScrollForParallax: debounce(function() {	
+
+    checkScrollForParallax: debounce(function() {
 
         	no_of_elements = 0;
         	$('.parallax').each(function() {
         	    var $elem = $(this);
-        	    
+
         	    if(isElementInViewport($elem)){
-                  var parent_top = $elem.offset().top;          
+                  var parent_top = $elem.offset().top;
                   var window_bottom = $(window).scrollTop();
                   var $image = $elem.find('img')
-                              	  
+
             	  oVal = ((window_bottom - parent_top) / 3);
-                  $image.css('transform','translate3d(0px, ' + oVal + 'px, 0px)');    
+                  $image.css('transform','translate3d(0px, ' + oVal + 'px, 0px)');
         	    }
             });
-    		
+
     }, 6),
-    
+
     checkScrollForContentTransitions: debounce(function() {
          $('.content-with-opacity').each(function() {
              var $content = $(this);
-             
-             if(isElementInViewport($content)){          
+
+             if(isElementInViewport($content)){
                   var window_top = $(window).scrollTop();
             	  opacityVal = 1 - (window_top / 230);
-                  
+
                   if(opacityVal < 0){
                       opacityVal = 0;
                       return;
                   } else {
-                    $content.css('opacity',opacityVal);    
+                    $content.css('opacity',opacityVal);
                   }
-                      
-        	    }            
+
+        	    }
          });
     }, 6),
-    
+
     showModal: function(button){
         var id = $(button).data('target');
         var $project = $(button).closest('.project');
-        
+
         var scrollTop = $(window).scrollTop();
         var distanceTop = $project.offset().top;
 
-        var projectTop = distanceTop - scrollTop; 
+        var projectTop = distanceTop - scrollTop;
         var projectLeft = $project.offset().left;
         var projectHeight = $project.innerHeight();
         var projectWidth = $project.innerWidth();
@@ -350,14 +353,14 @@ rubik = {
 
         $(modal).css({
          'top'  :    projectTop,
-         'left' :    projectLeft, 
+         'left' :    projectLeft,
          'width' :   projectWidth,
          'height' :  projectHeight,
          'z-index'  : '1032'
         });
-        
+
         $(modal).addClass('has-background');
-        
+
         setTimeout(function(){
            $(modal).addClass('open');
         },30);
@@ -366,28 +369,28 @@ rubik = {
            $('body').addClass('noscroll');
            $(modal).addClass('scroll');
         },1000);
-    
+
         $('.icon-close').click(function(){
           $project_content = $(this).closest('.project-content');
           $project_content.removeClass('open scroll');
-          
+
           $('body').removeClass("noscroll");
           //$('a').removeClass('no-opacity');
             setTimeout(function(){
                 $project_content.removeClass('has-background');
-                setTimeout(function(){    
-                    $project_content.removeAttr('style');     
-                }, 450); 
+                setTimeout(function(){
+                    $project_content.removeAttr('style');
+                }, 450);
             },500);
         });
     },
-    
+
     initGoogleMaps: function(){
         var myLatlng = new google.maps.LatLng(44.433530, 26.093928);
-        
-        
-                
-        
+
+
+
+
         var mapOptions = {
           zoom: 14,
           center: myLatlng,
@@ -396,12 +399,12 @@ rubik = {
           styles: [{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"on"},{"gamma":"1.82"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"gamma":"1.96"},{"lightness":"-9"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"on"},{"lightness":"25"},{"gamma":"1.00"},{"saturation":"-100"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#ffaa00"},{"saturation":"-43"},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"},{"hue":"#ffaa00"},{"saturation":"-70"}]},{"featureType":"road.highway.controlled_access","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"visibility":"on"},{"saturation":"-100"},{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"saturation":"-100"},{"lightness":"40"},{"visibility":"off"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"gamma":"0.80"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"off"}]}]
         }
         var map = new google.maps.Map(document.getElementById("contactUsMap"), mapOptions);
-        
+
         var marker = new google.maps.Marker({
             position: myLatlng,
             title:"Hello World!"
         });
-        
+
         // To add the marker to the map, call setMap();
         marker.setMap(map);
     }

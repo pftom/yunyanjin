@@ -6,12 +6,11 @@ import './css/modal.css';
 import './css/GoodDetail.css';
 
 import avatar1 from './img/img_avatar1.png';
-import goods1 from './img/goods-1.png';
 
 import {  base, shopSingleApi } from './config/config';
 import request from './config/request'
 
-import { Modal, Button, Tabs, Radio, Pagination, Avatar, Rate, Icon, notification, message, Spin, Alert } from 'antd';
+import { Modal, Button, Tabs, Radio, Pagination, Rate, Icon, notification, message, Spin } from 'antd';
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.Group;
 const RadioButton = Radio.Button;
@@ -38,7 +37,7 @@ class GoodsDetail extends Component {
       try {
         const token = await localStorage.getItem('token');
         console.log('currentGood', this.props.currentGood);
-        
+
         const goodItemContent = await request.get(base + shopSingleApi(this.props.currentGood).productDetail, null, token);
         const goodItemImg = await request.get(base + shopSingleApi(this.props.currentGood).productAllImg, null, token);
         const goodAllBuyItem = await request.get(base + shopSingleApi(this.props.currentGood).productAllBuyItem, null, token);
@@ -164,8 +163,9 @@ class GoodsDetail extends Component {
         if (item.description || item.unit === e.target.value) {
           currentBuyItem = item;
         }
+        return item;
       })
-      
+
 
       this.setState({
         norms: e.target.value,
@@ -198,7 +198,7 @@ class GoodsDetail extends Component {
 
     render() {
 
-        const { goodItemContent, goodItemImg } = this.state;
+        const { goodItemContent } = this.state;
 
         let renderDetail = null;
 
@@ -238,7 +238,6 @@ class GoodsDetail extends Component {
               width={900}
 
             footer={null}
-            title={null}
             className="modal-good-container"
           >
             {
@@ -275,7 +274,7 @@ class GoodsDetail extends Component {
                             </span>
                           </div>
                         </div>
-                        
+
                         <div className="norms-box">
                           <span className="norms">购买规格：</span>
                           <RadioGroup defaultValue={this.state.norms} onChange={this.handleNormsChange}>
@@ -290,11 +289,11 @@ class GoodsDetail extends Component {
                         <div className="count-select-box">
                           <span className="norms count-select align-center">数量选择：</span>
                           <span className="count-box">
-                            <a href="javascript:void(0);" className="yj-count" onClick={this.handleCountMinus}>
+                            <a className="yj-count" onClick={this.handleCountMinus}>
                               <Icon type="minus" style={{ color: '#3C3C3C', fontWeight: 'bold' }} />
                             </a>
                             <input type="text" value={this.state.count} onChange={this.handleCountChange} />
-                            <a href="javascript:void(0);" className="yj-count" onClick={this.handleCountAdd}>
+                            <a className="yj-count" onClick={this.handleCountAdd}>
                               <Icon type="plus" style={{ color: '#3C3C3C', fontWeight: 'bold' }}/>
                             </a>
                             &nbsp; {this.state.currentBuyItem.unit}(库存{this.state.currentBuyItem.stock})
@@ -434,7 +433,7 @@ export default GoodsDetail;
                       <span>袋装</span>
                     </div>
 
-                    
+
                     <div className="col-sm-3">
                       <span>存储方法：</span>
                       <span>避免阳光直射</span>

@@ -1,5 +1,3 @@
-'use strict';
-
 export const base = 'http://api.yunyanjin.com/';
 
 

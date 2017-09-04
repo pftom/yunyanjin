@@ -5,12 +5,6 @@ import './css/modal.css';
 
 import './css/HeaderBody.css'
 
-import carousel1 from './img/carousel-1.jpg';
-import carousel2 from './img/carousel-2.jpg';
-import carousel3 from './img/carousel-3.jpg';
-
-
-
 class HeaderBody extends Component {
     render() {
         return (

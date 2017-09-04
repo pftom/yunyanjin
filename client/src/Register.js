@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './css/Register.css'
 import UserForm from './UserForm';
 
 import {  base, userApi } from './config/config';
 import request from './config/request';
 
-import Footer from './Footer';
+import { Button, Form, Icon, Input, message } from 'antd';
 
-import { Modal, Button, Tabs, Form, Icon, Input, Checkbox, message } from 'antd';
 
-const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
 class Register extends Component {
@@ -45,16 +43,15 @@ class Register extends Component {
                 console.log('Received values of form: ', values);
 
                 const { username, password } = values;
-                
+
                 const body = {
                     username,
                     password,
                 };
-    
+
                 try {
-                    const value = await request.post(base + userApi.register, body);
                     const { token } = await request.post(base + userApi.login, body);
-    
+
                     await localStorage.setItem('token', token);
 
                     this.success('注册成功');
@@ -62,9 +59,9 @@ class Register extends Component {
                     const location = {
                         pathname: '/',
                     };
-    
+
                     this.props.history.push(location);
-                    
+
 
                 } catch(e) {
                     this.error('注册失败！');
@@ -89,7 +86,7 @@ class Register extends Component {
     error = (msg) => {
         message.error(msg);
     }
-    
+
     handleConfirmBlur = (e) => {
         console.log('blur confirm');
         const value = e.target.value;
@@ -206,7 +203,7 @@ class Register extends Component {
 									<span className="project-name">东华大学公益项目</span>
 									<span className="license">This project follow <a href="">MIT License</a></span>
 								</div>
-                <UserForm 
+                <UserForm
                     loginModalVisible={this.state.loginModalVisible}
                     hideLoginModal={this.hideLoginModal}
                     noRegister={true}

@@ -1,8 +1,7 @@
-
 .video-cover {
     max-width: 100%;
     border-radius: 1rem;
-  }
+}
 
 .culture {
     background-color: #FFF;
@@ -11,47 +10,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  @media screen and (max-width: 361px) {
-    
-        .culture {
-            padding: 3rem 2rem 2rem 2rem;
-            align-items: baseline;
-        }
 }
-  
-  
-  @media screen and (max-width: 320px) {
-    
-        .culture {
-            padding: 2rem 2rem;
-            align-items: baseline;
 
-        }
+@media screen and (max-width: 768px) {
+
+    .culture {
+        padding: 6rem 1rem 2rem 1rem;
+        align-items: baseline;
+        height: auto;
+    }
 }
-  
-  .culutre-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .culture .culutre-small-box {
-      margin-right: 50px;
-  }
-  
-  .culture .col-sm-7 {
-      margin-right: 50px;
-  }
-  
-  @media screen and (max-width: 768px) {
-      .culutre-box {
-          display: block;
-      }
-  }
 
-  @media screen and (max-width: 445px) {
+.culutre-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.culture .culutre-small-box {
+    margin-right: 50px;
+}
+
+.culture .col-sm-7 {
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .culutre-box {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 445px) {
     .culture .culutre-small-box {
         margin-right: 0;
     }
@@ -89,7 +79,7 @@
         margin-top: 20px;
     }
 }
-  
+
   /* .culture .culutre-box p {
       font-weight: 300;
       color: #787878;
@@ -110,8 +100,8 @@
     /* z-index: 1; hide shadow behind image */
     -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);                
-    width: 70%; 
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    width: 70%;
     left: 15%; /* one half of the remaining 30% */
     height: 100px;
     bottom: 1px;
@@ -133,6 +123,7 @@
 .mouse-box-inverse .wheel {
     -webkit-animation: mouse-wheel 1.2s ease infinite;
     -moz-animation: mouse-wheel 1.2s ease infinite;
+    animation: mouse-wheel 1.2s ease infinite;
     height: 5px;
     width: 2px;
     display: block;
@@ -158,5 +149,52 @@
     position: absolute;
     left: 50%;
     top: 85%;
+}
 
+@media screen and (max-width: 768px) {
+    .mouse-box-inverse {
+        display: none;
+    }
+}
+
+/*
+    全局浮现效果
+*/
+
+.slideanim {visibility:hidden;}
+
+@media screen and (max-width: 768px) {
+    .slideanim {
+        visibility: visible;
+    }
+}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
 }

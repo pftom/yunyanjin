@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button, Tabs, Form, Icon, Input, Checkbox } from 'antd';
+import { Button, Form, Icon, Input } from 'antd';
 import './css/Register.css';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,6 @@ import request from './config/request'
 
 import { message } from 'antd';
 
-const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
 class ChangePassword extends Component {
@@ -35,14 +34,14 @@ class ChangePassword extends Component {
 
                 try {
                     const { oldPassword, password } = values;
-                    
+
                     const body = {
                         old_password: oldPassword,
                         new_password: password,
                     };
-    
+
                     const token = await localStorage.getItem('token');
-    
+
                     await request.post(base + userApi.changePassword, body, token);
 
                     this.success('修改密码成功！');
@@ -61,7 +60,7 @@ class ChangePassword extends Component {
     error = (msg) => {
         message.error(msg);
     }
-    
+
     handleConfirmBlur = (e) => {
         console.log('blur confirm');
         const value = e.target.value;

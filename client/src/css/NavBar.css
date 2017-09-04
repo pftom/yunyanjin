@@ -24,7 +24,7 @@
 
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(20px);
 }
 
@@ -53,7 +53,7 @@
 }
 
 .navbar>.container .navbar-brand {
-    margin-left: 0px;
+    margin-left: -30px;
 }
 
 #login-button {
@@ -85,7 +85,7 @@ svg path {
     fill: transparent;
 }
 
-@media screen and (max-width: 414px) { 
+@media screen and (max-width: 414px) {
     svg {
         height: 40px;
         width: 53px;
@@ -97,11 +97,26 @@ svg path {
 
     .navbar-collapse .navbar-nav li .nav-operation{
         margin: 5px 3px;
+        border: none;
     }
 }
 
 .logo {
     margin-top: -15px;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        margin-top: -1rem;
+        height: 2.4rem;
+        width: 3rem;
+    }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .logo {
+        margin-left: 3rem;
+    }
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -138,12 +153,12 @@ svg path {
 
 .setting-popover-box a {
     font-size: 20px;
-    
+
     color: #AAA;
 }
 
 .setting-popover-box a:first-child {
-    
+
 }
 
 .setting-popover-box a:hover {
@@ -155,3 +170,16 @@ svg path {
     margin-bottom: 10px;
     padding: 10px 0;
 }
+
+
+@media screen and (max-width: 760px) {
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+        max-height: 380px;
+    }
+
+    .navbar .navbar-nav > li > a {
+        padding: 10px 15px;
+        margin: 0 3px;
+      }
+}
+
