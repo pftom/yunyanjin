@@ -11,6 +11,7 @@ class VideoPlayer extends Component {
             <ModalVideo  
                 isOpen={this.props.videoModalVisible} 
                 videoId="L61p2uyiMSo"
+                channel="youtube"
                 onClose={() => this.props.handleCancel('videoModalVisible')}
             />
         )
