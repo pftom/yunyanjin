@@ -114,3 +114,7 @@
 .license {
     color: #a6aeb3;
 }
+
+.navbar-default .navbar-nav > li > a:not(.btn):hover, .navbar-default .navbar-nav > li > a:not(.btn):focus {
+    cursor: pointer;
+} 
