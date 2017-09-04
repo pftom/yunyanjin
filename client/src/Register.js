@@ -50,7 +50,7 @@ class Register extends Component {
                 };
 
                 try {
-                    const { token } = await request.post(base + userApi.login, body);
+                    const { token } = await request.post(base + userApi.register, body);
 
                     await localStorage.setItem('token', token);
 

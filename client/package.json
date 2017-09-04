@@ -3,8 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/es6-promise": "0.0.33",
+    "@types/isomorphic-fetch": "0.0.34",
+    "@types/promise-polyfill": "^6.0.0",
+    "@types/whatwg-fetch": "0.0.33",
     "antd": "^2.12.7",
+    "axios": "^0.16.2",
     "bootflat": "^2.0.4",
+    "es6-promise": "^4.1.1",
+    "isomorphic-fetch": "^2.2.1",
+    "promise-polyfill": "^6.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-html5video": "^2.3.0",
@@ -14,7 +23,8 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.11",
     "react-scroll-horizontal": "^1.1.2",
-    "react-toolbox": "^2.0.0-beta.12"
+    "react-toolbox": "^2.0.0-beta.12",
+    "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

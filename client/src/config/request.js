@@ -1,5 +1,16 @@
+
+import Promise from 'promise-polyfill'; 
+
 import queryString from 'query-string';
 import _ from 'lodash';
+
+import axios from 'axios';
+require('es6-promise').polyfill();
+require('whatwg-fetch');
+
+if (!window.Promise) {
+  window.Promise = Promise;
+}
 
 const header = (METHOD, token, multiform) => {
   let auth = {};
@@ -39,7 +50,6 @@ const header = (METHOD, token, multiform) => {
 let request = {};
 
 request.get =  ( url, params, token ) => {
-  let options = null;
   if (params) {
     console.log('params', params)
     url += '?' + queryString.stringify(params);
@@ -47,18 +57,21 @@ request.get =  ( url, params, token ) => {
 
 
 
-  if (token) {
-    options = _.extend(header('GET', token));
-  }
+  const options = _.extend(header('GET', token));
 
   console.log('url', url, options);
+  console.log('fetch', fetch);
 
   return fetch(url, options)
       .then(response => {
+        console.log('response', response);
         if (response.status !== 200 || !response.ok) {
           throw response.json();
         }
         return response.json();
+      })
+      .catch(err => {
+        console.log('err', err);
       })
 }
 
@@ -81,7 +94,7 @@ request.post = ( url, body, token, multiform ) => {
         .then(response => {
 
           console.log('response', response);
-          if (![200, 201].includes(response.status) || !response.ok) {
+          if (![200, 201].includes(response.status)) {
             throw response.json();
           }
           // console.log('succceed', response.json());

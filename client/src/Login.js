@@ -107,7 +107,6 @@ class Login extends Component {
                     })(
                         <Checkbox>记住密码</Checkbox>
                     )}
-                        <Link to="/change_password" className="login-form-forgot remember-password">忘记密码</Link>
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             登 录
                         </Button>
