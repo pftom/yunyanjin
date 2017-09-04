@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'whatwg-fetch';
 import 'antd/dist/antd.css';
 import './css/rubick_pres.css';
 import './css/App.css';
