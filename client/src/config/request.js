@@ -70,9 +70,6 @@ request.get =  ( url, params, token ) => {
         }
         return response.json();
       })
-      .catch(err => {
-        console.log('err', err);
-      })
 }
 
 request.post = ( url, body, token, multiform ) => {
