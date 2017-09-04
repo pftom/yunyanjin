@@ -15,13 +15,13 @@
 }
 
 .thumbnail {
-    padding: 0 0 2rem 0;
-    margin: 1rem 1rem;
+    padding: 0 0 1.5rem 0;
+    margin: 0.5rem 1rem;
 }
 
 .thumbnail img {
     width: 100%;
-    height: 16rem;
+    height: 12rem;
     margin-bottom: 20px;
 }
 
