@@ -152,18 +152,20 @@ class ShopCart extends Component {
                                     </div>
                                     {
                                         this.state.allNoRepProducts.map((item, key) => (
-                                            <div className="row cart-item-body" key={key}>
+                                            <div className="row cart-item-body min-screen-body" key={key}>
                                                 <div className="col-sm-5 ">
                                                     <img src={item.photo} alt="good1" /> 
-                                                    <span className="good-img-title">{item.item.description}</span>
+                                                    {
+                                                        window.innerWidth >= 761 && (<span className="good-img-title">{item.item.description}</span>)
+                                                    }
                                                 </div>  
                                                 <div className="col-sm-2 text-center">
                                                     <span>{item.item.unit}</span>
                                                 </div>
-                                                <div className="col-sm-2 text-center">
+                                                <div className="col-sm-2 text-center min-screen-adapt-item-count">
                                                     <span className="item-count">{this.state.allNoRepProductsCount[key]}</span>
                                                 </div>
-                                                <div className="col-sm-3 item-price text-left">
+                                                <div className="col-sm-3 item-price text-left close-box">
                                                     <span>￥{item.quantity * item.item.price}</span>
                                                     <Icon type="close" className="item-price-close" onClick={() => { this.deleteCartItem(item) }}/>
                                                 </div>

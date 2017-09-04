@@ -75,7 +75,6 @@
 
 @media screen and (max-width: 768px) {
     .il_footer {
-        padding: 24px 100px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -97,7 +96,12 @@
     }
 
     .register-box-row h4 {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
+    }
+
+    .min-screen-adapt-item-count span {
+        width: 100%;
+        text-align: right;
     }
 
 }
