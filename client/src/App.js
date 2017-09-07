@@ -17,6 +17,7 @@ import Footer from './Footer';
 import ShopCart from './ShopCart';
 import Video from './Video';
 import Events from './Events';
+import ExtraVideo from './ExtraVideo';
 
 
 let currentGood = 1;
@@ -153,7 +154,6 @@ class App extends Component {
           }
 
           <Commitments />
-
           <Footer />
 
       </div>

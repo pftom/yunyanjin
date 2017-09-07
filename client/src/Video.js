@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import 'react-html5video/dist/styles.css';
 import './css/Video.css';
 
 import ModalVideo from './ModalVideo';
