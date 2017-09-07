@@ -35,7 +35,7 @@
 .nav-operation {
   color: white;
   font-size: large;
-  font-weight: 350;
+  font-weight: 480;
 }
 
 
@@ -57,15 +57,29 @@
 }
 
 #login-button {
-    padding: 6px 16px;
-    top: 1.5px;
+    margin-left: 2rem;
+    border-radius: 100rem;
+    padding: 0.5rem 1.2rem 0.7rem 1.2rem;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+
+#login-button:hover {
+    color: white !important;
+    background-color: #ff5542;
+    border: 1px solid #ff5542;
+    box-shadow: 0 8px 16px rgba(255,85,66,0.5);
 }
 
 .navbar-transparent #login-button {
     border: 1px solid #FFF;
-    border-radius: 100px;
 }
 
+.navbar-transparent #login-button:hover {
+    background-color: white;
+    color: #ff5542 !important;
+    box-shadow: 0 5px 16px rgba(255,255,255,0.5);
+}
 
 .nav .navbar-nav li a:hover, .nav .navbar-nav li.active a {
     background-color: transparent;
