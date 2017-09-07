@@ -224,3 +224,14 @@
 .video-react .video-react-poster {
     background-size: cover;
 }
+
+
+@media screen and (max-width: 320px) {
+    .video-react .video-react-control {
+        width: 3rem;
+    }
+}
+
+.video-react-fullscreen .video-react-video {
+    border-radius: 0;
+}

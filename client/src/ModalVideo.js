@@ -62,7 +62,7 @@ export default class ModalVideo extends React.Component {
   }
 
   getYoutubeUrl (youtube, videoId) {
-    return 'https://dn-coding-net-public-file.qbox.me/coding-webide.mp4';
+    return 'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/%E4%BA%91%E6%A2%A6%E7%9B%90%E6%B4%A5%E8%B0%83%E7%A0%94%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4';
   }
 
   getVimeoUrl (vimeo, videoId) {
@@ -106,7 +106,9 @@ export default class ModalVideo extends React.Component {
                   <div className={this.props.classNames.modalVideoInner}>
                     <div className={this.props.classNames.modalVideoIframeWrap} style={style}>
                       <button className={this.props.classNames.modalVideoCloseBtn} aria-label={this.props.aria.dismissBtnMessage} ref='modalbtn' onKeyDown={this.updateFocus} />
-                      <iframe title="video" width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allowFullScreen={this.props.allowFullScreen} tabIndex='-1' />
+                      <div width="100%" height="100%">
+                        <video controls width="100%" height="100%" preload src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/%E4%BA%91%E6%A2%A6%E7%9B%90%E6%B4%A5%E8%B0%83%E7%A0%94%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4"></video>
+                      </div>
                     </div>
                   </div>
                 </div>
