@@ -220,3 +220,7 @@
 .video-react .video-react-big-play-button {
     display: none;
 }
+
+.video-react .video-react-poster {
+    background-size: cover;
+}
