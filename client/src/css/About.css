@@ -55,6 +55,14 @@
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .culture .col-sm-4 {
+        width: 100%;
+    }
+
+    .video-react-video {
+        border-radius: 1rem;
+    }
 }
 
 /* @media screen and (max-width: 445px) {
@@ -192,4 +200,23 @@
     opacity: 1;
     -webkit-transform: translateY(0%);
   }
+}
+
+.video-react .video-react-video {
+    border-radius: 1rem;
+    outline: none;
+}
+
+.box-img-shadow .video-react-fluid {
+    border-radius: 1rem;
+    outline: none;
+}
+
+.video-react-control-bar {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.video-react .video-react-big-play-button {
+    display: none;
 }
