@@ -84,7 +84,7 @@
     font-weight: 500;
 }
 
-.box-img-shadow img {
+.box-img-shadow .video-react-fluid {
     position: relative;
     z-index: 100;
 }
