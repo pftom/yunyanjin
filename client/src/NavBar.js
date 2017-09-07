@@ -92,7 +92,7 @@ class NavBar extends Component {
 
         const settingNav = (
             <li className="navbar-setting">
-                <a href="nav-operation">
+                <a href="javascript:void(0);">
                     <Popover placement="bottom" content={this.renderSettingContent()}>
                         <Icon type="setting" style={{ fontSize: 30, marginTop: -5 }}/>
                     </Popover>
