@@ -62,7 +62,7 @@ export default class ModalVideo extends React.Component {
   }
 
   getYoutubeUrl (youtube, videoId) {
-    return 'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/%E4%BA%91%E6%A2%A6%E7%9B%90%E6%B4%A5%E8%B0%83%E7%A0%94%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4';
+    return 'https://dn-coding-net-public-file.qbox.me/coding-webide.mp4';
   }
 
   getVimeoUrl (vimeo, videoId) {

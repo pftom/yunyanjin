@@ -80,14 +80,9 @@
     }
 }
 
-  /* .culture .culutre-box p {
-      font-weight: 300;
-      color: #787878;
-  }
-   */
-   .culture .culutre-box h3 {
-      font-weight: 500;
-  }
+.culture .culutre-box h3 {
+    font-weight: 500;
+}
 
 .box-img-shadow img {
     position: relative;
@@ -147,7 +142,7 @@
 
 .mouse-box-inverse {
     position: absolute;
-    left: 50%;
+    left: 48%;
     top: 85%;
 }
 
