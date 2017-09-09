@@ -1,0 +1,38 @@
+.partner {
+    background-color: #fff;
+    padding: 7%;
+}
+
+.tab-box {
+    margin-top: 3rem;
+}
+
+.tab-box .ant-table-thead > tr > th {
+    background: #f6f6f6;
+}
+
+.tab-box .ant-pagination-item-active {
+    background-color: #f40;
+    border-color: #f40;
+}
+
+.tab-box .ant-pagination-item:focus, .ant-pagination-item:hover {
+    border-color: #f40;
+}
+
+.tab-box .ant-pagination-item:focus a, .ant-pagination-item:hover a {
+    border-color: #f40;
+    color: #f40;
+}
+
+.tab-box a:hover {
+    border-color: #f40;
+    color: #f40;
+}
+
+.tab-box .ant-pagination-prev:focus .ant-pagination-item-link, .ant-pagination-next:focus .ant-pagination-item-link, .ant-pagination-prev:hover .ant-pagination-item-link, .ant-pagination-next:hover .ant-pagination-item-link {
+    border-color: #f40;
+    color: #f40;
+}
+
+

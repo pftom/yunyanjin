@@ -18,6 +18,7 @@ import ShopCart from './ShopCart';
 import Video from './Video';
 import Events from './Events';
 import ExtraVideo from './ExtraVideo';
+import Partner from './Partners';
 
 
 let currentGood = 1;
@@ -152,6 +153,8 @@ class App extends Component {
               />
             )
           }
+
+          <Partner />
 
           <Commitments />
           <Footer />
