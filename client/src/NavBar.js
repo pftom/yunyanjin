@@ -38,7 +38,6 @@ class NavBar extends Component {
             <li><a className="nav-operation" href="#events">扶贫纪实</a></li>
             <li><a className="nav-operation" href="#shop">商品展示</a> </li>
             <li><a className="nav-operation" href="#partner">合作伙伴</a> </li>
-            <li><a className="nav-operation" href="#commitments">我们的承诺</a> </li>
             {cartNav}
             {settingNav}
             {changePasswdNav}

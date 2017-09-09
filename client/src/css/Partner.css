@@ -22,7 +22,7 @@
 
 .tab-box .ant-pagination-item:focus a, .ant-pagination-item:hover a {
     border-color: #f40;
-    color: #f40;
+    color: #fff;
 }
 
 .tab-box a:hover {

@@ -1,89 +1,12 @@
 import React, { Component } from 'react';
 
 import './css/Partner.css';
+import { data } from './data'
 
 import { Table, Button } from 'antd';
 
 
-const data = [{
-    key: '1',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-  }, {
-    key: '2',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},{
-    key: '3',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},{
-    key: '4',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-  }, {
-    key: '5',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},{
-    key: '6',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},{
-    key: '7',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-  }, {
-    key: '8',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},{
-    key: '9',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},{
-    key: '10',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},{
-    key: '11',
-    firmName: 'Powerformer',
-    firmPhone: '021-7777777',
-    personName: '黄大侠',
-    personPhone: 13786683333,
-    address: 'New York No. 1 Lake Park',
-},];
-
+// con
 const columns = [{
     title: '企业名称',
     dataIndex: 'firmName',
