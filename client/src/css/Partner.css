@@ -35,4 +35,8 @@
     color: #f40;
 }
 
+.tab-box .ant-pagination-jump-prev:focus:after, .ant-pagination-jump-next:focus:after, .ant-pagination-jump-prev:hover:after, .ant-pagination-jump-next:hover:after {
+    color: #f40;
+}
+
 
