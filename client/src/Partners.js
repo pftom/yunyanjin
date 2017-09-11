@@ -33,7 +33,19 @@ const columns = [{
     key: 'personPhone',
     fixed: 'right',
     width: 100
-}]
+}];
+
+const small_screen_columns = [{
+    title: '企业名称',
+    dataIndex: 'firmName',
+    key: 'firmName',
+    width: 170
+}, {
+    title: '企业电话',
+    dataIndex: 'firmPhone',
+    key: 'firmPhone',
+    width: 100,
+}];
 
 class Partners extends Component {
     constructor(props) {
@@ -51,13 +63,24 @@ class Partners extends Component {
 
     render() {
         const { selectedRowKeys } = this.state;
+        const width = window.innerWidth;
 
+        let renderTable = null;
+        if (width <= 767) {
+            renderTable = (
+                <Table columns={small_screen_columns} dataSource={data} />
+            )
+        } else {
+            renderTable = (
+                <Table columns={columns} dataSource={data} scroll={{ x: 1300 }} />
+            )
+        }
 
         return (
             <div className="container-fluid partner" id="partner">
                 <h3 className="sector-title text-center">合作伙伴</h3>
                 <div className="tab-box">
-                    <Table columns={columns} dataSource={data} scroll={{ x: 1300 }} />
+                    {renderTable}
                 </div>
             </div>
         )
