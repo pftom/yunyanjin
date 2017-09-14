@@ -64,16 +64,10 @@ class Register extends Component {
 
 
                 } catch(e) {
-                    this.error('注册失败！');
+                    this.error('此账号已经被注册了');
                 }
             } else {
                 this.error('注册失败！');
-
-                const location = {
-                    pathname: '/',
-                };
-
-                this.props.history.push(location);
             }
 
         });

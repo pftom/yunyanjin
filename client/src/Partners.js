@@ -31,8 +31,6 @@ const columns = [{
     title: '联络员电话',
     dataIndex: 'personPhone',
     key: 'personPhone',
-    fixed: 'right',
-    width: 100
 }];
 
 const small_screen_columns = [{
@@ -72,7 +70,7 @@ class Partners extends Component {
             )
         } else {
             renderTable = (
-                <Table columns={columns} dataSource={data} scroll={{ x: 1300 }} />
+                <Table columns={columns} dataSource={data}/>
             )
         }
 
