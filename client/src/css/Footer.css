@@ -37,3 +37,22 @@ footer .glyphicon {
 .glyphicon-chevron-up:before {
     content: "\e113";
 }
+
+.contact-us {
+    position: absolute;
+    right: 40px;
+}
+
+.contact-us .wechat-contact {
+    height: 30px;
+    width: 37px;
+}
+
+.contact-us .qrcode {
+    position: absolute;
+    left: -10.125rem;
+    top: -8rem;
+    width: 7.625rem;
+    height: 8.0625rem;
+    
+}
