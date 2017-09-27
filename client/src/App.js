@@ -154,6 +154,8 @@ class App extends Component {
             )
           }
 
+          <Partner />
+
           <Commitments />
           <Footer />
 
