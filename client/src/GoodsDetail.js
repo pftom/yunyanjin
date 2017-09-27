@@ -117,16 +117,21 @@ class GoodsDetail extends Component {
     }
 
     handleCountChange = (event) => {
+      const { currentBuyItem } = this.state;
       const text = event.target.value;
       let cnt = 1;
+      console.log('text', text);
       if (Number(text) < 0 || isNaN(Number(text))) {
         cnt = 1;
+      } else if(Number(text) > currentBuyItem.stock) {
+        cnt = currentBuyItem.stock;
       } else {
-        cnt = Number(text);
+        cnt = Number(text)
       }
 
       this.setState({
         count: cnt,
+        currentPrice: cnt * currentBuyItem.price,
       });
     }
 

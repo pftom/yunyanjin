@@ -33,7 +33,7 @@ const columns = [{
     key: 'personPhone',
 }];
 
-const small_screen_columns = [{
+const SMALL_SCREEN_COLUMNS = [{
     title: '企业名称',
     dataIndex: 'firmName',
     key: 'firmName',
@@ -66,7 +66,7 @@ class Partners extends Component {
         let renderTable = null;
         if (width <= 767) {
             renderTable = (
-                <Table columns={small_screen_columns} dataSource={data} />
+                <Table columns={SMALL_SCREEN_COLUMNS} dataSource={data} />
             )
         } else {
             renderTable = (
