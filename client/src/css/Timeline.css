@@ -164,6 +164,7 @@
     text-decoration: none; }
 
   .rt-text-container {
+    background-color: white;
     padding: 0.5em 1em;
     font-weight: 300;
     overflow: hidden;
