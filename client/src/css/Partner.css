@@ -10,11 +10,11 @@
 
 .header-bg {
     background-color: #F7F9FA;
-    width: 110%;
-    height: 110%;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    left: -5%;
-    top: -5%;
+    left: 0%;
+    top: 0%;
     z-index: -1;
     transition: -webkit-filter 0.2s ease, background-image 0.2s ease;
     background: linear-gradient(223deg, #9ce8dd, #a993da, #F0CB54, #6D93A3);
@@ -43,6 +43,13 @@
     border-right: 1px solid hsla(0,0%,88%,.2);
 }
 
+
+@media screen and (max-width: 768px) {
+    .tab-box .left-title {
+        border: none;
+    }
+}
+
 .tab-box .left-title h2 {
     padding-right: 40px;
     font-size: 36px;
@@ -56,10 +63,35 @@
     color: white;
 }
 
+@media screen and (max-width: 768px) {
+    .tab-box .col-sm-6 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .tab-box .right-line-height {
+        padding-left: 0;
+    }
+
+    .tab-box .left-title h2 {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    
+}
+
 .tab-box .right-line-height .desc {
     margin-bottom: 10px;
     text-decoration: 1px;
     font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .tab-box .right-line-height .desc {
+        margin-bottom: 40px;
+    }
 }
 
 .tab-box .right-line-height .download {

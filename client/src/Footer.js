@@ -11,7 +11,7 @@ import qrcode from './img/qr_code.png';
 class Footer extends Component {
     render() {
         return (
-            <footer className="container-fluid bg-4" style={this.props.footerStyle}>
+            <footer className="container-fluid bg-4 text-center" style={this.props.footerStyle}>
                 <div className="row text-center">
                     <a href="#topNav" title="回到顶部">
                         <span className="glyphicon glyphicon-chevron-up"></span>
@@ -21,9 +21,7 @@ class Footer extends Component {
                     <h2 className="footer-title">云梦盐津公益项目</h2>
                     <p className="declaration">FROM YANJIN WITH LOVE</p>
                 </div>
-                <div className="row contact-us">
-                    <img src={qrcode} alt="qrcode" className="qrcode"/>
-                </div>
+                <img src={qrcode} alt="qrcode" className="qrcode"/>
           </footer>
         )
     }
