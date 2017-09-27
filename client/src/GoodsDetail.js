@@ -138,7 +138,11 @@ class GoodsDetail extends Component {
     handleCountAdd = () => {
       let { count, currentBuyItem } = this.state;
       count = Number(count);
-      count++;
+      if (count >= currentBuyItem.stock) {
+        count = currentBuyItem.stock;
+      } else {
+        count++;
+      }
 
       this.setState({
         count,
@@ -197,7 +201,7 @@ class GoodsDetail extends Component {
         this.success('加入购物车成功！')
       } catch(err) {
         console.log('err', err);
-        this.error('加入购物车失败！');
+        this.error('加入购物车失败,你还未登录!');
       }
     }
 
