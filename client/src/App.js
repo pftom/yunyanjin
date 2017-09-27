@@ -136,13 +136,13 @@ class App extends Component {
             handleCancel={this.handleCancel}
           />
 
-          <News />
-
-          <Events />
-
           <Shops
             showGoodItemModal={this.showModal}
           />
+
+          <News />
+
+          <Events />
 
           {
             this.state.goodsItemModalVisible && (

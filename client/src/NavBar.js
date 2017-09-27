@@ -3,7 +3,6 @@ import 'antd/dist/antd.css';
 
 import './css/modal.css';
 
-
 import './css/NavBar.css';
 import './css/App.css';
 
@@ -33,10 +32,10 @@ class NavBar extends Component {
 
     renderNavBar = (changePasswdNav, logoutNav, cartNav, loginRegisterNav, settingNav) => (
         <ul className="nav navbar-nav navbar-right" style={{ paddingRight: '-70px'}}>
-            <li><a className="nav-operation" href="#about">我们的文化</a></li>
+            <li><a className="nav-operation" href="#about">项目概况</a></li>
+            <li><a className="nav-operation" href="#shop">商品展示</a></li>
             <li><a className="nav-operation" href="#news">盐津简介</a></li>
             <li><a className="nav-operation" href="#events">扶贫纪实</a></li>
-            <li><a className="nav-operation" href="#shop">商品展示</a> </li>
             <li><a className="nav-operation" href="#partner">合作伙伴</a> </li>
             {cartNav}
             {settingNav}
