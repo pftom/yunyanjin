@@ -18,8 +18,8 @@ class Footer extends Component {
                     </a>
                 </div>
                 <div className="footer-desc-box text-center">
-                    <h2 className="footer-title">东华大学公益项目</h2>
-                    <p className="declaration">FROM DHU WITH LOVE</p>
+                    <h2 className="footer-title">云梦盐津公益项目</h2>
+                    <p className="declaration">FROM YANJIN WITH LOVE</p>
                 </div>
                 <div className="row contact-us">
                     <img src={qrcode} alt="qrcode" className="qrcode"/>
