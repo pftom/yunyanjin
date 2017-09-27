@@ -8,6 +8,27 @@
     padding-bottom: 80px;
 } */
 
+.header-bg {
+    background-color: #F7F9FA;
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    z-index: -1;
+    transition: -webkit-filter 0.2s ease, background-image 0.2s ease;
+    background: linear-gradient(223deg, #9ce8dd, #a993da, #F0CB54, #6D93A3);
+    background-size: 600% 600%;
+    -webkit-animation: bg-generator 50s ease infinite;
+    animation: bg-generator 50s ease infinite;
+  }
+  
+  @keyframes bg-generator {
+    0% {background-position: 0% 84%;}
+    50% {background-position: 100% 17%;}
+    100% {background-position: 0% 84%;}
+  }
+
 
 
 .tab-box .col-sm-6 {
@@ -39,5 +60,9 @@
     margin-bottom: 10px;
     text-decoration: 1px;
     font-size: 20px;
+}
+
+.tab-box .right-line-height .download {
+    padding: 5px;
 }
 
