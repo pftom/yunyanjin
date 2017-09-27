@@ -1,42 +1,43 @@
 .partner {
-    background-color: #fff;
+    background-color: #C4C4C4;
     padding: 7%;
 }
 
-.tab-box {
-    margin-top: 3rem;
+/* .tab-box {
+    padding-top: 80px;
+    padding-bottom: 80px;
+} */
+
+
+
+.tab-box .col-sm-6 {
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.tab-box .ant-table-thead > tr > th {
-    background: #f6f6f6;
+.tab-box .left-title {
+    justify-content: flex-end;
+    border-right: 1px solid hsla(0,0%,88%,.2);
 }
 
-.tab-box .ant-pagination-item-active {
-    background-color: #f40;
-    border-color: #f40;
+.tab-box .left-title h2 {
+    padding-right: 40px;
+    font-size: 36px;
+    font-weight: 500;
+    color: white;
 }
 
-.tab-box .ant-pagination-item:focus, .ant-pagination-item:hover {
-    border-color: #f40;
+
+.tab-box .right-line-height {
+    padding-left: 40px;
+    color: white;
 }
 
-.tab-box .ant-pagination-item:focus a, .ant-pagination-item:hover a {
-    border-color: #f40;
-    color: #fff;
+.tab-box .right-line-height .desc {
+    margin-bottom: 10px;
+    text-decoration: 1px;
+    font-size: 20px;
 }
-
-.tab-box a:hover {
-    border-color: #f40;
-    color: #f40;
-}
-
-.tab-box .ant-pagination-prev:focus .ant-pagination-item-link, .ant-pagination-next:focus .ant-pagination-item-link, .ant-pagination-prev:hover .ant-pagination-item-link, .ant-pagination-next:hover .ant-pagination-item-link {
-    border-color: #f40;
-    color: #f40;
-}
-
-.tab-box .ant-pagination-jump-prev:focus:after, .ant-pagination-jump-next:focus:after, .ant-pagination-jump-prev:hover:after, .ant-pagination-jump-next:hover:after {
-    color: #f40;
-}
-
 
