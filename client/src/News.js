@@ -11,7 +11,7 @@ class News extends Component {
             <div id="news" className="container-fluid culture map-box">
               <div className="row culutre-box news-box slideanim">
                 <div className="col-sm-5 ">
-                  <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/map.png'} alt="map" className="map"/>
+                  <img className="lazyload map" data-src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/map.png'} alt="map"/>
                 </div>
                 <div className="col-sm-7">
                 <h3 className="sector-title text-center">盐津简介</h3>

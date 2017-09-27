@@ -136,7 +136,7 @@ var DefaultImageBody = function () {
         return _react2['default'].createElement(
             'div',
             null,
-            _react2['default'].createElement('img', { src: imageUrl, className: 'rt-image' })
+            _react2['default'].createElement('img', {'data-src': imageUrl, className: 'lazyload rt-image' })
         );
     }
 

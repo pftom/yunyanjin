@@ -19,7 +19,7 @@ class About extends Component {
                 </p>
               </div>
               <div className="col-sm-4 box-img-shadow js-modal-btn" onClick={() => { this.props.handlePlayVideo('videoModalVisible') }}>
-                <img src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/video-cover.jpg'} alt="videoCover" className="video-cover"/>
+                <img className="lazyload video-cover" data-src={'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/video-cover.jpg'} alt="videoCover"/>
               </div>
             </div>
             <a href="#shop" className="mouse-box-inverse responsive-mouse-box">
