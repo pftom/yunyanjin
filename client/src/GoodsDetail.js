@@ -187,6 +187,10 @@ class GoodsDetail extends Component {
     handleAddToCart = async () => {
       const { currentBuyItem, count } = this.state;
 
+      if (count <= 0 || count >= currentBuyItem.stock) {
+        return;
+      }
+
       const body = {
         item: currentBuyItem.id,
         quantity: Number(count),
