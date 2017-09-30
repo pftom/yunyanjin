@@ -170,7 +170,7 @@ class ChangePassword extends Component {
                 </div>
                 </div>
                 <div className="il_footer text-center" id="il_footer">
-                    <span className="project-name">东华大学公益项目</span>
+                    <span className="project-name">云梦盐津公益项目</span>
                     <span className="license">This project follow <a href="">MIT License</a></span>
                 </div>
                 </div>
