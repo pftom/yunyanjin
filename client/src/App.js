@@ -75,7 +75,6 @@ class App extends Component {
 
     const token = await localStorage.getItem('token');
 
-    console.log('token', token);
 
     if (token) {
       this.setState({
@@ -86,11 +85,9 @@ class App extends Component {
 
 
   changeRadio = (e) => {
-    console.log(`radio checked: ${e.target.value}`)
   }
 
   render() {
-    console.log('history', this.props.history);
 
     return (
       <div>
