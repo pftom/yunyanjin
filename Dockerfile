@@ -1,10 +1,5 @@
-FROM nginx:1.13
+FROM alpine
 
-# Remove default config of nginx
-RUN rm /etc/nginx/conf.d/default.conf
+COPY build /yyj-client
 
-COPY config/* /etc/nginx/conf.d/
-
-COPY build /client
-
-VOLUME [ "/etc/nginx/conf.d" ]
+VOLUME [ "/yyj-client" ]
