@@ -31,23 +31,32 @@ def read_api_auth():
 
 def upload_to_oss(css_files, js_files):
     """Upload static assets to OSS via SDK."""
+    # Initialize api auth with access key
+    print "Reading api auth keys ...",
     auth = read_api_auth()
+    print "Done."
+
     bucket = oss2.Bucket(auth, oss_vendor, 'yunyanjin')
 
     # Delete existing outdated static assets
+    print "Deleting existing outdated static assets in OSS ...",
     for file in oss2.ObjectIterator(bucket):
         if file.key.endswith(('.js', '.css', '.map')) and file.key.startswith('main'):
             bucket.delete_object(file.key)
+    print "Done."
 
+    print "Uploading newest static assets ...",
     for css_file in css_files:
         bucket.put_object_from_file(css_file, 'build/static/css/' + css_file)
 
     for js_file in js_files:
         bucket.put_object_from_file(js_file, 'build/static/js/' + js_file)
+    print "Done."
 
 
 def replace_links(css_file, js_file):
     """Replace links of static assets in index page."""
+    print "Replacing links in index.html ...",
     with open('build/index.html') as fp:
         filedata = fp.read()
 
@@ -66,6 +75,8 @@ def replace_links(css_file, js_file):
     # Write the modified html code back
     with open('build/index.html', 'w') as fp:
         fp.write(filedata)
+
+    print "Done."
 
 
 def build():
