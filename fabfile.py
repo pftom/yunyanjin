@@ -73,7 +73,7 @@ def build():
     Run react build scripts and upload static assets to OSS,
     and replace links in HTML meanwhile.
     """
-    # local("npm run build")
+    local("npm run build")
 
     # Capture names of static files needed to be uploaded
     css_files = sorted(local("ls build/static/css/", capture=True).split())
@@ -95,10 +95,15 @@ def pull_image_and_redeploy():
     run("docker pull %s" % image_repo)
 
     # Run a container with the updated image
-    run("docker run -d --name %s %s" % (container_name, image_repo))
+    run("docker run -d --name %s --restart=always %s"
+        % (container_name, image_repo))
 
 
 def deploy():
+    """
+    Push your code, handle the whole process of docker image.
+    and (re)deploy the container.
+    """
     local("git push")
 
     # Build and push the image
