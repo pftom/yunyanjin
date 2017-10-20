@@ -195,7 +195,7 @@ class Register extends Component {
                 </div>
                 <div className="il_footer text-center" id="il_footer">
 									<span className="project-name">云梦盐津公益项目</span>
-									<span className="license">This project follow <a href="">pf License</a></span>
+									<span className="license">This project follow <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0</a></span>
 								</div>
                 <UserForm
                     loginModalVisible={this.state.loginModalVisible}
