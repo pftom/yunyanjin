@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -9,8 +8,8 @@ import {
     Route
  } from 'react-router-dom';
 
- import Register from './Register.js';
- import ChangePassword from './ChangePassword.js';
+ import Register from './containers/Register.js';
+ import ChangePassword from './containers/ChangePassword.js';
 
 
  const BasicApp = () => (

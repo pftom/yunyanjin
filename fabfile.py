@@ -124,9 +124,6 @@ def deploy():
     Push your code, handle the whole process of docker image.
     and (re)deploy the container.
     """
-    local("git add . && git commit -m '%s auto-build commit.'" % datetime.now())
-    local("git push")
-
     # Build and push the image
     local("docker build -t %s ." % image_repo)
     local("docker push %s" % image_repo)

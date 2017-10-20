@@ -5,20 +5,19 @@ import './css/App.css';
 import './css/modal.css';
 
 //import Login component
-import UserForm from './UserForm';
-import NavBar from './NavBar';
-import HeaderBody from './HeaderBody';
-import About from './About';
-import News from './News';
-import Shops from './Shops';
-import GoodsDetail from './GoodsDetail';
-import Commitments from './Commitments';
-import Footer from './Footer';
-import ShopCart from './ShopCart';
-import Video from './Video';
-import Events from './Events';
-import ExtraVideo from './ExtraVideo';
-import Partner from './Partners';
+import UserForm from './components/UserForm';
+import NavBar from './components/NavBar';
+import HeaderBody from './components/HeaderBody';
+import About from './components/About';
+import News from './components/News';
+import Shops from './components/Shops';
+import GoodsDetail from './containers/GoodsDetail';
+import Commitments from './components/Commitments';
+import Footer from './components/Footer';
+import ShopCart from './containers/ShopCart';
+import Video from './components/Video';
+import Events from './components/Events';
+import Partner from './components/Partners';
 
 
 let currentGood = 1;
