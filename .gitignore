@@ -16,4 +16,7 @@ yarn-error.log*
 
 *.pyc
 .vscode
+
+# Secret keys
 ACCESS_KEY
+pf.pem

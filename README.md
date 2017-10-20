@@ -16,10 +16,10 @@ This is the client-side codebase of Yunyanjin project.
 
 1. First and foremost, install docker on your machine. [The official docker documentation](https://docs.docker.com/engine/installation/) is a good start.
 
-2. Install Fabric on your machine(Remember it's based on **Python2**, so you have to check you are using `pip` for Python2).
+2. Install fabric and oss2 on your machine(Remember it's based on **Python2**, so you have to check you are using `pip` for Python2).
 
 ```bash
-$ pip install fabric
+$ pip install fabric oss2
 ```
 
 3. Adjust the **fabfile.py** global settings to your taste.
@@ -33,13 +33,13 @@ oss_vendor = 'YOUR OSS VENDOR'
 bucket_url = 'YOUR BUCKET URL'
 ```
 
-4. Contact mrc for ACCESS_KEY, and put it in the project folder.
+4. Contact mrc for ACCESS_KEY and pf.pem, and put it in the project folder.
 
 5. Build your project and deploy it in one single command respectively. If you have are unfamiliar with command function, refer to `fabfile.py`.
 
 ```bash
 $ fab build
-$ fab deploy
+$ fab deploy -i pf.pem
 ```
 
 Then grab a cup of coffee for yourself, and you'll see your changes alive.
