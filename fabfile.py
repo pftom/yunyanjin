@@ -104,10 +104,13 @@ def pull_image_and_redeploy():
         # The image already has a running container
         # So we need to remove it
         run("docker rm -f %s" % container_name)
+        run("docker rm -f proxy")
 
     # Run a container with the updated image
     run("docker run -d --name %s --restart=always %s"
         % (container_name, image_repo))
+    run("docker run -d --name proxy -p 80:80 --link web:web \
+        --volumes-from web --volumes-from yyj_client powerformarc/pf-proxy")
 
 
 def deploy():
