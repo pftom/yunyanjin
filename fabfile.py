@@ -96,14 +96,14 @@ def build():
 
 def pull_image_and_redeploy():
     """Pull the newest image from Docker Hub."""
+    # Pull the newest image
+    run("docker pull %s" % image_repo)
+
     running_containers = run("docker ps --format {{.Names}}").split()
     if container_name in running_containers:
         # The image already has a running container
         # So we need to remove it
         run("docker rm -f %s" % container_name)
-
-    # Pull the newest image
-    run("docker pull %s" % image_repo)
 
     # Run a container with the updated image
     run("docker run -d --name %s --restart=always %s"
