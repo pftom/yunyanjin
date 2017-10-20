@@ -11,6 +11,8 @@ Available commands:
 
 from __future__ import with_statement
 
+from datetime import datetime
+
 from fabric.api import *
 import oss2
 
@@ -122,6 +124,7 @@ def deploy():
     Push your code, handle the whole process of docker image.
     and (re)deploy the container.
     """
+    local("git add . && git commit -m '%s auto-build commit.'" % datetime.now())
     local("git push")
 
     # Build and push the image
