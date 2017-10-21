@@ -14,7 +14,7 @@ import Shops from '../components/Shops';
 import GoodsDetail from '../containers/GoodsDetail';
 import Commitments from '../components/Commitments';
 import Footer from '../components/Footer';
-import ShopCart from '../containers/ShopCart';
+import ShopCart from './ShopCart';
 import Video from '../components/Video';
 import Events from '../components/Events';
 import Partner from '../components/Partners';
@@ -87,6 +87,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('props', this.props.history);
 
     return (
       <div>

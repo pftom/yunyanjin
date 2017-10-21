@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Icon, Input } from 'antd';
-import './css/Register.css';
+// import './css/Register.css';
 import { Link } from 'react-router-dom';
 
 import { userApi, base } from '../config/config';

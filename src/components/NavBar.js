@@ -71,7 +71,7 @@ class NavBar extends Component {
                     width <= 760
                     ? (
                         <a className="nav-operation" onClick={() => { this.props.showLoginModal('loginModalVisible') }}>
-                            &nbsp;&nbsp;登录/注册
+                            登录/注册
                         </a>
                     )
                     : (

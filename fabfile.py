@@ -34,7 +34,7 @@ def read_api_auth():
 def upload_to_oss(css_files, js_files):
     """Upload static assets to OSS via SDK."""
     # Initialize api auth with access key
-    print "Reading api auth keys ...",
+    print "Reading api auth keys ..."
     auth = read_api_auth()
     print "Done."
 

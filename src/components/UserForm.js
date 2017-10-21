@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 
 // import login, register, change-password component
-import Login from '../containers/Login';
+import LoginContainer from '../containers/LoginContainer';
 
 import { Modal, Tabs } from 'antd';
 
@@ -13,6 +13,7 @@ const TabPane = Tabs.TabPane;
 class UserForm extends Component {
 
     render() {
+        console.log('props', this.props);
 
         return (
             <Modal
@@ -34,7 +35,7 @@ class UserForm extends Component {
                         tab="登 录"
                         key="1"
                     >
-                        <Login
+                        <LoginContainer
                             handleLogin={this.props.handleLogin}
                             history={this.props.history}
                             noRegister={this.props.noRegister}

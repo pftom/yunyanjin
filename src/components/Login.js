@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-
-import './css/Login.css';
-
 import { Link } from 'react-router-dom';
 
-import {  base, userApi } from '../config/config';
-import request from '../config/request';
+import './css/Login.css';
 
 import { Button, Form, Icon, Input, Checkbox, message } from 'antd';
 
@@ -13,64 +9,12 @@ const FormItem = Form.Item;
 
 
 class Login extends Component {
+    onSubmit = (e) => {
+        e.preventDefault();
+        const form = this.props.form;
+        
+        this.props.onSubmit(form);
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            loginModalVisible: false,
-        }
-    }
-
-
-
-
-    handleSubmit = (e) => {
-            e.preventDefault();
-            this.props.form.validateFields(async (err, values) => {
-            if (!err) {
-                console.log('Received values of form: ', values);
-
-                const { username, password } = values;
-
-                const body = {
-                    username,
-                    password,
-                };
-
-                try {
-                    const { token } = await request.post(base + userApi.login, body);
-
-                    await localStorage.setItem('token', token);
-
-                    this.success('登录成功！');
-
-                    this.props.handleLogin()
-
-                    setTimeout(() => {
-                        this.props.hideLoginModal('loginModalVisible');
-                    }, 2000);
-
-                    const location = {
-                        pathname: '/',
-                    };
-
-                    this.props.history.push(location);
-                } catch(e) {
-                    this.error('登录失败！');
-                    console.log('redirect faile')
-                }
-            } else {
-                this.error('登录失败！');
-            }
-        });
-    }
-    success = (msg) => {
-        message.success(msg);
-    }
-
-    error = (msg) => {
-        message.error(msg);
     }
 
     render() {
@@ -79,7 +23,7 @@ class Login extends Component {
 
         return (
             <div className="container-fluid login-box">
-                <Form onSubmit={this.handleSubmit} className="login-form">
+                <Form onSubmit={this.onSubmit} className="login-form">
                     <FormItem
                         hasFeedback
                     >
@@ -112,7 +56,7 @@ class Login extends Component {
                         {
                             !this.props.noRegister && (
                                 <div className="already-user text-center">
-                                    还没账号？<Link to="/register" onClick={this.showLoginModal} className="text-blue">马上注册</Link>
+                                    还没账号？<Link to="/register" className="text-blue">马上注册</Link>
                                 </div>
                             )
                         }
