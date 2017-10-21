@@ -88,8 +88,8 @@ def build():
     local("npm run build")
 
     # Capture names of static files needed to be uploaded
-    css_files = sorted(local("ls build/static/css/*.css", capture=True).split())
-    js_files = sorted(local("ls build/static/js/*.js", capture=True).split())
+    css_files = sorted(local("ls build/static/css/", capture=True).split())
+    js_files = sorted(local("ls build/static/js/", capture=True).split())
 
     upload_to_oss(css_files, js_files)
     replace_links(css_files[0], js_files[0])
