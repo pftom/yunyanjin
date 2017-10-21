@@ -73,7 +73,7 @@ $(document).ready(function(){
     }
     //add for response adapt
 
-    if(window_width < 414) {
+    if(window_width < 441) {
 
         $('.sy-box, #slider').html('<img src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/mobile-background.jpg" class="responsive-img" />')
         $('.sy-box.sy-loading').css('min-height', 0);
