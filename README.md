@@ -35,11 +35,11 @@ bucket_url = 'YOUR BUCKET URL'
 
 4. Contact mrc for ACCESS_KEY and pf.pem, and put it in the project folder.
 
-5. Build your project and deploy it in one single command respectively. If you have are unfamiliar with command function, refer to `fabfile.py`.
+5. Build your project and deploy it in one single command respectively. If you are unfamiliar with command function, refer to `fabfile.py`.
 
 ```bash
 $ fab build
-$ fab deploy -i pf.pem
+$ fab deploy
 ```
 
 Then grab a cup of coffee for yourself, and you'll see your changes alive.

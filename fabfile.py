@@ -3,10 +3,9 @@ Yunyanjin client fabric script.
 
 Available commands:
 
-- `fab build`: Run react build scripts and upload static assets to OSS,
-    and replace links in HTML meanwhile.
-- `fab deploy`: Push your code, handle the whole process of docker image.
-    and (re)deploy the container.
+- `fab build`: Run react build scripts and upload static assets to OSS, and replace
+links in HTML meanwhile.
+- `fab deploy`: Handle the whole process of docker image, and (re)deploy the container.
 """
 
 from __future__ import with_statement
@@ -97,7 +96,7 @@ def build():
 
 
 def pull_image_and_redeploy():
-    """Pull the newest image from Docker Hub."""
+    """Pull the newest image from Docker Hub and redeploy the container."""
     # Pull the newest image
     run("docker pull %s" % image_repo)
 
@@ -119,7 +118,7 @@ def pull_image_and_redeploy():
         --restart=always powerformarc/pf-proxy")
 
 
-def deploy():
+def deploy_with_private_key():
     """
     Push your code, handle the whole process of docker image.
     and (re)deploy the container.
@@ -129,3 +128,8 @@ def deploy():
     local("docker push %s" % image_repo)
 
     pull_image_and_redeploy()
+
+
+def deploy():
+    """Simplify deploy command from `fab deploy -i pf.pem` to `fab deploy`."""
+    local("fab deploy_with_private_key -i pf.pem")
