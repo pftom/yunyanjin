@@ -5,7 +5,6 @@ import './css/App.css';
 import './css/modal.css';
 
 import {
-  YjUserForm,
   NavBar,
   About,
   Intro,
@@ -13,11 +12,14 @@ import {
   Shops,
   Commitments,
   Footer,
-  YjVideo,
   Events,
   Partner,
 } from '../components/';
-import { YjGoodsDetail, YjShopCart } from './';
+
+import GoodsDetail from './GoodsDetail';
+import ShopCart from './ShopCart';
+import Video from '../components/Video';
+import UserForm from '../components/UserForm';
 
 
 
@@ -106,7 +108,7 @@ class App extends Component {
 
           {
             this.state.cartModalVisible && (
-              <YjShopCart
+              <ShopCart
                 cartModalVisible={this.state.cartModalVisible}
                 hideCartModal={this.handleCancel}
                 history={this.props.history}
@@ -114,7 +116,7 @@ class App extends Component {
             )
           }
 
-          <YjUserForm
+          <UserForm
             loginModalVisible={this.state.loginModalVisible}
             handleLogin={this.handleLogin}
             hideLoginModal={this.handleCancel}
@@ -129,7 +131,7 @@ class App extends Component {
             handleCancelVideo={this.handleCancel}
            />
 
-          <YjVideo
+          <Video
             videoModalVisible={this.state.videoModalVisible}
             handleCancel={this.handleCancel}
           />
@@ -144,7 +146,7 @@ class App extends Component {
 
           {
             this.state.goodsItemModalVisible && (
-              <YjGoodsDetail
+              <GoodsDetail
                 currentGood={currentGood}
                 handleCancel={this.handleCancel}
                 goodsItemModalVisible={this.state.goodsItemModalVisible}

@@ -8,15 +8,17 @@ import {
     Route
  } from 'react-router-dom';
 
- import { YjRegister, YjChangePassword } from './containers/';
+//  import { YjRegister, YjChangePassword } from './containers/';
+import RegisterContainer from './containers/RegisterContainer';
+import ChangePasswordContainer from './containers/ChangePassword';
 
 
  const BasicApp = () => (
      <Router forceRefresh={true}>
         <div>
             <Route exact path="/" component={App} />
-            <Route path="/register" component={YjRegister} />
-            <Route path="/change_password" component={YjChangePassword} />
+            <Route path="/register" component={RegisterContainer} />
+            <Route path="/change_password" component={ChangePasswordContainer} />
         </div>
      </Router>
  )
