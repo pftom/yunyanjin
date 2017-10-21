@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import './css/News.css';
-class News extends Component {
+import './css/Intro.css';
+
+class Intro extends Component {
     render() {
         return (
             <div id="news" className="container-fluid culture map-box">
@@ -19,4 +20,4 @@ class News extends Component {
     }
 }
 
-export default News;
+export default Intro;

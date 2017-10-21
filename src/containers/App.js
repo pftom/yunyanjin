@@ -4,20 +4,21 @@ import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
-//import Login component
-import UserForm from '../components/UserForm';
-import NavBar from '../components/NavBar';
-import HeaderBody from '../components/HeaderBody';
-import About from '../components/About';
-import News from '../components/News';
-import Shops from '../components/Shops';
-import GoodsDetail from '../containers/GoodsDetail';
-import Commitments from '../components/Commitments';
-import Footer from '../components/Footer';
-import ShopCart from './ShopCart';
-import Video from '../components/Video';
-import Events from '../components/Events';
-import Partner from '../components/Partners';
+import {
+  YjUserForm,
+  NavBar,
+  About,
+  Intro,
+  HeaderBody,
+  Shops,
+  Commitments,
+  Footer,
+  YjVideo,
+  Events,
+  Partner,
+} from '../components/';
+import { YjGoodsDetail, YjShopCart } from './';
+
 
 
 let currentGood = 1;
@@ -92,10 +93,10 @@ class App extends Component {
     return (
       <div>
           <ul id="slider" style={{ zIndex: -1, position: 'absolute', listStyle: 'none', width: '100%', height: '100%', padding: 0, margin: 0 }} className="hde">
-                  <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s1.jpg"/></li>
-                  <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s2.jpg"/></li>
-                  <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s3.jpg"/></li>
-              </ul>
+              <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s1.jpg"/></li>
+              <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s2.jpg"/></li>
+              <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s3.jpg"/></li>
+          </ul>
           <NavBar
             isLoggedIn={this.state.isLoggedIn}
             showLoginModal={this.showModal}
@@ -105,7 +106,7 @@ class App extends Component {
 
           {
             this.state.cartModalVisible && (
-              <ShopCart
+              <YjShopCart
                 cartModalVisible={this.state.cartModalVisible}
                 hideCartModal={this.handleCancel}
                 history={this.props.history}
@@ -113,7 +114,7 @@ class App extends Component {
             )
           }
 
-          <UserForm
+          <YjUserForm
             loginModalVisible={this.state.loginModalVisible}
             handleLogin={this.handleLogin}
             hideLoginModal={this.handleCancel}
@@ -128,7 +129,7 @@ class App extends Component {
             handleCancelVideo={this.handleCancel}
            />
 
-          <Video
+          <YjVideo
             videoModalVisible={this.state.videoModalVisible}
             handleCancel={this.handleCancel}
           />
@@ -137,13 +138,13 @@ class App extends Component {
             showGoodItemModal={this.showModal}
           />
 
-          <News />
+          <Intro />
 
           <Events />
 
           {
             this.state.goodsItemModalVisible && (
-              <GoodsDetail
+              <YjGoodsDetail
                 currentGood={currentGood}
                 handleCancel={this.handleCancel}
                 goodsItemModalVisible={this.state.goodsItemModalVisible}

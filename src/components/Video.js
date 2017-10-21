@@ -4,7 +4,7 @@ import './css/Video.css';
 
 import ModalVideo from './ModalVideo';
 
-class VideoPlayer extends Component {
+class Video extends Component {
     render() {
         return (
             <ModalVideo  
@@ -17,4 +17,4 @@ class VideoPlayer extends Component {
     }
 }
 
-export default VideoPlayer;
+export default Video;
