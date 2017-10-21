@@ -3,10 +3,9 @@ Yunyanjin client fabric script.
 
 Available commands:
 
-- `fab build`: Run react build scripts and upload static assets to OSS,
-    and replace links in HTML meanwhile.
-- `fab deploy`: Push your code, handle the whole process of docker image.
-    and (re)deploy the container.
+- `fab build`: Run react build scripts and upload static assets to OSS, and replace
+links in HTML meanwhile.
+- `fab deploy`: Handle the whole process of docker image, and (re)deploy the container.
 """
 
 from __future__ import with_statement
