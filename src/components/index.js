@@ -1,7 +1,7 @@
 import React from 'react';
-import Loadable from 'react-loadable';
+// import Loadable from 'react-loadable';
 
-import { Loading } from '../containers/';
+// import { Loading } from '../containers/';
 
 import NavBar from './NavBar';
 import About from './About';
@@ -13,32 +13,31 @@ import Footer from './Footer';
 import Events from './Events';
 import Partner from './Partners';
 
-// construc basic loadable component
-const constructLoadable = (componentPath) => (
-    Loadable({
-        loader: () => import(`${componentPath}`),
-        loading: Loading,
-        timeout: 10000,
-    })
-);
+// // construc basic loadable component
+// const constructLoadable = (componentPath) => (
+//     Loadable({
+//         loader: () => import(`${componentPath}`),
+//         loading: Loading,
+//         timeout: 10000,
+//     })
+// );
 
-// Video dynamic loading function
-const LoadableVideo = constructLoadable('./Video.js');
+// // Video dynamic loading function
+// const LoadableVideo = constructLoadable('./Video.js');
 
-function YjVideo(props) {
-    return <LoadableVideo {...props} />
-}
+// function YjVideo(props) {
+//     return <LoadableVideo {...props} />
+// }
 
-// UserForm dynamic loading function
-const LoadableUserForm = constructLoadable('./UserForm.js');
+// // UserForm dynamic loading function
+// const LoadableUserForm = constructLoadable('./UserForm.js');
 
-function YjUserForm(props) {
-    return <LoadableUserForm {...props} />
-}
+// function YjUserForm(props) {
+//     return <LoadableUserForm {...props} />
+// }
 
 
 export {
-    YjUserForm,
     NavBar,
     HeaderBody,
     About,
@@ -46,7 +45,6 @@ export {
     Shops,
     Commitments,
     Footer,
-    YjVideo,
     Events,
     Partner,
 }
