@@ -14,12 +14,12 @@ import {
   Footer,
   Events,
   Partner,
+  Video,
+  UserForm,
 } from '../components/';
 
 import GoodsDetail from './GoodsDetail';
 import ShopCart from './ShopCart';
-import Video from '../components/Video';
-import UserForm from '../components/UserForm';
 
 
 
