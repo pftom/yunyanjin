@@ -33,15 +33,11 @@ class GoodsDetailContainer extends Component {
       */
       try {
         const token = await localStorage.getItem('token');
-        console.log('currentGood', this.props.currentGood);
 
         const goodItemContent = await request.get(base + shopSingleApi(this.props.currentGood).productDetail, null, token);
         const goodItemImg = await request.get(base + shopSingleApi(this.props.currentGood).productAllImg, null, token);
         const goodAllBuyItem = await request.get(base + shopSingleApi(this.props.currentGood).productAllBuyItem, null, token);
 
-        console.log('goodItemContent', goodItemContent);
-        console.log('goodItemImg', goodItemImg);
-        console.log('goodAllBuyItem', goodAllBuyItem);
 
         this.setState({
           goodItemContent,
@@ -70,7 +66,6 @@ class GoodsDetailContainer extends Component {
     }
 
     closeNotification = () => {
-        console.log('Notification was close');
     }
 
     openNotification = () => {
@@ -103,7 +98,6 @@ class GoodsDetailContainer extends Component {
     }
 
     changeTab = (key) => {
-        console.log(key);
     }
 
 
@@ -162,7 +156,6 @@ class GoodsDetailContainer extends Component {
     }
 
     handleNormsChange = (e) => {
-      console.log(e.target.value);
       const { goodAllBuyItem, count } = this.state;
 
       let currentBuyItem = null;
@@ -202,7 +195,6 @@ class GoodsDetailContainer extends Component {
 
         this.success('加入购物车成功！')
       } catch(err) {
-        console.log('err', err);
         this.error('加入购物车失败,你还未登录!');
       }
     }

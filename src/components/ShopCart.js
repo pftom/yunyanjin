@@ -24,8 +24,6 @@ class ShopCart extends Component {
             deleteCartItem,
         } = this.props;
 
-        console.log('props', this.props);
-
 
         return (
             <Modal

@@ -13,7 +13,6 @@ const TabPane = Tabs.TabPane;
 class UserForm extends Component {
 
     render() {
-        console.log('props', this.props);
 
         return (
             <Modal
