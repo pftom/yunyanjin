@@ -18,8 +18,8 @@ import {
   UserForm,
 } from '../components/';
 
-import GoodsDetail from './GoodsDetail';
-import ShopCart from './ShopCart';
+import GoodsDetailContainer from './GoodsDetailContainer';
+import ShopCartContainer from './ShopCartContainer';
 
 
 
@@ -108,7 +108,7 @@ class App extends Component {
 
           {
             this.state.cartModalVisible && (
-              <ShopCart
+              <ShopCartContainer
                 cartModalVisible={this.state.cartModalVisible}
                 hideCartModal={this.handleCancel}
                 history={this.props.history}
@@ -146,7 +146,7 @@ class App extends Component {
 
           {
             this.state.goodsItemModalVisible && (
-              <GoodsDetail
+              <GoodsDetailContainer
                 currentGood={currentGood}
                 handleCancel={this.handleCancel}
                 goodsItemModalVisible={this.state.goodsItemModalVisible}

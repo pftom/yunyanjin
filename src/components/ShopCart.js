@@ -1,135 +1,45 @@
 import React, { Component } from 'react';
-
+import { Modal, Button, Tabs, Icon, message, Spin } from 'antd';
 
 import './css/ShopCart.css'
-
-import {  base, cartSingleApi } from '../config/config';
-import request from '../config/request';
-
 import wechat from './img/wechat_pay.png';
-
-import { Modal, Button, Tabs, Icon, message, Spin } from 'antd';
 
 const TabPane = Tabs.TabPane;
 
 
 class ShopCart extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            allProducts: null,
-            alreadyLoaded: false,
-            totalPrice: 0,
-            allNoRepProducts: [],
-            allNoRepProductsCount: [],
-            countEveryProductCount: {
-                '1': 0,
-                '2': 0,
-                '3': 0,
-                '4': 0,
-                '5': 0,
-                '6': 0,
-            },
-        }
-    }
-
-    componentDidMount() {
-        this.getAllCart();
-    }
-
-    getAllCart = async () => {
-
-        const { countEveryProductCount, allNoRepProducts, allNoRepProductsCount } = this.state;
-        try {
-            const token = await localStorage.getItem('token');
-
-            const allProducts = await request.get(base + cartSingleApi().allProducts, null, token);
-
-            console.log('allProducts', allProducts);
-            let totalPrice = 0;
-
-            allProducts.map(item => {
-                totalPrice += Number(item.item.price);
-                countEveryProductCount[`${item.item.id}`]++;
-                return item;
-            })
-
-
-            Object.keys(countEveryProductCount).map(item => {
-                if (countEveryProductCount[item] > 0) {
-                    let flag = false;
-                    allProducts.map(goodItem => {
-                        if (!flag && goodItem.item.id === Number(item)) {
-                            allNoRepProducts.push(goodItem);
-                            allNoRepProductsCount.push(countEveryProductCount[item]);
-                            flag = true;
-                        }
-                        return goodItem;
-                    })
-                }
-
-                return item;
-            })
-
-            console.log('allNoRepProducts', allNoRepProducts, 'allNoRepProductsCount', allNoRepProductsCount);
-
-            this.setState({
-                allProducts,
-                alreadyLoaded: true,
-                allNoRepProductsCount,
-                allNoRepProducts,
-                totalPrice,
-            });
-
-            this.success('获取购物车成功！');
-        } catch(err) {
-            console.log('err', err);
-            this.error('获取购物车失败！请登录或者检查网络连接！');
-        }
-    }
-
-    success = (msg) => {
-        message.success(msg);
-    }
-
-    error = (msg) => {
-        message.error(msg);
-    }
-
-    deleteCartItem = async (item) => {
-        try {
-            const token = await localStorage.getItem('token');
-
-            console.log('token', token);
-            console.log('item', item);
-
-            await request.delete(base + cartSingleApi(item.item.id).deleteSingleProduct, token);
-
-            this.getAllCart();
-
-            this.success('删除商品成功！');
-
-        } catch(err) {
-            this.error('删除商品失败！请检查网络连接！');
-        }
-    }
-
     render() {
+        const {
+            // prop
+            allNoRepProducts,
+            allNoRepProductsCount,
+            totalPrice,
+            alreadyLoaded,
+            allProducts,
+            cartModalVisible,
+
+            // method
+            hideCartModal,
+            deleteCartItem,
+        } = this.props;
+
+        console.log('props', this.props);
+
+
         return (
             <Modal
-               visible={this.props.cartModalVisible}
-                onCancel={() => { this.props.hideCartModal('cartModalVisible') }}
+               visible={cartModalVisible}
+                onCancel={() => { hideCartModal('cartModalVisible') }}
                 width={899}
                 footer={null}
                 title={null}
                 className="shop-cart-container"
             >
                 {
-                    this.state.alreadyLoaded
+                    alreadyLoaded
                     ? (
-                        this.state.allProducts && (
+                        allProducts && (
                             <div className="container-fluid shop-cart">
                                 <div className="col-sm-7 shop-cart-left">
 
@@ -150,7 +60,7 @@ class ShopCart extends Component {
                                         </div>
                                     </div>
                                     {
-                                        this.state.allNoRepProducts.map((item, key) => (
+                                        allNoRepProducts.map((item, key) => (
                                             <div className="row cart-item-body min-screen-body" key={key}>
                                                 <div className="col-sm-5 ">
                                                     <img src={item.photo} alt="good1" />
@@ -162,11 +72,11 @@ class ShopCart extends Component {
                                                     <span>{item.item.unit}</span>
                                                 </div>
                                                 <div className="col-sm-2 text-center min-screen-adapt-item-count">
-                                                    <span className="item-count">{this.state.allNoRepProductsCount[key]}</span>
+                                                    <span className="item-count">{allNoRepProductsCount[key]}</span>
                                                 </div>
                                                 <div className="col-sm-3 item-price text-left close-box">
                                                     <span>￥{item.quantity * item.item.price}</span>
-                                                    <Icon type="close" className="item-price-close" onClick={() => { this.deleteCartItem(item) }}/>
+                                                    <Icon type="close" className="item-price-close" onClick={() => { deleteCartItem(item) }}/>
                                                 </div>
                                             </div>
                                         ))
@@ -177,13 +87,13 @@ class ShopCart extends Component {
                                         共需支付
                                     </div>
                                     <div className="row total-price text-right">
-                                        ￥{this.state.totalPrice}
+                                        ￥{totalPrice}
                                     </div>
 
                                     <div className="breakwidth-60 row"></div>
 
                                     <div className="row return-homepage">
-                                        <Button type="Default" onClick={() => { this.props.hideCartModal('cartModalVisible')}}>返回首页</Button>
+                                        <Button type="Default" onClick={() => { hideCartModal('cartModalVisible')}}>返回首页</Button>
                                     </div>
 
                                 </div>
