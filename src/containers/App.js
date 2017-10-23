@@ -17,7 +17,7 @@ import {
   Footer,
   Events,
   Partner,
-  LoadableVideo,
+  Video,
   UserForm,
   BackgroundImg,
 } from '../components/';
@@ -130,7 +130,7 @@ class App extends Component {
             handleCancelVideo={this.handleCancel}
            />
 
-          <LoadableVideo
+          <Video
             videoModalVisible={this.state.videoModalVisible}
             handleCancel={this.handleCancel}
           />
