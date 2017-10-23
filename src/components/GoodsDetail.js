@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import './css/GoodDetail.css';
+import React from 'react';
+import { Modal, Button, Tabs, Radio, Pagination, Rate, Icon, notification, message, Spin } from 'antd';
 
+// css and image file
+import './css/GoodDetail.css';
 import avatar1 from './img/img_avatar1.png';
 
-import {  base, shopSingleApi } from '../config/config';
-import request from '../config/request'
+// http request api and request function
+import { base, shopSingleApi } from '../config/config';
+import request from '../config/request';
 
-import { Modal, Button, Tabs, Radio, Pagination, Rate, Icon, notification, message, Spin } from 'antd';
+// SubComponent of antd component
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.Group;
 const RadioButton = Radio.Button;
 
-class GoodsDetail extends Component {
-
-    render() {
-
+function GoodsDetail(props) {
         const { 
           // prop item
           goodItemContent, 
@@ -37,7 +37,7 @@ class GoodsDetail extends Component {
           handleCountAdd,
           handleAddToCart,
           changePagination,
-        } = this.props;
+        } = props;
 
         let renderDetail = null;
 
@@ -161,75 +161,23 @@ class GoodsDetail extends Component {
                     key="3"
                   >
                     <div className="container-fluid comment-box">
-                      <div className="media col-sm-8 comment-item">
-                        <div className="media-left">
-                          <img src={avatar1} alt="avatar1" className="media-object" style={{ width: '60px' }}/>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading text-left">Powerformer Tom</h4>
-                          <p className="text-left">Lorem Lorem ipsum... Lorem ipsum...</p>
-                          <div className="rate-box">
-                            <Rate disabled defaultValue={4} character={<Icon type="heart" />} />
-                            <span>2017-08-26 21:03</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="media col-sm-8 comment-item">
-                        <div className="media-left">
-                          <img src={avatar1} alt="avatar1" className="media-object" style={{ width: '60px' }}/>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading text-left">Powerformer Tom</h4>
-                          <p className="text-left">Lorem Lorem ipsum... Lorem ipsum...</p>
-                          <div className="rate-box">
-                            <Rate disabled defaultValue={4} character={<Icon type="heart" />} />
-                            <span>2017-08-26 21:03</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="media col-sm-8 comment-item">
-                        <div className="media-left">
-                          <img src={avatar1} alt="avatar1" className="media-object" style={{ width: '60px' }}/>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading text-left">Powerformer Tom</h4>
-                          <p className="text-left">Lorem Lorem ipsum... Lorem ipsum...</p>
-                          <div className="rate-box">
-                            <Rate disabled defaultValue={4} character={<Icon type="heart" />} />
-                            <span>2017-08-26 21:03</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="media col-sm-8 comment-item">
-                        <div className="media-left">
-                          <img src={avatar1} alt="avatar1" className="media-object" style={{ width: '60px' }}/>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading text-left">Powerformer Tom</h4>
-                          <p className="text-left">Lorem Lorem ipsum... Lorem ipsum...</p>
-                          <div className="rate-box">
-                            <Rate disabled defaultValue={4} character={<Icon type="heart" />} />
-                            <span>2017-08-26 21:03</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="media col-sm-8">
-                        <div className="media-left">
-                          <img src={avatar1} alt="avatar1" className="media-object" style={{ width: '60px' }}/>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading text-left">Powerformer Tom</h4>
-                          <p className="text-left">Lorem Lorem ipsum... Lorem ipsum...</p>
-                          <div className="rate-box">
-                            <Rate disabled defaultValue={4} character={<Icon type="heart" />} />
-                            <span>2017-08-26 21:03</span>
-                          </div>
-                        </div>
-                      </div>
+                      {
+						  [1, 2, 3, 4, 5, 6, 7].map((item, key) => (
+							<div className="media col-sm-8 comment-item">
+								<div className="media-left">
+								<img src={avatar1} alt="avatar1" className="media-object" style={{ width: '60px' }}/>
+								</div>
+								<div className="media-body">
+								<h4 className="media-heading text-left">Powerformer Tom</h4>
+								<p className="text-left">Lorem Lorem ipsum... Lorem ipsum...</p>
+								<div className="rate-box">
+									<Rate disabled defaultValue={4} character={<Icon type="heart" />} />
+									<span>2017-08-26 21:03</span>
+								</div>
+								</div>
+						    </div>
+						  ))
+					  }
                       <div className="partition" />
                       <Pagination current={current} onChange={changePagination} total={50} />
                     </div>
@@ -244,8 +192,7 @@ class GoodsDetail extends Component {
               )
             }
           </Modal>
-        )
-    }
+        );
 }
 
 export default GoodsDetail;

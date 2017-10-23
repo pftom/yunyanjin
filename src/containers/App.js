@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+
+// import css file
 import 'antd/dist/antd.css';
 import './css/rubick_pres.css';
 import './css/App.css';
 import './css/modal.css';
 
+// Presentation component
 import {
   NavBar,
   About,
@@ -14,18 +17,18 @@ import {
   Footer,
   Events,
   Partner,
-  Video,
+  LoadableVideo,
   UserForm,
+  BackgroundImg,
 } from '../components/';
 
+// Container component
 import GoodsDetailContainer from './GoodsDetailContainer';
 import ShopCartContainer from './ShopCartContainer';
 
-
-
-let currentGood = 1;
-
 class App extends Component {
+  currentGood = 1;
+
   constructor(props) {
     super(props);
 
@@ -49,7 +52,7 @@ class App extends Component {
   showModal = (type, goodId) => {
 
     if (goodId) {
-      currentGood = goodId;
+      this.currentGood = goodId;
     }
 
 
@@ -93,11 +96,8 @@ class App extends Component {
 
     return (
       <div>
-          <ul id="slider" style={{ zIndex: -1, position: 'absolute', listStyle: 'none', width: '100%', height: '100%', padding: 0, margin: 0 }} className="hde">
-              <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s1.jpg"/></li>
-              <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s2.jpg"/></li>
-              <li><img className="lazyload" data-src="http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/slippry/s3.jpg"/></li>
-          </ul>
+          <BackgroundImg />
+
           <NavBar
             isLoggedIn={this.state.isLoggedIn}
             showLoginModal={this.showModal}
@@ -130,7 +130,7 @@ class App extends Component {
             handleCancelVideo={this.handleCancel}
            />
 
-          <Video
+          <LoadableVideo
             videoModalVisible={this.state.videoModalVisible}
             handleCancel={this.handleCancel}
           />
@@ -146,7 +146,7 @@ class App extends Component {
           {
             this.state.goodsItemModalVisible && (
               <GoodsDetailContainer
-                currentGood={currentGood}
+                currentGood={this.currentGood}
                 handleCancel={this.handleCancel}
                 goodsItemModalVisible={this.state.goodsItemModalVisible}
               />

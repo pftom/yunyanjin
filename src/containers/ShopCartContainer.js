@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
 
-import ShopCart from '../components/ShopCart';
+import { ShopCart } from '../components/';
 
 import {  base, cartSingleApi } from '../config/config';
 import request from '../config/request';

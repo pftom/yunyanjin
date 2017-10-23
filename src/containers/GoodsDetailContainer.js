@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { message, notification, Button, Icon } from 'antd';
 
-import GoodsDetail from '../components/GoodsDetail';
+import { GoodsDetail } from '../components/';
 
 import {  base, shopSingleApi } from '../config/config';
 import request from '../config/request';
