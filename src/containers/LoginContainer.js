@@ -6,14 +6,14 @@
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Button, Form, Icon, Input, Checkbox, message } from 'antd';
 
 // Presentational Login component
 import Login from '../components/Login';
 
-// http request api and request func
-import {  base, userApi } from '../config/config';
-import request from '../config/request';
+// import async action constants
+import { LOGIN } from '../constants/userConstants';
 
 const FormItem = Form.Item;
 
@@ -25,6 +25,36 @@ class LoginContainer extends Component {
         this.state = {
             loginModalVisible: false,
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const { loginSuccess, loginError } = nextProps;
+
+        if (loginSuccess) {
+            this.handleLoginSuccess();
+        }
+
+        if (loginError) {
+            this.handleLoginError();
+        }
+    }
+
+    handleLoginSuccess() {
+        this.success('登录成功！');
+
+        setTimeout(() => {
+            this.props.hideLoginModal('loginModalVisible');
+        }, 2000);
+
+        const location = {
+            pathname: '/',
+        };
+
+        this.props.history.push(location);
+    }
+
+    handleLoginError() {
+        this.error('账号或密码错误，登录失败！');
     }
 
     handleSubmit = (form) => {
@@ -39,33 +69,8 @@ class LoginContainer extends Component {
                 password,
             };
 
-            try {
-                const { token } = await request.post(base + userApi.login, body);
-
-                await localStorage.setItem('token', token);
-
-                this.success('登录成功！');
-                console.log('props', this.props);
-
-                if (this.props.handleLogin) {
-                    this.props.handleLogin();
-                }
-
-
-                setTimeout(() => {
-                    this.props.hideLoginModal('loginModalVisible');
-                }, 2000);
-
-                const location = {
-                    pathname: '/',
-                };
-
-                this.props.history.push(location);
-            } catch(e) {
-                this.error('登录失败！');
-            }
-        } else {
-            this.error('登录失败！');
+            const { dispatch } = this.props;
+            dispatch({ type: LOGIN, payload: { body }});
         }
     });
     }
@@ -90,4 +95,9 @@ class LoginContainer extends Component {
 }
 
 
-export default LoginContainer;
+export default connect(
+    state => ({
+        loginSuccess: state.getIn(['user', 'loginSuccess']),
+        loginError: state.getIn(['user', 'loginError']),
+    }),
+)(LoginContainer);

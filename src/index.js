@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
+import store from './store/';
 
 import {
     BrowserRouter as Router,
@@ -14,13 +17,15 @@ import ChangePasswordContainer from './containers/ChangePassword';
 
 
  const BasicApp = () => (
-     <Router forceRefresh={true}>
-        <div>
-            <Route exact path="/" component={App} />
-            <Route path="/register" component={RegisterContainer} />
-            <Route path="/change_password" component={ChangePasswordContainer} />
-        </div>
-     </Router>
+     <Provider store={store}>
+        <Router forceRefresh={true}>
+            <div>
+                <Route exact path="/" component={App} />
+                <Route path="/register" component={RegisterContainer} />
+                <Route path="/change_password" component={ChangePasswordContainer} />
+            </div>
+        </Router>
+     </Provider>
  )
 
 ReactDOM.render(<BasicApp />, document.getElementById('root'));

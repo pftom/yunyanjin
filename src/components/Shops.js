@@ -46,10 +46,10 @@ function Shops(props) {
           <div className="row text-center scrollmenu">
             {
               DATA.map((itemTop, keyTop) => (
-                <div className="row  slideanim">
+                <div className="row  slideanim" key={keyTop}>
                 {
                   itemTop.map((item, key) => (
-                    <div className=" good-item" onClick={() => { props.showGoodItemModal('goodsItemModalVisible', (keyTop * itemTop.length) + (key + 1)) }}>
+                    <div className=" good-item" key={key} onClick={() => { props.showGoodItemModal('goodsItemModalVisible', (keyTop * itemTop.length) + (key + 1)) }}>
                       <div className="thumbnail">
                         <img data-src={item.image} alt="good3" className="lazyload goodItem"/>
                         <p><strong className="title-align">{item.title} <Icon type="right" style={{ fontSize: '12px' }}/></strong></p>

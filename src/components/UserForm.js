@@ -30,7 +30,6 @@ function UserForm (props){
                     key="1"
                 >
                     <LoginContainer
-                        handleLogin={props.handleLogin}
                         history={props.history}
                         noRegister={props.noRegister}
                         hideLoginModal={props.hideLoginModal}

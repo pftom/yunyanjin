@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // import css file
 import 'antd/dist/antd.css';
@@ -25,6 +26,14 @@ import {
 // Container component
 import GoodsDetailContainer from './GoodsDetailContainer';
 import ShopCartContainer from './ShopCartContainer';
+
+// import action constants
+import {
+  GET_TOKEN,
+
+  LOGIN,
+  LOGOUT,
+} from '../constants/userConstants';
 
 class App extends Component {
   currentGood = 1;
@@ -61,31 +70,18 @@ class App extends Component {
     });
   }
 
-  handleLogin = () => {
-    this.setState({
-      isLoggedIn: true,
-    });
-  }
-
   handleLogout = async () => {
-
-    await localStorage.removeItem('token');
-
-    this.setState({
-      isLoggedIn: false,
-    });
+    // dispatch logout async action
+    const { dispatch } = this.props;
+    dispatch({ type: LOGOUT });
   }
 
   componentDidMount = async () => {
-
-    const token = await localStorage.getItem('token');
-
-
-    if (token) {
-      this.setState({
-        isLoggedIn: true,
-      });
-    }
+    // get dispatch action dispatcher from connect props
+    const { dispatch } = this.props;
+    
+    // dispatch get token action
+    dispatch({ type: GET_TOKEN });
   }
 
 
@@ -94,12 +90,14 @@ class App extends Component {
 
   render() {
 
+    const { token } = this.props;
+
     return (
       <div>
           <BackgroundImg />
 
           <NavBar
-            isLoggedIn={this.state.isLoggedIn}
+            isLoggedIn={token ? true : false}
             showLoginModal={this.showModal}
             showCartModal={this.showModal}
             handleLogout={this.handleLogout}
@@ -117,7 +115,6 @@ class App extends Component {
 
           <UserForm
             loginModalVisible={this.state.loginModalVisible}
-            handleLogin={this.handleLogin}
             hideLoginModal={this.handleCancel}
             history={this.props.history}
           />
@@ -163,4 +160,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  (state) => ({
+    token: state.getIn(['user', 'token']),
+  }),
+)(App);
