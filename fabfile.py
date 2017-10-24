@@ -17,7 +17,7 @@ import oss2
 
 env.hosts = ['root@yunyanjin.com']
 
-image_repo = 'powerformarc/yunyanjin-client'
+image_repo = 'pftom/yunyanjin-client'
 container_name = 'yyj_client'
 oss_vendor = 'http://oss-cn-hangzhou.aliyuncs.com'
 bucket_url = 'http://yunyanjin.oss-cn-hangzhou.aliyuncs.com'
