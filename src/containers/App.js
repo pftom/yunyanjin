@@ -117,6 +117,7 @@ class App extends Component {
             loginModalVisible={this.state.loginModalVisible}
             hideLoginModal={this.handleCancel}
             history={this.props.history}
+            noRegister={true}
           />
 
           <HeaderBody />

@@ -3,11 +3,6 @@ import { Button, Form, Icon, Input } from 'antd';
 // import './css/Register.css';
 import { Link } from 'react-router-dom';
 
-import { userApi, base } from '../config/config';
-import request from '../config/request'
-
-import { message } from 'antd';
-
 const FormItem = Form.Item;
 
 class ChangePassword extends Component {
@@ -20,43 +15,11 @@ class ChangePassword extends Component {
         }
     }
 
-    async componentDidMount() {
-        const token = await localStorage.getItem('token');
-    }
-
-
-    handleSubmit = (e) => {
+    onSubmit = (e) => {
         e.preventDefault();
-        this.props.form.validateFieldsAndScroll(async (err, values) => {
-            if (!err) {
 
-                try {
-                    const { oldPassword, password } = values;
-
-                    const body = {
-                        old_password: oldPassword,
-                        new_password: password,
-                    };
-
-                    const token = await localStorage.getItem('token');
-
-                    await request.post(base + userApi.changePassword, body, token);
-
-                    this.success('修改密码成功！');
-                } catch (err) {
-                    this.error('修改密码失败！');
-                }
-            } else {
-                this.error('修改密码失败！');
-            }
-        });
-  }
-   success = (msg) => {
-       message.success(msg);
-   }
-
-    error = (msg) => {
-        message.error(msg);
+        const { form, onSubmit } = this.props;
+        onSubmit(form);
     }
 
     handleConfirmBlur = (e) => {
@@ -67,19 +30,19 @@ class ChangePassword extends Component {
     checkPassword = (rule, value, callback) => {
         const form = this.props.form;
         if (value && value !== form.getFieldValue('password')) {
-        callback('两次密码不一致');
+            callback('两次密码不一致');
         } else {
-        callback();
+            callback();
         }
-  }
+    }
 
     checkConfirm = (rule, value, callback) => {
         const form = this.props.form;
         if (value && this.state.confirmDirty) {
-        form.validateFields(['confirm'], { force: true });
+            form.validateFields(['confirm'], { force: true });
         }
         callback();
-  }
+    }
 
 
     render() {
@@ -119,7 +82,7 @@ class ChangePassword extends Component {
                         </div>
                         <div className="row register-box-row">
                             <div className="register-box-row-item">
-                <Form onSubmit={this.handleSubmit} className="change-password-form">
+                <Form onSubmit={this.onSubmit} className="change-password-form">
                     <FormItem
                         hasFeedback
                     >

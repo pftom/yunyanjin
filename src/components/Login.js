@@ -52,7 +52,7 @@ function Login (props) {
                         登 录
                     </Button>
                     {
-                        !props.noRegister && (
+                        props.noRegister && (
                             <div className="already-user text-center">
                                 还没账号？<Link to="/register" className="text-blue">马上注册</Link>
                             </div>

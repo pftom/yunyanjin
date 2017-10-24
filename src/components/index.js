@@ -15,6 +15,7 @@ import Video from './Video';
 import UserForm from './UserForm';
 import GoodsDetail from './GoodsDetail';
 import ShopCart from './ShopCart';
+import ChangePassword from './ChangePassword';
 
 
 export {
@@ -32,4 +33,5 @@ export {
     UserForm,
     GoodsDetail,
     ShopCart,
+    ChangePassword,
 }

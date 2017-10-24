@@ -16,6 +16,10 @@ import {
     REGISTER_SUCCESS,
     REGISTER_ERROR,
 
+    CHANGE_PASSWORD,
+    CHANGE_PASSWORD_SUCCESS,
+    CHANGE_PASSWORD_ERROR,
+
     LOGOUT,
 } from '../constants/userConstants';
 
@@ -53,6 +57,7 @@ function* setToken(payload) {
 function* getToken(payload) {
     try {
         const token = yield localStorage.getItem('token');
+        console.log('token', token);
         yield put({ type: GET_TOKEN_SUCCESS, payload: { token }});
     } catch (e) {
         console.error(e, 'Something has gotten wrong in the web storage.');
@@ -76,7 +81,7 @@ function* tokenSaga() {
 function* loginFlow(payload) {
     try {
         const { body } = payload;
-        const token = yield call(request.post, base + userApi.login, body);
+        const { token } = yield call(request.post, base + userApi.login, body);
 
         // login success dispatch success action and set token
         yield put({ type: LOGIN_SUCCESS });
@@ -132,6 +137,37 @@ function* registerSaga() {
 
 
 /*
+ *  register flow
+ *    
+ */
+
+// worker Saga: will be fired on CHANGE_PASSWORD actions
+function* changePasswordFlow(payload) {
+    try {
+        const { body, token } = payload;
+        console.log('payload', payload);
+        yield call(request.post, base + userApi.changePassword, body, token);
+        
+        yield put({ type: CHANGE_PASSWORD_SUCCESS });
+    } catch (e) {
+        yield put({ 
+            type: CHANGE_PASSWORD_ERROR, 
+            payload: { msg: 'change password got wrong.' 
+        }});
+    }
+}
+
+// watch Saga, spawn a new incrementAsync task on each CHANGE_PASSWORD
+function* changePasswordSaga() {
+    while (true) {
+        const { payload } = yield take(CHANGE_PASSWORD);
+        yield call(changePasswordFlow, payload);   
+    }
+}
+
+
+
+/*
  *  logout flow
  *    
  */
@@ -148,5 +184,6 @@ export {
     tokenSaga,
     loginSaga,
     registerSaga,
+    changePasswordSaga,
     logoutSaga,
 }

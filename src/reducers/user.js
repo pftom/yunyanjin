@@ -14,6 +14,10 @@ import {
     LOGIN,
     LOGIN_SUCCESS,
     LOGIN_ERROR,
+
+    CHANGE_PASSWORD,
+    CHANGE_PASSWORD_SUCCESS,
+    CHANGE_PASSWORD_ERROR,
 } from '../constants/userConstants';
 
 // The initial state is just an empty Map
@@ -25,6 +29,9 @@ const initialState = Immutable.Map({
 
     registerSuccess: false,
     registerError: false,
+
+    changePasswordSuccess: false,
+    changePasswordError: false,
 });
 
 /* 
@@ -88,6 +95,20 @@ const user = (state = initialState, action) => {
             return state.merge({
                 registerSuccess: false,
                 registerError: true,
+            });
+
+        case CHANGE_PASSWORD_SUCCESS:
+            // when change password is success, update state
+            return state.merge({
+                changePasswordSuccess: true,
+                changePasswordError: false,
+            });
+
+        case CHANGE_PASSWORD_ERROR:
+            // when change password is failed, update state
+            return state.merge({
+                changePasswordSuccess: false,
+                changePasswordError: true,
             });
         
         default:

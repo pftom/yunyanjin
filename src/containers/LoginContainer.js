@@ -46,11 +46,15 @@ class LoginContainer extends Component {
             this.props.hideLoginModal('loginModalVisible');
         }, 2000);
 
-        const location = {
-            pathname: '/',
-        };
+        const { noRegister } = this.props;
 
-        this.props.history.push(location);
+        if (!noRegister) {
+            const location = {
+                pathname: '/',
+            };
+    
+            this.props.history.push(location);
+        }
     }
 
     handleLoginError() {

@@ -6,6 +6,7 @@ import {
     tokenSaga,
     loginSaga,
     registerSaga,
+    changePasswordSaga,
     logoutSaga,
 } from './userSaga';
 
@@ -15,6 +16,7 @@ const rootSaga = function* () {
         
         registerSaga(),
         loginSaga(),
+        changePasswordSaga(),
         logoutSaga(),
     ]);
 };

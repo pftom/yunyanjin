@@ -13,7 +13,7 @@ import {
 
 //  import { YjRegister, YjChangePassword } from './containers/';
 import RegisterContainer from './containers/RegisterContainer';
-import ChangePasswordContainer from './containers/ChangePassword';
+import ChangePasswordContainer from './containers/ChangePasswordContainer';
 
 
  const BasicApp = () => (
