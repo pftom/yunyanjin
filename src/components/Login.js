@@ -8,63 +8,60 @@ import { Button, Form, Icon, Input, Checkbox, message } from 'antd';
 const FormItem = Form.Item;
 
 
-class Login extends Component {
-    onSubmit = (e) => {
+function Login (props) {
+    const onSubmit = (e) => {
         e.preventDefault();
-        const form = this.props.form;
+        const form = props.form;
         
-        this.props.onSubmit(form);
+        props.onSubmit(form);
 
     }
 
-    render() {
+    const { getFieldDecorator } = props.form;
 
-        const { getFieldDecorator } = this.props.form;
+    return (
+        <div className="container-fluid login-box">
+            <Form onSubmit={onSubmit} className="login-form">
+                <FormItem
+                    hasFeedback
+                >
+                {getFieldDecorator('username', {
+                    rules: [{ required: true, message: '请输入您的用户名' }],
+                })(
+                    <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="请输入您的用户名" />
+                )}
+                </FormItem>
+                <FormItem
 
-        return (
-            <div className="container-fluid login-box">
-                <Form onSubmit={this.onSubmit} className="login-form">
-                    <FormItem
-                        hasFeedback
-                    >
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: '请输入您的用户名' }],
-                    })(
-                        <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="请输入您的用户名" />
-                    )}
-                    </FormItem>
-                    <FormItem
-
-                        hasFeedback
-                    >
-                    {getFieldDecorator('password', {
-                        rules: [{ required: true, message: '请输入您的密码' }],
-                    })(
-                        <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="请输入您的密码" />
-                    )}
-                    </FormItem>
-                    <FormItem className="remember-password-box">
-                    {getFieldDecorator('remember', {
-                        valuePropName: 'checked',
-                        initialValue: true,
-                    })(
-                        <Checkbox>记住密码</Checkbox>
-                    )}
-                        <Button type="primary" htmlType="submit" className="login-form-button">
-                            登 录
-                        </Button>
-                        {
-                            !this.props.noRegister && (
-                                <div className="already-user text-center">
-                                    还没账号？<Link to="/register" className="text-blue">马上注册</Link>
-                                </div>
-                            )
-                        }
-                    </FormItem>
-                </Form>
-            </div>
-        )
-    }
+                    hasFeedback
+                >
+                {getFieldDecorator('password', {
+                    rules: [{ required: true, message: '请输入您的密码' }],
+                })(
+                    <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="请输入您的密码" />
+                )}
+                </FormItem>
+                <FormItem className="remember-password-box">
+                {getFieldDecorator('remember', {
+                    valuePropName: 'checked',
+                    initialValue: true,
+                })(
+                    <Checkbox>记住密码</Checkbox>
+                )}
+                    <Button type="primary" htmlType="submit" className="login-form-button">
+                        登 录
+                    </Button>
+                    {
+                        !props.noRegister && (
+                            <div className="already-user text-center">
+                                还没账号？<Link to="/register" className="text-blue">马上注册</Link>
+                            </div>
+                        )
+                    }
+                </FormItem>
+            </Form>
+        </div>
+    )
 }
 
 

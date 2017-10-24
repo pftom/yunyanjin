@@ -22,7 +22,6 @@ class ChangePassword extends Component {
 
     async componentDidMount() {
         const token = await localStorage.getItem('token');
-        console.log('token', token);
     }
 
 
@@ -30,7 +29,6 @@ class ChangePassword extends Component {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll(async (err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
 
                 try {
                     const { oldPassword, password } = values;
@@ -62,7 +60,6 @@ class ChangePassword extends Component {
     }
 
     handleConfirmBlur = (e) => {
-        console.log('blur confirm');
         const value = e.target.value;
         this.setState({ confirmDirty: this.state.confirmDirty || !!value });
     }

@@ -13,7 +13,6 @@ class RegisterContainer extends Component {
     handleSubmit =  (form) => {
         form.validateFieldsAndScroll(async (err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
 
                 const { username, password } = values;
 

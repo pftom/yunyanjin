@@ -25,7 +25,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Event = _react.PropTypes.shape({
-    date: _react.PropTypes.object.isRequired,
+    date: _react.PropTypes.number.isRequired,
     title: _react.PropTypes.string.isRequired,
     imageUrl: _react.PropTypes.string.isRequired,
     text: _react.PropTypes.string.isRequired,

@@ -1,12 +1,19 @@
+/*
+ * import React for the requirement of React Framework.
+ * import Component for build LoginContainer with extend it.  
+ * import Link for routing to other page.
+ * import `antd` for use component already in production.
+ */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Button, Form, Icon, Input, Checkbox, message } from 'antd';
 
+// Presentational Login component
 import Login from '../components/Login';
 
+// http request api and request func
 import {  base, userApi } from '../config/config';
 import request from '../config/request';
-
-import { Button, Form, Icon, Input, Checkbox, message } from 'antd';
 
 const FormItem = Form.Item;
 

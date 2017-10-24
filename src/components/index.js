@@ -1,4 +1,8 @@
+import React from 'react';
+import Loadable from 'react-loadable';
+
 import NavBar from './NavBar';
+import BackgroundImg from './BackgroundImg';
 import About from './About';
 import Intro from './Intro';
 import HeaderBody from './HeaderBody';
@@ -9,10 +13,13 @@ import Events from './Events';
 import Partner from './Partners';
 import Video from './Video';
 import UserForm from './UserForm';
+import GoodsDetail from './GoodsDetail';
+import ShopCart from './ShopCart';
 
 
 export {
     NavBar,
+    BackgroundImg,
     HeaderBody,
     About,
     Intro,
@@ -23,4 +30,6 @@ export {
     Partner,
     Video,
     UserForm,
+    GoodsDetail,
+    ShopCart,
 }

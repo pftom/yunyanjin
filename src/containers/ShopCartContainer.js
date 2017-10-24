@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
 
-import ShopCart from '../components/ShopCart';
+import { ShopCart } from '../components/';
 
 import {  base, cartSingleApi } from '../config/config';
 import request from '../config/request';
@@ -42,7 +42,6 @@ class ShopCartContainer extends Component {
 
             const allProducts = await request.get(base + cartSingleApi().allProducts, null, token);
 
-            console.log('allProducts', allProducts);
             let totalPrice = 0;
 
             allProducts.map(item => {
@@ -68,7 +67,6 @@ class ShopCartContainer extends Component {
                 return item;
             })
 
-            console.log('allNoRepProducts', allNoRepProducts, 'allNoRepProductsCount', allNoRepProductsCount);
 
             this.setState({
                 allProducts,
@@ -80,7 +78,6 @@ class ShopCartContainer extends Component {
 
             this.success('获取购物车成功！');
         } catch(err) {
-            console.log('err', err);
             this.error('获取购物车失败！请登录或者检查网络连接！');
         }
     }
@@ -97,8 +94,6 @@ class ShopCartContainer extends Component {
         try {
             const token = await localStorage.getItem('token');
 
-            console.log('token', token);
-            console.log('item', item);
 
             await request.delete(base + cartSingleApi(item.item.id).deleteSingleProduct, token);
 

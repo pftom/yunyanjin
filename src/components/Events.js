@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-
-
-import './css/Events.css';
-
-import './css/Timeline.css';
+import React from 'react';
 
 import Timeline from './TimeLine';
 
-const events = [{
-	"date": Date.parse("2015-02-14T07:00:00.000Z"),
+import './css/Events.css';
+import './css/Timeline.css';
+
+const DATA = [{
+	"date": Date.parse("2015-02-10T07:00:00.000Z"),
 	"title": "1",
 	"text": "2015年11月，大学举办慈善文化月相关活动，对口扶贫盐津的工作进一步开展。11月17日，计算机学院慈善义工队在大学大学生活动中心组织举办的慈善爱心义卖中义卖盐津特产，并将首次调研的成果制作成宣传短片。借此机会，计算机学院“云梦盐津”公益扶贫项目正式启动，计算机学院慈善义工服务队志愿者组成“云梦盐津”公益志愿团队2015年11月，大学举办慈善文化月相关活动，对口扶贫盐津的工作进一步开展。11月17日，计算机学院慈善义工队在大学大学生活动中心组织举办的慈善爱心义卖中义卖盐津特产，并将首次调研的成果制作成宣传短片。借此机会，计算机学院“云梦盐津”公益扶贫项目正式启动，计算机学院慈善义工服务队志愿者组成“云梦盐津”公益志愿团队",
 	"imageUrl": "http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/timeline/1.jpg"
@@ -39,17 +37,15 @@ const events = [{
 	"imageUrl": "http://yunyanjin.oss-cn-hangzhou.aliyuncs.com/timeline/6.jpg"
 }];
 
-class Events extends Component {
-    render() {
-        return (
-            <div className="event-box " id="events">
-                <h3 className="sector-title text-center">扶贫纪实</h3>
-                <div className="row slideanim">
-                    <Timeline events={events} />
-                </div>
-            </div>
-        )
-    }
+function Events(props) {
+	return (
+		<div className="event-box " id="events">
+			<h3 className="sector-title text-center">扶贫纪实</h3>
+			<div className="row slideanim">
+				<Timeline events={DATA} />
+			</div>
+		</div>
+	)
 }
 
 export default Events;
