@@ -22,10 +22,12 @@ const stateTransformer = (state) => {
 };
 
 // create logger for dev enviroment
-const logger = createLogger({
-    stateTransformer,
-});
-middlewares.push(logger);
+if (process.env.NODE_ENV === 'development') {
+    const logger = createLogger({
+        stateTransformer,
+    });
+    middlewares.push(logger);
+}
 
 // cretae saga middleware for run saga async action flow
 const sagaMiddleware = createSagaMiddleware();

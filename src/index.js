@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
@@ -16,7 +17,7 @@ import RegisterContainer from './containers/RegisterContainer';
 import ChangePasswordContainer from './containers/ChangePasswordContainer';
 
 
- const BasicApp = () => (
+ const Root = ({ store }) => (
      <Provider store={store}>
         <Router forceRefresh={true}>
             <div>
@@ -26,7 +27,11 @@ import ChangePasswordContainer from './containers/ChangePasswordContainer';
             </div>
         </Router>
      </Provider>
- )
+ );
 
-ReactDOM.render(<BasicApp />, document.getElementById('root'));
+ Root.propTypes = {
+     store: PropTypes.object.isRequired,
+ };
+
+ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 registerServiceWorker();

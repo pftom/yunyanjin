@@ -50,7 +50,6 @@ let request = {};
 
 request.get =  ( url, params, token ) => {
   if (params) {
-    console.log('params', params)
     url += '?' + queryString.stringify(params);
   }
 
@@ -58,12 +57,9 @@ request.get =  ( url, params, token ) => {
 
   const options = _.extend(header('GET', token));
 
-  console.log('url', url, options);
-  console.log('fetch', fetch);
 
   return fetch(url, options)
       .then(response => {
-        console.log('response', response);
         if (response.status !== 200 || !response.ok) {
           throw response.json();
         }
@@ -79,21 +75,18 @@ request.post = ( url, body, token, multiform ) => {
     data = JSON.stringify(body);
   }
 
-  console.log('data', data);
   let options = _.extend(header('POST', token, multiform), {
     body: data
   });
 
-  console.log('options', options, url);
 
   return fetch(url, options)
         .then(response => {
 
-          console.log('response', response);
           if (![200, 201].includes(response.status)) {
             throw response.json();
           }
-          // console.log('succceed', response.json());
+        
           return response.json();
         })
 }
@@ -106,14 +99,12 @@ request.put = ( url, token, body, multiform ) => {
     data = JSON.stringify(body);
   }
 
-  console.log('multiform', multiform, url);
 
   //multiform support
   let options = _.extend(header('PUT', token, multiform), {
     body: data,
   });
 
-  console.log('options', options);
 
   return fetch(url, options) 
         .then(response => {
@@ -131,11 +122,9 @@ request.delete = ( url, token ) => {
     options = _.extend(header('DELETE', token));
   }
 
-  console.log('url', url, options);
   
     return fetch(url, options)
         .then(response => {
-          console.log('response', response);
           if (response.status !== 204 || !response.ok) {
             throw response.json();
           }

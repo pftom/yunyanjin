@@ -57,7 +57,6 @@ function* setToken(payload) {
 function* getToken(payload) {
     try {
         const token = yield localStorage.getItem('token');
-        console.log('token', token);
         yield put({ type: GET_TOKEN_SUCCESS, payload: { token }});
     } catch (e) {
         console.error(e, 'Something has gotten wrong in the web storage.');
@@ -145,7 +144,6 @@ function* registerSaga() {
 function* changePasswordFlow(payload) {
     try {
         const { body, token } = payload;
-        console.log('payload', payload);
         yield call(request.post, base + userApi.changePassword, body, token);
         
         yield put({ type: CHANGE_PASSWORD_SUCCESS });

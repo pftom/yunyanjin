@@ -13,6 +13,7 @@
     "es6-promise": "^4.1.1",
     "immutable": "^3.8.2",
     "promise-polyfill": "^6.0.2",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-html5video": "^2.3.0",

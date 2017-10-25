@@ -38,7 +38,9 @@ class ChangePasswordContainer extends Component {
                     new_password: password,
                 };
 
-                const { token, dispatch } = this.props;
+                const token = await localStorage.getItem('token');
+
+                const { dispatch } = this.props;
                 dispatch({ type: CHANGE_PASSWORD, payload: { body, token } });
             }
         });
@@ -53,6 +55,7 @@ class ChangePasswordContainer extends Component {
     }
 
     render() {
+        console.log('props', this.props);
 
         return (
             <ChangePassword
@@ -69,3 +72,4 @@ export default connect(
         changePasswordError: state.getIn(['user', 'changePasswordError']),
     }),
 )(ChangePasswordContainer);
+
