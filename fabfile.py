@@ -30,10 +30,29 @@ def read_api_auth():
     return oss2.Auth(keys[0], keys[1])
 
 
-def upload_to_oss(css_files, js_files):
+def collect_static_files():
+    """Capture names of static files needed to be uploaded."""
+    static_files = []
+
+    for filename in local("ls build/css/", capture=True).split():
+        static_files.append('/css/' + filename)
+
+    for filename in local("ls build/js/", capture=True).split():
+        static_files.append('/js/' + filename)
+
+    for filename in local("ls build/static/css", capture=True).split():
+        static_files.append('/static/css/' + filename)
+
+    for filename in local("ls build/static/js", capture=True).split():
+        static_files.append('/static/js/' + filename)
+
+    return static_files
+
+
+def upload_to_oss(static_files):
     """Upload static assets to OSS via SDK."""
     # Initialize api auth with access key
-    print "Reading api auth keys ..."
+    print "Reading api auth keys ...",
     auth = read_api_auth()
     print "Done."
 
@@ -42,36 +61,30 @@ def upload_to_oss(css_files, js_files):
     # Delete existing outdated static assets
     print "Deleting existing outdated static assets in OSS ...",
     for file in oss2.ObjectIterator(bucket):
-        if file.key.endswith(('.js', '.css', '.map')) and file.key.startswith('main'):
+        if file.key in ['css', 'js', 'static']:
             bucket.delete_object(file.key)
     print "Done."
 
-    print "Uploading newest static assets ...",
-    for css_file in css_files:
-        bucket.put_object_from_file(css_file, 'build/static/css/' + css_file)
-
-    for js_file in js_files:
-        bucket.put_object_from_file(js_file, 'build/static/js/' + js_file)
+    print "Uploading latest static assets ...",
+    for static_file in static_files:
+        bucket.put_object_from_file(
+            static_file.lstrip('/'),
+            'build' + static_file
+        )
     print "Done."
 
 
-def replace_links(css_file, js_file):
+def replace_links(static_files):
     """Replace links of static assets in index page."""
     print "Replacing links in index.html ...",
     with open('build/index.html') as fp:
         filedata = fp.read()
 
-    # Replace css link
-    filedata = filedata.replace(
-        '/static/css/%s' % css_file,
-        '%s/%s' % (bucket_url, css_file)
-    )
-
-    # Replace js link
-    filedata = filedata.replace(
-        '/static/js/%s' % js_file,
-        '%s/%s' % (bucket_url, js_file)
-    )
+    for static_file in static_files:
+        filedata = filedata.replace(
+            static_file,
+            bucket_url + static_file
+        )
 
     # Write the modified html code back
     with open('build/index.html', 'w') as fp:
@@ -85,14 +98,11 @@ def build():
     Run react build scripts and upload static assets to OSS,
     and replace links in HTML meanwhile.
     """
-    local("npm run build")
+    # local("npm run build")
 
-    # Capture names of static files needed to be uploaded
-    css_files = sorted(local("ls build/static/css/", capture=True).split())
-    js_files = sorted(local("ls build/static/js/", capture=True).split())
-
-    upload_to_oss(css_files, js_files)
-    replace_links(css_files[0], js_files[0])
+    static_files = collect_static_files()
+    upload_to_oss(static_files)
+    replace_links(static_files)
 
 
 def pull_image_and_redeploy():
