@@ -5,6 +5,7 @@ Available commands:
 
 - `fab build`: Run react build scripts and upload static assets to OSS, and replace
 links in HTML meanwhile.
+- `fab start`: Run the prod container locally.
 - `fab deploy`: Handle the whole process of docker image, and (re)deploy the container.
 """
 
@@ -15,7 +16,7 @@ from datetime import datetime
 from fabric.api import *
 import oss2
 
-env.hosts = ['root@yunyanjin.com']
+env.hosts = ['root@60.205.183.134']
 
 image_repo = 'pftom/yunyanjin-client'
 container_name = 'yyj_client'
@@ -93,18 +94,6 @@ def replace_links(static_files):
     print "Done."
 
 
-def build():
-    """
-    Run react build scripts and upload static assets to OSS,
-    and replace links in HTML meanwhile.
-    """
-    # local("npm run build")
-
-    static_files = collect_static_files()
-    upload_to_oss(static_files)
-    replace_links(static_files)
-
-
 def pull_image_and_redeploy():
     """Pull the newest image from Docker Hub and redeploy the container."""
     # Pull the newest image
@@ -138,6 +127,24 @@ def deploy_with_private_key():
     local("docker push %s" % image_repo)
 
     pull_image_and_redeploy()
+
+
+# Available commands
+def build():
+    """
+    Run react build scripts and upload static assets to OSS,
+    and replace links in HTML meanwhile.
+    """
+    local("npm run build")
+
+    static_files = collect_static_files()
+    upload_to_oss(static_files)
+    replace_links(static_files)
+
+
+def start():
+    """Run the prod container locally."""
+    local("docker-compose up --build")
 
 
 def deploy():
