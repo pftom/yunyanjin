@@ -9,7 +9,17 @@ import Register from '../components/Register';
 // import async action constants
 import { REGISTER } from '../constants/userConstants';
 
-class RegisterContainer extends Component {
+function delegateConnect(target) {
+  return connect(
+    state => ({
+        registerSuccess: state.getIn(['user', 'registerSuccess']),
+        registerError: state.getIn(['user', 'registerError']),
+    }),
+  )(target);
+}
+
+@delegateConnect
+export default class RegisterContainer {
 
     componentWillReceiveProps (nextProps) {
         const { registerSuccess, registerError } = nextProps;
@@ -61,18 +71,12 @@ class RegisterContainer extends Component {
     }
 
     render() {
-        return (
-            <Register 
-                onSubmit={this.handleSubmit}
-                history={this.props.history}
-            />
-        )
+      console.log('props', this.props);
+      return (
+          <Register 
+              onSubmit={this.handleSubmit}
+              history={this.props.history}
+          />
+      )
     }
 }
-
-export default connect(
-    state => ({
-        registerSuccess: state.getIn(['user', 'registerSuccess']),
-        registerError: state.getIn(['user', 'registerError']),
-    }),
-)(RegisterContainer);
