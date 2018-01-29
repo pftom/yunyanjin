@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  client:
+    image: nginx:1.13
+    ports:
+      - "3000:80"
+    volumes:
+      - ./build:/yyj-client
+      - ./config/nginx:/etc/nginx/conf.d
