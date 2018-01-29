@@ -163,7 +163,7 @@ function GoodsDetail(props) {
                     <div className="container-fluid comment-box">
                       {
 						  [1, 2, 3, 4, 5, 6, 7].map((item, key) => (
-							<div className="media col-sm-8 comment-item">
+							<div className="media col-sm-8 comment-item" key={key}>
 								<div className="media-left">
 								<img src={avatar1} alt="avatar1" className="media-object" style={{ width: '60px' }}/>
 								</div>
